@@ -2,6 +2,7 @@
 // This tool needs no private software repository and copies no machine sources.
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const chapters = [
   ['overview', 'Kurs & Vorbereitung', 'README.de.md'],
@@ -31,6 +32,16 @@ async function build() {
     data[id] = { title, html, headings, search: md.replace(/!\[[^\]]*\]\([^)]*\)/g, '') };
   }
   fs.writeFileSync(path.join(root, 'content.js'), `/* Compiled from the selected public course Markdown. */\nwindow.COURSE = ${JSON.stringify(data)};\n`);
+  // Changed assets get changed URLs, so an open browser cannot silently keep
+  // the old router while displaying a new navigation menu after deployment.
+  const indexPath = path.join(root, 'index.html');
+  let index = fs.readFileSync(indexPath, 'utf8');
+  for (const name of ['styles.css', 'console-lab.css', 'content.js', 'console-lab.js', 'app.js']) {
+    const digest = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, name))).digest('hex').slice(0, 12);
+    const pattern = new RegExp(`((?:src|href)=")${name.replace(/\./g, '\\.')}\\??[^"\\s]*(")`, 'g');
+    index = index.replace(pattern, `$1${name}?v=${digest}$2`);
+  }
+  fs.writeFileSync(indexPath, index);
   console.log(`Generated ${Object.keys(data).length} chapters.`);
 }
 build().catch(error => { console.error(error.message); process.exitCode = 1; });

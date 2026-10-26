@@ -26,7 +26,7 @@ window.createConsoleNavigationLab = function ({ main, escape }) {
           <button id="console-module-next" class="console-control console-arrow" aria-label="Nächstes Beispielmodul">›</button>
           <div class="console-dropdown" id="console-module-list" hidden></div>
         </div>
-        <button id="console-message-open" class="console-message-preview" aria-haspopup="dialog"><span>INFO · Lernbereich bereit</span><small>Keine Meldung einer realen Maschine</small><small>Anklicken: Meldungen öffnen</small></button>
+        <button id="console-message-open" class="console-message-preview" aria-expanded="false" aria-controls="console-message-panel"><span>INFO · Lernbereich bereit</span><small>Keine Meldung einer realen Maschine</small><small>Anklicken: Meldungen öffnen</small></button>
         <div class="console-zoom-picker">
           <button id="console-zoom" class="console-control" aria-expanded="false" aria-controls="console-zoom-list" aria-label="Vergrößerung auswählen">⌕<small id="console-zoom-label">100 %</small></button>
           <div id="console-zoom-list" class="console-dropdown" hidden><button data-zoom="1">100 %</button><button data-zoom="1.5">150 %</button><button data-zoom="2">200 %</button></div>
@@ -38,13 +38,22 @@ window.createConsoleNavigationLab = function ({ main, escape }) {
           <div class="console-dropdown" id="console-page-list" hidden></div>
         </div>
       </div>
-      <div class="console-working-area"><div class="console-viewport" id="console-viewport" tabindex="0" aria-label="Vergrößerbare Arbeitsfläche"><div id="console-space"><div id="console-sheet" class="console-sheet"></div></div></div><aside class="console-function-bar" id="console-functions" aria-label="Seitenabhängige feste Funktionstasten"></aside></div>
+      <div class="console-working-area">
+        <div class="console-viewport" id="console-viewport" tabindex="0" aria-label="Vergrößerbare Arbeitsfläche"><div id="console-space"><div id="console-sheet" class="console-sheet"></div></div></div>
+        <aside class="console-function-bar" id="console-functions" aria-label="Seitenabhängige feste Funktionstasten"></aside>
+        <section id="console-message-panel" class="console-message-panel" role="region" aria-labelledby="console-message-title" hidden>
+          <div class="console-dialog-heading"><h2 id="console-message-title">Meldungen · Lernbeispiele</h2><button id="console-message-close">Schließen ×</button></div>
+          <p class="console-message-row info"><b>INFO</b> Die Lernansicht ist bereit. Es besteht keine Maschinenverbindung.</p>
+          <p class="console-message-row warning"><b>WARNUNG</b> Beispiel: Eine Rückmeldung fehlt. Diese Zeile meldet keinen Anlagenfehler.</p>
+          <p class="console-message-row info"><b>INFO</b> Schließen beendet nur diese Liste, nicht die Ursache einer Meldung.</p>
+        </section>
+      </div>
       <div class="console-location" id="console-location"></div>
     </div>
     <p class="console-explanation" id="console-explanation" role="status">Beginne auf MAIN. Wähle eine Kachel oder öffne die Modulliste oben.</p>
     <section class="task-box"><h2>Deine Bedienprobe <span id="console-progress">0 / 9</span></h2><p>Die Häkchen erscheinen durch deine Bedienung. Es gibt keine Verbindung zu einer Konsole oder PLC.</p><ul class="console-tasks" id="console-tasks"></ul><div class="button-row"><button id="console-reset" class="button">Bedienprobe zurücksetzen</button><a class="button" href="#/orientation">Bedienung mit echten Konsolenbildern →</a></div></section>
     <div class="notice blue">Das Modell bildet ausgewählte Navigationswege nach, nicht die vollständige Konsole. F1–F8 erzeugen hier nur Lernhinweise. Dokumenttexte und Meldungen sind Beispiele; Meldungsfenster schließen bedeutet nicht Fehler quittieren.</div>
-    <dialog id="console-message-dialog" class="console-message-dialog" aria-labelledby="console-message-title"><div class="console-dialog-heading"><h2 id="console-message-title">Meldungen · Lernbeispiele</h2><button id="console-message-close">Schließen ×</button></div><p class="console-message-row info"><b>INFO</b> Die Lernansicht ist bereit. Es besteht keine Maschinenverbindung.</p><p class="console-message-row warning"><b>WARNUNG</b> Beispiel: Eine Rückmeldung fehlt. Diese Zeile meldet keinen Anlagenfehler.</p><p class="console-message-row info"><b>INFO</b> Schließen beendet nur diese Liste, nicht die Ursache einer Meldung.</p></dialog>`;
+    `;
   const q = id => main.querySelector('#' + id);
   const describe = text => { if (!disposed) q('console-explanation').textContent = text; };
   function task(name) { completed.add(name); drawTasks(); }
@@ -100,6 +109,7 @@ window.createConsoleNavigationLab = function ({ main, escape }) {
     q('console-module-list').innerHTML = modules.map((m, i) => `<button data-module="${i}">${String(m.id).padStart(2, '0')} ${escape(m.name)}</button>`).join('');
     q('console-page-list').innerHTML = module.pages.map((name, i) => `<button data-page="${i}">${i + 1} / ${module.pages.length} ${escape(name)}</button>`).join('');
     q('console-functions').hidden = isMain;
+    main.querySelector('.console-working-area').classList.toggle('has-functions', !isMain);
     q('console-functions').innerHTML = Array.from({ length: 8 }, (_, i) => `<button data-fkey="${i + 1}"><b>F${i + 1}</b><small>Lernhinweis</small></button>`).join('');
     const sheet = q('console-sheet');
     if (isMain) sheet.innerHTML = `<h2>KonsoleLite</h2><p>Bereich auswählen · drei Beispielmodule</p><div class="console-module-tiles">${modules.map((m, i) => `<button data-module="${i}"><span>${String(m.id).padStart(2, '0')}</span><strong>${escape(m.name)}</strong></button>`).join('')}</div>`;
@@ -131,15 +141,28 @@ window.createConsoleNavigationLab = function ({ main, escape }) {
     if (button.dataset.fkey) { task('F-Taste untersuchen'); describe(`F${button.dataset.fkey} gehört zur Seite „${modules[moduleIndex].pages[pageIndex]}“. Dieses Modell zeigt nur diesen Hinweis und führt keine projektierte Funktion aus.`); }
   };
   region.addEventListener('click', click);
-  const messageDialog = q('console-message-dialog');
-  q('console-message-open').addEventListener('click', () => { menu = ''; drawMenu(); opener = document.activeElement; messageVisited = true; messageDialog.showModal(); });
-  q('console-message-close').addEventListener('click', () => messageDialog.close());
-  messageDialog.addEventListener('close', () => { if (disposed) return; if (messageVisited) task('Meldungen öffnen und schließen'); describe('Meldungsliste geschlossen. Eine Meldungsursache wurde dadurch nicht behoben oder quittiert.'); opener?.focus(); });
-  q('console-reset').addEventListener('click', () => { completed.clear(); remembered.clear(); moduleIndex = 0; pageIndex = 0; isMain = true; zoom = 1; menu = ''; messageVisited = false; draw(); describe('Bedienprobe zurückgesetzt. Beginne auf MAIN.'); });
+  const messagePanel = q('console-message-panel');
+  function closeMessages() {
+    messagePanel.hidden = true;
+    q('console-message-open').setAttribute('aria-expanded', 'false');
+    if (messageVisited) task('Meldungen öffnen und schließen');
+    describe('Meldungsliste geschlossen. Eine Meldungsursache wurde dadurch nicht behoben oder quittiert.');
+    opener?.focus();
+  }
+  q('console-message-open').addEventListener('click', () => {
+    if (!messagePanel.hidden) { closeMessages(); return; }
+    menu = ''; drawMenu(); opener = document.activeElement; messageVisited = true;
+    messagePanel.hidden = false;
+    q('console-message-open').setAttribute('aria-expanded', 'true');
+    q('console-message-close').focus();
+    describe('Meldungsliste innerhalb der Konsole geöffnet. Konsolenleiste und Kursnavigation bleiben bedienbar.');
+  });
+  q('console-message-close').addEventListener('click', closeMessages);
+  q('console-reset').addEventListener('click', () => { completed.clear(); remembered.clear(); moduleIndex = 0; pageIndex = 0; isMain = true; zoom = 1; menu = ''; messageVisited = false; messagePanel.hidden = true; q('console-message-open').setAttribute('aria-expanded', 'false'); draw(); describe('Bedienprobe zurückgesetzt. Beginne auf MAIN.'); });
   const outside = e => { if (menu && !e.target.closest('.console-picker, .console-zoom-picker')) { menu = ''; drawMenu(); } };
-  const key = e => { if (e.key === 'Escape' && menu) { const previous = menu; menu = ''; drawMenu(); q(`console-${previous}`).focus(); } };
+  const key = e => { if (e.key !== 'Escape') return; if (menu) { const previous = menu; menu = ''; drawMenu(); q(`console-${previous}`).focus(); } else if (!messagePanel.hidden) closeMessages(); };
   document.addEventListener('click', outside); document.addEventListener('keydown', key);
   const resize = new ResizeObserver(drawScale); resize.observe(q('console-viewport'));
   draw();
-  return () => { disposed = true; resize.disconnect(); document.removeEventListener('click', outside); document.removeEventListener('keydown', key); if (messageDialog.open) messageDialog.close(); };
+  return () => { disposed = true; resize.disconnect(); document.removeEventListener('click', outside); document.removeEventListener('keydown', key); };
 };
