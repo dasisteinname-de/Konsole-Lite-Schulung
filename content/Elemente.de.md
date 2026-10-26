@@ -1,9 +1,12 @@
 # Grundelemente mit Bildern aufbauen
 
-Für jedes Grundelement gibt es eine echte Editoraufnahme, eine kleine Aufgabe
-und eine sichtbare Kontrolle. Die Aufnahmen zeigen den **Layoutmodus**, nicht
-aktive Maschinenwerte. Zum Vergrößern das jeweilige Bild öffnen. Änderungen
-immer in der eigenen Kurskopie speichern und nach dem Wiederöffnen kontrollieren.
+Beginne beim Ergebnis: Die **Live-Ansicht** zeigt die vollständige Konsole mit
+Navigation und F1 bis F8, ohne Editorleisten. Darunter folgt dieselbe Übungsseite
+in der **Entwurfsansicht** mit den Eigenschaften zum Nachbauen. Die Werte sind
+lokale Kursdaten, keine PLC-Rückmeldungen. Zum Vergrößern das Bild öffnen.
+Änderungen immer in der eigenen Kurskopie speichern und nach dem Wiederöffnen
+kontrollieren. Für 16 Elemente stehen beide Ansichten bereit; die 3D-Szene
+benötigt zusätzlich eine funktionierende Qt3D-Grafikumgebung.
 
 **Gemeinsamer Bedienweg:** Element links doppelklicken, auf der Fläche
 positionieren, am Griff vergrößern und rechts seine Eigenschaften einstellen.
@@ -13,7 +16,13 @@ Schreibtests und Maschinenaktionen gehören nicht zu diesen Layoutübungen.
 
 ## Text und Wert
 
-![Text Element im Editor mit Beschriftung, Geometrie und Schriftgröße](images/element-text.png)
+### Live Ansicht
+
+![Text und Wert in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-text.png)
+
+### Entwurfsansicht
+
+![Text Element im Editor mit Beschriftung, Geometrie und Schriftgröße](images/design-element-text.png)
 
 1. **Text / Wert** einfügen und eine eindeutige `id` behalten.
 2. `text` auf **Beladestation 1** setzen; Breite, Schriftgröße und Ausrichtung
@@ -28,7 +37,13 @@ der lesbare Ersatztext bleibt erhalten.
 
 ## Bild
 
-![Bild Element auf der Layoutfläche und seine Quelle in den Eigenschaften](images/element-image.png)
+### Live Ansicht
+
+![Bild in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-image.png)
+
+### Entwurfsansicht
+
+![Bild Element auf der Layoutfläche und seine Quelle in den Eigenschaften](images/design-element-image.png)
 
 1. **Bild** einfügen und markieren.
 2. Über **Menü → Bearbeiten → Bild / Icon auswählen …** das Übersichtsbild wählen.
@@ -44,7 +59,13 @@ Platz für BMK-Karten. Die gemeinsame [BMK-Bildfolge](#/bmk) baut darauf auf.
 
 ## BMK LED
 
-![Zwei BMK Karten sind mit den zugehörigen Sensorpunkten verbunden](images/10-bmk-zwei-positionen.png)
+### Live Ansicht
+
+![BMK LED in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-bmkled.png)
+
+### Entwurfsansicht
+
+![Zwei BMK Karten sind mit den zugehörigen Sensorpunkten verbunden](images/design-element-bmkled.png)
 
 Das vollständige [BMK-LED-Kapitel](#/bmk) zeigt jeden Schritt mit eigenem
 Bild: Einfügen, Karte verschieben, Text ändern, Kreis ziehen, Variable wählen,
@@ -52,12 +73,19 @@ Vergleichswert und Farbe einstellen, speichern und wieder öffnen.
 
 ## Button
 
-![Button mit Navigation als Aktion und editierbarer Beschriftung](images/element-button.png)
+### Live Ansicht
+
+![Button in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-button.png)
+
+### Entwurfsansicht
+
+![Button mit Navigation als Aktion und editierbarer Beschriftung](images/design-element-button.png)
 
 1. **Button** einfügen, `text` auf **Sensorübersicht** setzen und ausreichend
    groß für eine sichere Betätigung zeichnen.
 2. Für eine harmlose erste Aktion `actionType` **navigate** wählen.
-3. Zielmodus **page**, Zielmodul und eine vorhandene Zielseite auswählen.
+3. Zum ersten Test den Zielmodus **main** wählen. Danach **page**, Zielmodul
+   und eine vorhandene Zielseite ausprobieren.
 4. Speichern und die Navigation in der lokalen Vorschau prüfen.
 
 **Kontrolle:** Der sichtbare Text erklärt das Ziel. Eine Navigation muss keine
@@ -66,7 +94,13 @@ im Fortgeschrittenenteil behandelt.
 
 ## Edit Feld
 
-![Edit Feld mit Übungswert und Eigenschaften für die Eingabe](images/element-edit.png)
+### Live Ansicht
+
+![Edit Feld in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-edit.png)
+
+### Entwurfsansicht
+
+![Edit Feld mit Übungswert und Eigenschaften für die Eingabe](images/design-element-edit.png)
 
 1. **Edit-Feld** einfügen und Größe sowie Textdarstellung wählen.
 2. Einen statischen Übungswert einstellen und unter **Eingabe und Prüfung**
@@ -80,7 +114,13 @@ Darstellungs-/Eingabeprüfung ersetzt keine angeschlossene Speicherfunktion.
 
 ## Progress Bar
 
-![Fortschrittsanzeige mit Beispielwert und Zahlenbereich](images/element-progress.png)
+### Live Ansicht
+
+![Progress Bar in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-progress.png)
+
+### Entwurfsansicht
+
+![Fortschrittsanzeige mit Beispielwert und Zahlenbereich](images/design-element-progress.png)
 
 1. **Progress-Bar** einfügen; `minimum` 0 und `maximum` 100 wählen.
 2. Den lokalen Beispielwert `value` auf 65 setzen.
@@ -93,7 +133,13 @@ und echte Datenquelle unterscheiden.
 
 ## Slider
 
-![Slider mit lokalem Übungswert und einstellbarer Skala](images/element-slider.png)
+### Live Ansicht
+
+![Slider in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-slider.png)
+
+### Entwurfsansicht
+
+![Slider mit lokalem Übungswert und einstellbarer Skala](images/design-element-slider.png)
 
 1. **Slider** einfügen; Minimum, Maximum und Schrittweite passend wählen.
 2. Mit einem statischen Übungswert beginnen, beispielsweise 35 von 100.
@@ -106,7 +152,13 @@ ist kein Bestandteil von Basic.
 
 ## Checkbox
 
-![Checkbox mit verständlicher Beschriftung in der Layoutfläche](images/element-checkbox.png)
+### Live Ansicht
+
+![Checkbox in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-checkbox.png)
+
+### Entwurfsansicht
+
+![Checkbox mit verständlicher Beschriftung in der Layoutfläche](images/design-element-checkbox.png)
 
 1. **Checkbox** einfügen und eindeutig beschriften, etwa **Übungsauswahl**.
 2. Für eine Zustandsanzeige eine boolesche Datenquelle auswählen.
@@ -117,7 +169,13 @@ Startwert und Rückschreiben sind verschiedene Dinge; `writeBack` bleibt aus.
 
 ## RadioButton
 
-![RadioButton mit eigener Beschriftung und Gruppenzuordnung](images/element-radiobutton.png)
+### Live Ansicht
+
+![RadioButton in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-radiobutton.png)
+
+### Entwurfsansicht
+
+![RadioButton mit eigener Beschriftung und Gruppenzuordnung](images/design-element-radiobutton.png)
 
 1. Einen **RadioButton** für **Variante A** einfügen.
 2. Einen zweiten für **Variante B** ergänzen. Technische IDs müssen verschieden
@@ -132,7 +190,13 @@ allein durch eine grafische Auswahl behaupten.
 
 ## 2D Fläche
 
-![2D Fläche als ruhiger Bereich mit anpassbarer Füllung und Rahmen](images/element-shape2d.png)
+### Live Ansicht
+
+![2D Fläche in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-shape2d.png)
+
+### Entwurfsansicht
+
+![2D Fläche als ruhiger Bereich mit anpassbarer Füllung und Rahmen](images/design-element-shape2d.png)
 
 1. **2D-Fläche** einfügen und als optischen Bereich um mehrere Elemente zeichnen.
 2. `fillColor`, `borderColor`, Rahmenbreite und gegebenenfalls `radius` einstellen.
@@ -155,7 +219,13 @@ Für den statischen HGM-Übersichtsplan genügt das Bild-Element.
 
 ## Index Liste
 
-![Index Liste mit auswählbaren Einträgen als Layoutobjekt](images/element-list.png)
+### Live Ansicht
+
+![Index Liste in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-list.png)
+
+### Entwurfsansicht
+
+![Index Liste mit auswählbaren Einträgen als Layoutobjekt](images/design-element-list.png)
 
 1. **Index-Liste** einfügen und ihre sichtbare Größe einstellen.
 2. Einträge mit eindeutigen Indizes und verständlichen Texten definieren;
@@ -168,7 +238,13 @@ JSON-Programmierung von Hand nachgebaut.
 
 ## Tabelle
 
-![Tabellen Element mit Spalten und vorbereitetem lokalen Datenmodell](images/element-table.png)
+### Live Ansicht
+
+![Tabelle in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-table.png)
+
+### Entwurfsansicht
+
+![Tabellen Element mit Spalten und vorbereitetem lokalen Datenmodell](images/design-element-table.png)
 
 1. **Tabelle** einfügen und über **Menü → Bearbeiten → Tabelle bearbeiten …** öffnen.
 2. Spalten **Sensor** und **Zustand** sowie zwei vorbereitete lokale Beispielzeilen
@@ -176,13 +252,19 @@ JSON-Programmierung von Hand nachgebaut.
 3. Breiten, Zeilenhöhe, Kopfzeile und Scrollverhalten einstellen.
 4. Layout speichern und die Zeilen in der lokalen Vorschau prüfen.
 
-**Kontrolle:** Das Layoutbild zeigt die Tabellenfläche, nicht deren vollständige
-Laufzeitzeilen. Bei dateibasierten Tabellen die Datei nicht durch ein leeres
+**Kontrolle:** In der Live-Ansicht stehen drei lokale Beispielzeilen unter
+**Sensor** und **Zustand**. Bei dateibasierten Tabellen die Datei nicht durch ein leeres
 lokales Modell ersetzen; Änderungen an PLC-Daten sind hier nicht vorgesehen.
 
 ## Struktur
 
-![Struktur Element mit Platz für eine gegliederte Anzeige](images/element-structure.png)
+### Live Ansicht
+
+![Struktur in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-structure.png)
+
+### Entwurfsansicht
+
+![Struktur Element mit Platz für eine gegliederte Anzeige](images/design-element-structure.png)
 
 1. **Struktur** einfügen und ausreichend Platz für benannte Werte lassen.
 2. Das vom Dozenten vorbereitete Strukturmodell auswählen beziehungsweise die
@@ -195,7 +277,13 @@ weder ein zusätzlicher Unit-Aufruf noch eine Maschinenaktion.
 
 ## ImageList
 
-![ImageList als eigenes Element mit einer vorbereiteten Bildzuordnung](images/element-imagelist.png)
+### Live Ansicht
+
+![ImageList in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-imagelist.png)
+
+### Entwurfsansicht
+
+![ImageList als eigenes Element mit einer vorbereiteten Bildzuordnung](images/design-element-imagelist.png)
 
 1. **ImageList** einfügen und einen vorbereiteten Satz aus Index und Bildquelle
    verwenden. Für diese Liste zählt die `source`-Zuordnung des jeweiligen
@@ -208,7 +296,13 @@ oder nicht vorhandene Indizes sind kein gültiger Sensorzustand.
 
 ## TextList
 
-![TextList mit vorbereiteten Positionsmeldungen und Anzeigeeigenschaften](images/element-textlist.png)
+### Live Ansicht
+
+![TextList in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-textlist.png)
+
+### Entwurfsansicht
+
+![TextList mit vorbereiteten Positionsmeldungen und Anzeigeeigenschaften](images/design-element-textlist.png)
 
 1. **TextList** einfügen und einen vorbereiteten Meldungssatz verwenden,
    etwa **Position unbekannt**, **Grundstellung**, **Arbeitsstellung**.
@@ -220,7 +314,13 @@ Index und tatsächlicher Eingang müssen zur definierten Zuordnung passen.
 
 ## Rezeptur Ansicht
 
-![Rezeptur Element als große eingebettete Ansicht im Layout](images/element-recipe.png)
+### Live Ansicht
+
+![Rezeptur Ansicht in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-recipe.png)
+
+### Entwurfsansicht
+
+![Rezeptur Element als große eingebettete Ansicht im Layout](images/design-element-recipe.png)
 
 1. **Rezeptur** nur als vorhandene Ansicht im Layout untersuchen beziehungsweise
    in der Kurskopie platzieren.

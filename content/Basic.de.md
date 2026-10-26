@@ -24,7 +24,8 @@ zuerst der Elementname und das fertige Ergebnis in der **Live-Ansicht**,
 danach die **Entwurfsansicht** und ihre Bedienfolge. Die Live-Aufnahme zeigt nur
 die vollständige Konsole mit Navigation und F1–F8, ohne die Seitenleisten des
 Editors. Sie stammt aus der lokalen Offline-Vorschau, nicht aus einer
-PLC-Verbindung. Diese Bildpaare werden für alle 17 Grundelemente ergänzt.
+PLC-Verbindung. 16 Grundelemente haben bereits beide Ansichten; bei der
+3D-Szene steht zunächst die Entwurfsansicht mit den benötigten Voraussetzungen.
 
 Nicht erst alles lesen. Einen Abschnitt öffnen, den gezeigten Schritt selbst
 ausführen und das eigene Ergebnis mit dem Bild vergleichen. Ein Bild lässt sich

@@ -9,7 +9,9 @@ Maschinensteuerungsquellen.
 
 - **Basic · zwei Tage:** zuerst Konsolenbedienung mit MAIN, Modulen, Seiten,
   Meldungen, INFO, Zoom und F1–F8. Danach Projektaufbau und Oberflächengestaltung
-  im QML Editor, mit BMK-LED-Bildfolge und Bildkarten für 17 Grundelemente.
+  im QML Editor, mit BMK-LED-Bildfolge und Übungen für 17 Grundelemente.
+  Bei 16 Elementen steht die echte lokale Live-Ansicht vor dem zugehörigen
+  Editorbild; die 3D-Szene setzt eine funktionierende Qt3D-Grafikumgebung voraus.
 - **Fortgeschrittene · zwei Tage:** Grundtypen, Units, Schnittstellenzuordnung,
   Schrittketten, CALL SK und LOCAL-Diagnose. Dieser Teil ist noch ein Kursentwurf.
 - **Lernmodelle:** Konsolennavigation mit aufklappbaren Menüs und Meldungen,
@@ -64,6 +66,7 @@ Die optionale Markierung „gelesen“ wird nur lokal gespeichert; kein Konto,
 kein Tracking-Skript und keine Übermittlung des Lernfortschritts. GitHub Pages
 stellt die Dateien bereit; dessen Hosting-Datenschutzbedingungen gelten separat.
 
-Die Screenshots zeigen Layout-/Bearbeitungszustände, keine gemessenen
-Maschinenzustände. Beispielvariablen erklären die Zuordnung und sind kein
+Die Screenshots zeigen sowohl Layout-/Bearbeitungszustände als auch die echte
+Live-Offline-Ansicht mit lokalen Kurswerten. Sie stammen aus einer isolierten
+Übungskopie, nicht von einer verbundenen Maschine. Beispielvariablen erklären die Zuordnung und sind kein
 Anschlussprofil. Für reale Anlagen sind deren Vorgaben und Freigaben maßgeblich.
