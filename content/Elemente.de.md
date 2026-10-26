@@ -5,8 +5,8 @@ Navigation und F1 bis F8, ohne Editorleisten. Darunter folgt dieselbe Übungssei
 in der **Entwurfsansicht** mit den Eigenschaften zum Nachbauen. Die Werte sind
 lokale Kursdaten, keine PLC-Rückmeldungen. Zum Vergrößern das Bild öffnen.
 Änderungen immer in der eigenen Kurskopie speichern und nach dem Wiederöffnen
-kontrollieren. Für 16 Elemente stehen beide Ansichten bereit; die 3D-Szene
-benötigt zusätzlich eine funktionierende Qt3D-Grafikumgebung.
+kontrollieren. Alle 17 Grundelemente zeigen beide Ansichten. Die 3D-Szene benötigt
+auf dem Schulungs-PC eine funktionierende Qt3D-Grafikumgebung.
 
 **Gemeinsamer Bedienweg:** Element links doppelklicken, auf der Fläche
 positionieren, am Griff vergrößern und rechts seine Eigenschaften einstellen.
@@ -65,7 +65,7 @@ Platz für BMK-Karten. Die gemeinsame [BMK-Bildfolge](#/bmk) baut darauf auf.
 
 ### Entwurfsansicht
 
-![Zwei BMK Karten sind mit den zugehörigen Sensorpunkten verbunden](images/design-element-bmkled.png)
+![BMK Karte mit Beschreibung und zugehörigem Zielkreis im Editor](images/design-element-bmkled.png)
 
 Das vollständige [BMK-LED-Kapitel](#/bmk) zeigt jeden Schritt mit eigenem
 Bild: Einfügen, Karte verschieben, Text ändern, Kreis ziehen, Variable wählen,
@@ -207,7 +207,13 @@ keine Ablauf- oder Freigabelogik.
 
 ## 3D Szene
 
-![3D Szene als eigenes Layoutobjekt mit Größe und Darstellungseigenschaften](images/element-shape3d.png)
+### Live Ansicht
+
+![3D Szene in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-shape3d.png)
+
+### Entwurfsansicht
+
+![3D Szene als eigenes Layoutobjekt mit Größe und Darstellungseigenschaften](images/design-element-shape3d.png)
 
 1. **3D-Szene** einfügen und eine ausreichend große Darstellungsfläche vorsehen.
 2. Die vorhandene Beispielszene und ihre Darstellungsparameter untersuchen,

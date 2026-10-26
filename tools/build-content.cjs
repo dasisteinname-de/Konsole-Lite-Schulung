@@ -21,14 +21,20 @@ async function build() {
   for (const [id, title, file] of chapters) {
     const md = fs.readFileSync(path.join(root, 'content', file), 'utf8');
     const headings = [];
+    const usedAnchors = new Map();
     let html = marked.parse(md, { gfm: true });
     html = html.replace(/<h([234])>(.*?)<\/h\1>/g, (all, level, text) => {
       const plain = text.replace(/<[^>]*>/g, '');
-      const anchor = slug(plain);
+      const base = slug(plain);
+      const occurrence = (usedAnchors.get(base) || 0) + 1;
+      usedAnchors.set(base, occurrence);
+      const anchor = base + (occurrence === 1 ? '' : '-' + occurrence);
       if (level === '2') headings.push({ text: plain, anchor });
       return `<h${level} id="${anchor}">${text}</h${level}>`;
-    }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) =>
-      `<figure><img src="assets/images/${name}" alt="${alt}" loading="lazy" tabindex="0"><figcaption>${alt} · Anklicken zum Vergrößern</figcaption></figure>`);
+    }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) => {
+      const digest=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/images',name))).digest('hex').slice(0,12);
+      return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt}" loading="lazy" tabindex="0"><figcaption>${alt} · Anklicken zum Vergrößern</figcaption></figure>`;
+    });
     data[id] = { title, html, headings, search: md.replace(/!\[[^\]]*\]\([^)]*\)/g, '') };
   }
   fs.writeFileSync(path.join(root, 'content.js'), `/* Compiled from the selected public course Markdown. */\nwindow.COURSE = ${JSON.stringify(data)};\n`);

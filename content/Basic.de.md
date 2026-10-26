@@ -19,18 +19,19 @@ unverändert. Vorbereitung: [Kursübersicht](#/overview).
 
 ## So arbeitest du mit den Bildkapiteln
 
-Die ausgearbeiteten Elementkapitel folgen künftig derselben Reihenfolge:
+Die Elementkapitel folgen derselben Reihenfolge:
 zuerst der Elementname und das fertige Ergebnis in der **Live-Ansicht**,
 danach die **Entwurfsansicht** und ihre Bedienfolge. Die Live-Aufnahme zeigt nur
 die vollständige Konsole mit Navigation und F1–F8, ohne die Seitenleisten des
 Editors. Sie stammt aus der lokalen Offline-Vorschau, nicht aus einer
-PLC-Verbindung. 16 Grundelemente haben bereits beide Ansichten; bei der
-3D-Szene steht zunächst die Entwurfsansicht mit den benötigten Voraussetzungen.
+PLC-Verbindung. Alle 17 Grundelemente zeigen das Ergebnis und die zugehörige
+Entwurfsansicht. Für die 3D-Szene muss Qt3D auf dem Schulungs-PC verfügbar sein.
 
 Nicht erst alles lesen. Einen Abschnitt öffnen, den gezeigten Schritt selbst
 ausführen und das eigene Ergebnis mit dem Bild vergleichen. Ein Bild lässt sich
-zum Lesen kleiner Eigenschaften vergrößert öffnen. Die Aufnahmen zeigen den
-Layoutmodus; Auswahlrahmen und Zielkreise sind keine aktiven PLC-Rückmeldungen.
+zum Lesen kleiner Eigenschaften vergrößert öffnen. Die Entwurfsaufnahmen
+zeigen den Layoutmodus; Auswahlrahmen und Zielkreise sind
+keine aktiven PLC-Rückmeldungen. Auch die Live-Bilder verwenden nur lokale Kurswerte.
 
 | Arbeitsunterlage | Was du damit baust |
 | --- | --- |

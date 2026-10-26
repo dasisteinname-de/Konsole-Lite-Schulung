@@ -12,11 +12,23 @@ Ein **Anzeigename** ist der lesbare Text in der Navigation. Ein **technischer Na
 identifiziert die gespeicherte Seite; eine Änderung des Anzeigenamens benennt
 nicht automatisch Dateien, Signalpfade oder Schnittstellen um.
 
-Für die Kursübung einen bereitgestellten freien Bereich verwenden. Der aktuelle
-Editor arbeitet mit vorgegebenen Modulplätzen. Ein zusätzlicher neuer Modulplatz
-lässt sich noch nicht vollständig über einen visuellen Verwaltungsdialog anlegen.
-Dieser Unterschied gehört zur Übung: einen freien Bereich benennen ist nicht
-dasselbe wie die Konsolenstruktur um einen zusätzlichen Platz zu erweitern.
+Die Konsole hat zehn feste Modulplätze. Für die Kursübung wird ein Reserveplatz
+wie Bereich 06 eingerichtet; Modulnummer und Verzeichnis bleiben stabil.
+
+## Einen Modulplatz einrichten
+
+![Module und Seiten im echten Verwaltungsdialog mit stabilen technischen Kennungen](images/navigation-09-module-verwalten.png)
+
+1. **Menü → Projekt → Module und Seiten verwalten …** öffnen.
+2. **Freien Modulplatz benennen …** wählen und einen bereitgestellten Reserveplatz
+   06, 07 oder 08 auswählen. Einen belegten Bereich nicht unbeabsichtigt umwidmen.
+3. Als Anzeigenamen beispielsweise **Serviceanzeigen** eintragen.
+4. Die zugehörigen Seiten und ihre technischen Kennungen in der Tabelle prüfen.
+5. **Navigation speichern · kein Start** wählen. Die Live-Offline-Vorschau neu
+   öffnen und den neuen Modulnamen kontrollieren.
+
+Ein Anzeigename schafft keinen zusätzlichen elften Modulplatz und verändert
+keinen Gerätepfad. Bestehende Bereiche werden im gleichen Dialog bearbeitet.
 
 ## Eine neue Kursseite anlegen
 
@@ -32,9 +44,11 @@ dasselbe wie die Konsolenstruktur um einen zusätzlichen Platz zu erweitern.
    und wieder öffnen. Den gewählten Namen kontrollieren.
 
 **Ergebnis:** Eine eigene gespeicherte Kursseite ist vorhanden. Sie ersetzt
-nicht die vorhandene Originalseite. Ob die Zielkonsole eine neue Seite bereits
-in ihrer Navigation anbietet, ist zusätzlich im jeweiligen Projekt zu prüfen;
-ein neu angelegtes Dokument allein erweitert nicht jede feste Laufzeitnavigation.
+keine Originalseite. Der Editor registriert die neue Seite; die Live-Konsole
+führt sie nach den bisherigen Seiten desselben Moduls. In der Seitenliste
+**Kurs · Navigation** wählen, zur vorigen Seite wechseln und zurückkehren.
+Beim Übertragen auf einen anderen PC gehören Seite, zugehörige Dateien und
+Projektkonfiguration zusammen.
 
 ## Anzeigenamen bearbeiten
 
@@ -85,16 +99,23 @@ Kurs nur nach Anweisung des Dozenten verwenden, keine Maschinenaktion testen.
 
 ## Module und Seiten bedingt anzeigen
 
-Ein optionaler Bereich kann abhängig von einer booleschen Variable oder einem
-Parameter in der Navigation verfügbar sein. Die Konsolen-Konfiguration kennt
-dafür Voraussetzungen pro Modul und pro Seite. Die heutige Editoroberfläche
-bietet noch keine durchgängige visuelle Verwaltung dieser Bedingungen.
+![Sichtbarkeit eines Moduls mit ausdrücklich ausgewähltem globalen BOOL-Pfad](images/navigation-10-sichtbarkeit.png)
 
-Im Basic-Kurs erklärt ein vorbereitetes Beispiel den Unterschied zwischen
-„vorhanden, aber nicht angezeigt“ und „gelöscht“. Keine versteckte QML-/JSON-
-Bearbeitung als einfache Klickbedienung ausgeben. Sobald der Verwaltungsdialog
-verfügbar ist, wird dieser Abschnitt um dessen konkrete Bildfolge ergänzt.
-Ausblenden ersetzt weder Zugriffsschutz noch Maschinenfreigabe.
+1. **Module und Seiten verwalten …** öffnen und die Modulzeile markieren.
+2. Das Häkchen **Sichtbar** zunächst aus- und wieder einschalten. Für eine einzelne
+   Seite deren Zeile verwenden; nicht versehentlich die Modulzeile ändern.
+3. Für eine Abhängigkeit **Variable für gewählte Zeile auswählen …** öffnen und
+   den vom Dozenten vorbereiteten globalen BOOL-Pfad auswählen. Der vollständige
+   Pfad steht danach in der letzten Spalte. Das Beispielbild zeigt eine
+   Service-Anzeige, keine zusätzliche Maschinenfreigabe.
+4. Speichern und die Navigation in der Kurskopie prüfen. Ohne Variablenpfad
+   gilt allein das Häkchen. Mit Pfad müssen Häkchen und gelesener Wert TRUE sein.
+5. Einen unbekannten oder nicht verfügbaren Pfad prüfen: Der Bereich bleibt
+   ausgeblendet. Fällt die Bedingung der geöffneten Seite weg, erscheint MAIN.
+   Die Seite ist weiterhin gespeichert und im Editor bearbeitbar.
+
+Ausblenden ersetzt weder Zugriffsschutz noch Maschinenfreigabe. Für Basic keine
+reale PLC-Variable umschalten; der Dozent stellt die lokalen Beispielwerte bereit.
 
 ## Von der Projektstruktur zur Seitengestaltung
 

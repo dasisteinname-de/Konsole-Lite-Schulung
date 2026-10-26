@@ -1,4 +1,4 @@
-# KonsoleLite 1.43 CALL SK im lokalen Simulator
+# KonsoleLite 1.44 CALL SK im lokalen Simulator
 
 Für vorhandene Units wie Ax51 und Ax52. **Nur PC/LOCAL: keine PLC-Verbindung,
 keine Maschinenbewegung.**
@@ -35,7 +35,8 @@ auf TRUE setzen. Das ersetzt nicht die Unit-Freigaben.
 **Simulation starten.** Im Handtest am wartenden Aufruf `UnitNCStart` von FALSE
 auf TRUE setzen und halten. Loslassen vor Zielbestätigung pausiert den Aufruf.
 Für den nächsten geordneten Aufruf wieder loslassen und neu betätigen.
-In 1.43 erfolgt das noch über die ComboBox.
+Neben der ComboBox steht dafür **NC Start · halten**: Drücken setzt TRUE,
+Loslassen oder Fokusverlust setzt FALSE. Die ComboBox bedient denselben lokalen Eingang.
 
 Das zum aktiven Aufruf gehörende **Positionsfeld** unten bedienen. Im gelieferten
 Zylinderbeispiel bedeutet **1 Grundstellung**, **2 Arbeitsstellung**.
@@ -48,14 +49,20 @@ geprüft. Der Hauptschritt wartet auf alle Aufrufe und seine Übergangsbedingung
 
 ## Anzeige und Fehler verstehen
 
-**Plus** öffnet Erwartung, Istwert und Ursache. UNKNOWN bedeutet fehlende Daten.
+**Plus oben rechts im Aufrufkasten** öffnet Erwartung, Istwert und Ursache.
+Minus schließt an derselben Stelle. UNKNOWN bedeutet fehlende Daten.
 Rot kennzeichnet einen Fehler. Bei gemeinsamem Kanal wartet der zweite Aufruf
 auf den ersten. Technische JSON-Details sind optional und schreibgeschützt.
 
 Nach Timeout genügt ein nachträglich richtiger Sensorwert nicht:
-**NC Start loslassen → unten „Quittieren“ → neu starten.** Gemeint ist das
-Häkchen rechts neben „Fortsetzen“, nicht die Syntaxprüfung oben.
-**In 1.43 beginnt dieser Neustart am Initialschritt.** Quittieren und am
-Fehlerschritt erneut versuchen ist erst für die nächste Version vorgemerkt.
+**NC Start loslassen → Ursache prüfen → unten „Timeout quittieren“.**
+Der lokale Ablauf behält den Fehlerschritt und die bereits erledigten Aufrufe;
+der betroffene Timeout beginnt für einen bewussten neuen Versuch erneut.
+Im Handbetrieb NC Start anschließend frisch betätigen und halten.
+Schlägt auch dieser Versuch fehl, bleibt der Ablauf erneut rot stehen.
+Fehlende Freigaben, unbekannte Rückmeldungen und ein Betriebsartenkonflikt
+werden nicht übergangen. Andere Fehler benötigen weiterhin ihre passende
+Wiederherstellung. **Ablauf zurücksetzen** ist getrennt und beendet den Ablauf;
+ein anschließender Start beginnt am Initialschritt.
 
-Weiterführende Begriffe: [Units, Grundtypen und Grenzen dieser Kursfassung](#/reference).
+Ausführliche Definitionen: [Units und Grundtypen](README.de.md).

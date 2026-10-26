@@ -137,9 +137,10 @@ Richtzeit 60 Minuten.
 2. ActionType Unit einstellen und in der Unit-Aktionsauswahl Gerät, erlaubte
    Aktion und Überwachungszeit wählen. Keine QML-Zeile von Hand formulieren.
 3. Ein zweites Bedienelement entsprechend zuordnen. Sinnvoll beschriften,
-   speichern und wieder öffnen; die Auswahl im Dialog kontrollieren.
+   die Zuordnung direkt im Eigenschaftenbereich übernehmen, speichern und wieder
+   öffnen; Unit, Aktion und Timeout dort kontrollieren.
 
-**Grenze von 1.43:** Die Unit-Taste ist ohne installierten Ausführungsowner nicht
+**Ausführungsgrenze:** Die Unit-Taste ist ohne installierten Ausführungsowner nicht
 mit der realen Ausführung verbunden. Die erwartete Sperrmeldung gehört zur
 Prüfung; nicht mit Python-Bindings oder einem direkten Ausgangsschreiben umgehen.
 Kettenfunktion und Maskenzuordnung werden deshalb getrennt nachgewiesen.
@@ -158,9 +159,12 @@ Testfehler ein; der andere erklärt Ursache und vorgesehenen nächsten Schritt.
 | NC Start im Handlauf loslassen | Noch offener Aufruf wartet, Befehle neutral |
 | Stop bei wartendem Folgeauftrag | Kein verspäteter Start des Folgeauftrags |
 
-Fehler quittieren nach dem aktuell gelehrten Softwarestand: In 1.43 verlangt
-das einen neuen Start ab Initialschritt. Wiederholen am Fehlerschritt erst
-schulen, wenn diese Funktion umgesetzt und geprüft ist.
+Nach einem Timeout **Timeout quittieren** wählen: gleicher Schritt, neue
+Überwachungszeit, bereits erledigte Aufrufe bleiben erledigt. Im Handbetrieb
+NC Start frisch betätigen. Ein weiterer fehlgeschlagener Versuch bleibt erneut
+rot stehen. **Ablauf zurücksetzen** führt dagegen zum Stillstand; ein neuer Start
+beginnt am Initialschritt. Andere Fehler werden durch Timeout-Quittierung
+nicht übergangen.
 
 ### Abschließender Aufbau mit Sequence und Sequence Viewer
 

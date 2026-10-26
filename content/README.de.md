@@ -6,7 +6,7 @@ QML-, Python- oder JSON-Programmierkenntnisse. Maschinenkenntnisse der Teilnehme
 sind ausdrücklich erwünscht: Sie bestimmen, welche Rückmeldung ein Ziel
 wirklich bestätigt und welche Bedingungen vor einer Aktion gelten müssen.
 
-**Arbeitsfassung vom 26.10.2026, Softwarestand 1.43.** Zwei Teile mit
+**Arbeitsfassung vom 26.10.2026, Softwarestand 1.44.** Zwei Teile mit
 je zwei Tagen; Richtwert fünf Stunden Arbeitszeit pro Tag zuzüglich Pausen.
 Kurze Erklärung, gemeinsames Vormachen, selbst ausführen und gegenseitig
 erklären wechseln sich ab. Die Unterlagen begleiten die Übungen, nicht umgekehrt.
@@ -17,11 +17,11 @@ Der vorgesehene Lernort ist die eigenständige Schulungswebsite aus dem
 [öffentlichen Schulungs-Repository](https://github.com/dasisteinname-de/Konsole-Lite-Schulung).
 Hierhin gehören Kurse, Bildfolgen und Browser-Lernmodelle, nicht die privaten
 Softwarequellen. Die eigentliche Konsole bleibt auf Bedienung und Diagnose
-konzentriert. Nach der laufenden Testphase bleiben im fünften Modul genau drei
+konzentriert. Im fünften Modul bleiben genau drei
 Sandkasten-Seiten: Seite 1 mit den vorhandenen Schrittketten, Seiten 2 und 3
 zunächst leer und frei projektierbar.
 Die übrigen integrierten Trainingsseiten entfallen; die Website ist nicht auf
-drei Seiten begrenzt. Diese Notiz ändert die Laufzeit noch nicht.
+drei Seiten begrenzt.
 Website und Übungen benötigen keine Verbindung zu einer PLC.
 
 ## Lernweg über vier Tage
@@ -86,10 +86,12 @@ Unit-Aktion projektieren; er enthält nicht noch einmal deren Befehlslogik.
 
 ## Was in dieser Kursfassung noch nicht als fertig gelehrt wird
 
-In 1.43 setzt Quittieren die Simulation zurück; ein neuer Start beginnt am
-Initialschritt. Wiederholen am gehaltenen Fehlerschritt ist erst vorgemerkt.
-Der zusätzliche NC-Start-Momenttaster, die größere Plus/Minus-Fläche und die
-vereinfachte Kettenschnittstelle gehören ebenfalls zum [TODO 1.44](#/reference).
+Im lokalen Simulator 1.44 bleibt **Timeout quittieren** am gehaltenen Schritt
+und beginnt einen bewussten neuen Versuch. Erledigte Aufrufe werden nicht
+wiederholt; **Ablauf zurücksetzen** ist davon getrennt. Ein Taster ergänzt die
+NC-Start-ComboBox. Die [Kurzbedienung](#/quickguide) zeigt die Reihenfolge.
+Die vollständige Aktionsparametrierung der festen F1–F8-Tasten ist zurückgestellt;
+Basic unterscheidet deren Beschriftung von der vorhandenen Funktion.
 
 Unit-Buttons lassen sich projektieren, aber die native gemeinsame Ausführung
 von Button und CALL ist noch nicht vollständig in die Maschinenkonsole eingebunden.
