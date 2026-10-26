@@ -43,9 +43,11 @@ window.createConsoleNavigationLab = function ({ main, escape }) {
         <aside class="console-function-bar" id="console-functions" aria-label="Seitenabhängige feste Funktionstasten"></aside>
         <section id="console-message-panel" class="console-message-panel" role="region" aria-labelledby="console-message-title" hidden>
           <div class="console-dialog-heading"><h2 id="console-message-title">Meldungen · Lernbeispiele</h2><button id="console-message-close">Schließen ×</button></div>
-          <p class="console-message-row info"><b>INFO</b> Die Lernansicht ist bereit. Es besteht keine Maschinenverbindung.</p>
-          <p class="console-message-row warning"><b>WARNUNG</b> Beispiel: Eine Rückmeldung fehlt. Diese Zeile meldet keinen Anlagenfehler.</p>
-          <p class="console-message-row info"><b>INFO</b> Schließen beendet nur diese Liste, nicht die Ursache einer Meldung.</p>
+          <div class="console-message-list" tabindex="0" aria-label="Meldungsliste mit Beispielzeiten">
+            <p class="console-message-row info"><time>00:00:03</time> [INFO] Die Lernansicht ist bereit. Es besteht keine Maschinenverbindung.</p>
+            <p class="console-message-row warning"><time>00:00:02</time> [WARNUNG] Beispiel: Eine Rückmeldung fehlt. Diese Zeile meldet keinen Anlagenfehler.</p>
+            <p class="console-message-row info"><time>00:00:01</time> [INFO] Schließen beendet nur die Liste, nicht die Ursache einer Meldung.</p>
+          </div>
         </section>
       </div>
       <div class="console-location" id="console-location"></div>
