@@ -1,0 +1,9 @@
+{
+  "name": "konsole-lite-schulung",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public training website; this flag prevents accidental npm publication.",
+  "scripts": { "build:content": "node tools/build-content.cjs" },
+  "devDependencies": { "marked": "17.0.5" },
+  "engines": { "node": ">=20" }
+}
