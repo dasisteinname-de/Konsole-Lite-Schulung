@@ -1,9 +1,14 @@
 # Schulungsunterlagen Basic
 
-**Zwei Tage nur Oberflächengestaltung im QML Editor.** Wir fügen Grundelemente
-mit der Maus ein, positionieren sie, verändern Texte und Farben und ordnen
-vorhandene gelesene Variablen zu. Units, CALL, CALL SK, Schrittketten und
-Programmierung sind ausdrücklich **kein Inhalt von Basic**.
+**Zwei Tage von der Konsolenbedienung zur eigenen Maske.** Zuerst lernst du
+MAIN, Module, Seiten, Zoom, Meldungen, INFO und die festen Funktionstasten kennen.
+Danach projektierst du eine eigene Seite und gestaltest sie mit den 17
+Grundelementen. Units, CALL, CALL SK, Schrittkettenlogik sowie die Elemente
+Sequence und Sequence Viewer gehören ausdrücklich erst zu Fortgeschrittene.
+
+„Programmierung“ bedeutet in diesem Basic-Kurs visuelle Projektierung: Seiten
+anlegen, Namen vergeben und Eigenschaften auswählen, nicht Python-, QML- oder
+Ablaufcode schreiben.
 
 Als gemeinsames Beispiel dient **Hintergrundmagazin Seite 1**: Das Maschinenbild
 wird Schritt für Schritt um verständliche Sensoranzeigen ergänzt. Alles erfolgt
@@ -14,6 +19,13 @@ unverändert. Vorbereitung: [Kursübersicht](#/overview).
 
 ## So arbeitest du mit den Bildkapiteln
 
+Die ausgearbeiteten Elementkapitel folgen künftig derselben Reihenfolge:
+zuerst der Elementname und das fertige Ergebnis in der **Live-Ansicht**,
+danach die **Entwurfsansicht** und ihre Bedienfolge. Die Live-Aufnahme zeigt nur
+die vollständige Konsole mit Navigation und F1–F8, ohne die Seitenleisten des
+Editors. Sie stammt aus der lokalen Offline-Vorschau, nicht aus einer
+PLC-Verbindung. Diese Bildpaare werden für alle 17 Grundelemente ergänzt.
+
 Nicht erst alles lesen. Einen Abschnitt öffnen, den gezeigten Schritt selbst
 ausführen und das eigene Ergebnis mit dem Bild vergleichen. Ein Bild lässt sich
 zum Lesen kleiner Eigenschaften vergrößert öffnen. Die Aufnahmen zeigen den
@@ -21,6 +33,9 @@ Layoutmodus; Auswahlrahmen und Zielkreise sind keine aktiven PLC-Rückmeldungen.
 
 | Arbeitsunterlage | Was du damit baust |
 | --- | --- |
+| [Konsole Lite kennenlernen](#/orientation) | Bedienleiste, MAIN, Module, Seiten, Meldungen, INFO und Zoom verstehen |
+| [Navigation ausprobieren](#/navigation-lab) | Menüs und Fenster im Browser selbst öffnen und schließen |
+| [Module Seiten und F1–F8](#/project) | Eigene Kursseite vorbereiten und Benennung von Funktionszuordnung unterscheiden |
 | [BMK LED Schritt für Schritt](#/bmk) | Vollständige Bildfolge von Einfügen bis Speichern und Wiederöffnen |
 | [Grundelemente mit Bildern](#/elements) | Einzelübungen für alle siebzehn Grundelemente der Maskengestaltung |
 
@@ -29,16 +44,24 @@ haben bereits Bildkarten, konkrete Arbeitsschritte und Kontrollen; weitere
 Detailaufnahmen können diese Karten schrittweise vertiefen. Die Unterlagen sind
 weiterhin eine Arbeitsfassung, kein fertig abgenommener vollständiger Bildband.
 
-## Tag 1 Die erste Sensorübersicht gestalten
+## Tag 1 Konsole verstehen und die erste Sensorübersicht gestalten
 
-**Tagesziel:** Du kannst ein Bild und eine BMK-LED-Karte platzieren, die Karte
-vom Zielkreis unterscheiden und ihre gespeicherten Eigenschaften wiederfinden.
+**Tagesziel:** Du kannst die Konsole bedienen, deine Kursseite eindeutig öffnen
+und anschließend Bild sowie BMK-LED-Karte mit erklärbarer Zuordnung gestalten.
 
-### Orientierung und eigene Kursseite
+### Erst die Konsole bedienen
 
-Richtzeit 30 Minuten. QML Editor öffnen und Elementbibliothek, Arbeitsfläche,
-Eigenschaften sowie Speichern finden. Die anderen Editoren nur zur Orientierung
-benennen; ihre Bedienung folgt im zweiten Kursteil.
+Richtzeit 45 Minuten. Das [Bedienkapitel](#/orientation) lesen und die Aufgaben
+im [Navigationsmodell](#/navigation-lab) selbst ausführen: MAIN, Modul- und
+Seitenwechsel, Zoom auf 100/150/200 Prozent, Meldungsliste und INFO. Nicht die
+Editor-Werkzeugleiste mit dem Bedienrahmen der fertigen Konsole verwechseln.
+
+### Modulbereich Seite und Funktionstasten vorbereiten
+
+Richtzeit 60 Minuten. Das [Projektkapitel](#/project) ausführen: freien
+Modulbereich verwenden, Kursseite anlegen, Anzeigenamen und technische Namen
+unterscheiden, bestehende Seite wiederfinden und F1–F8 auswählen. Die Grenzen
+der heutigen visuellen Modulverwaltung und Tastenparametrierung berücksichtigen.
 
 Über **Menü → Projekt → Neue Seite …** eine eigene Übungsseite in der Kurskopie
 anlegen. Die HGM-Seite 1 als lesbare Vorlage ansehen, nicht durch Löschen der
@@ -46,7 +69,7 @@ vorhandenen Elemente zur leeren Übungsseite machen.
 
 ### Die Oberfläche mit der Maus bedienen
 
-Richtzeit 45 Minuten. Ein Text-Element einfügen, anklicken, verschieben und über
+Richtzeit 30 Minuten. Ein Text-Element einfügen, anklicken, verschieben und über
 seinen Griff vergrößern. Sichtbaren Text und technische ID unterscheiden.
 Raster und Einrasten ausprobieren. Der Zoom verändert den Blick, nicht die
 gespeicherte Lage des Elements.
@@ -56,7 +79,7 @@ an derselben Stelle. Noch nicht zugeordnete Anzeigen als solche kennzeichnen.
 
 ### Das Maschinenbild einfügen
 
-Richtzeit 60 Minuten. Das [Bild-Beispiel](#/elements/bild) ausführen:
+Richtzeit 45 Minuten. Das [Bild-Beispiel](#/elements/bild) ausführen:
 Bild aus der Bibliothek einfügen, über die Bildauswahl eine Projektgrafik wählen,
 Größe einstellen und freie Ränder für Beschriftungen lassen. Nicht auf eine
 Datei verlassen, die nur auf dem eigenen Desktop liegt.
@@ -65,7 +88,7 @@ Datei verlassen, die nur auf dem eigenen Desktop liegt.
 
 ### Die BMK LED Bildfolge selbst nachbauen
 
-Richtzeit 135 Minuten. Das [vollständige Bildkapitel](#/bmk) gemeinsam
+Richtzeit 90 Minuten. Das [vollständige Bildkapitel](#/bmk) gemeinsam
 beginnen und anschließend selbst ausführen:
 
 1. BMK LED doppelklicken und die Textkarte positionieren.
@@ -83,6 +106,8 @@ andere erklärt, welche Eigenschaft jeweils etwas verändert. Danach wechseln.
 Richtzeit 30 Minuten.
 
 - [ ] Meine Karte lässt sich unabhängig vom Zielkreis positionieren.
+- [ ] Ich finde MAIN, Module, Seiten, Meldungen, INFO und Zoom.
+- [ ] Ich unterscheide F-Tasten-Beschriftung und tatsächliche Funktion.
 - [ ] BMK, Beschreibung und Verbindung zum richtigen Bildpunkt sind erkennbar.
 - [ ] Ich finde Variable, Vergleichswert und Farbe in den Eigenschaften.
 - [ ] Alle Angaben bleiben nach dem Wiederöffnen erhalten.

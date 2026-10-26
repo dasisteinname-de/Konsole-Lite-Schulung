@@ -1,7 +1,7 @@
 # Schulungsunterlagen Fortgeschrittene
 
 Zwei Tage nach Basic. Hier beginnen Units, CALL SK und Schrittketten; Basic
-hat ausschließlich die Oberflächengestaltung vermittelt. Du entwickelst eigene
+hat Konsolenbedienung und Oberflächengestaltung vermittelt. Du entwickelst eigene
 Definitionen, ordnest konkrete Geräte zu und verbindest mehrere Aktionen zu
 einer nachvollziehbaren Anwendung.
 Voraussetzung ist der [Basic-Abschluss](#/basic). Alle Versuche bleiben LOCAL;
@@ -106,7 +106,7 @@ Auf Papier kurz Sollzustand, Rückmeldungen und Abbruchbedingungen notieren.
 
 ### Zwei Aufrufe in der Hauptkette
 
-Richtzeit 120 Minuten.
+Richtzeit 105 Minuten.
 
 1. Eine eigene Kurskopie der Deutschen Ampel öffnen. Der Dozent erklärt Schritt,
    Übergang, Schritteingangsaktion und den Unterschied von Auswahl und aktivem
@@ -131,16 +131,13 @@ Hauptkette hebt den exklusiven Besitz eines gemeinsamen Gerätekanals nicht auf.
 
 ### Die Maske mit den Unit-Aktionen projektieren
 
-Richtzeit 75 Minuten.
+Richtzeit 60 Minuten.
 
 1. Die eigene Basic-Maske öffnen und einen Button auswählen.
 2. ActionType Unit einstellen und in der Unit-Aktionsauswahl Gerät, erlaubte
    Aktion und Überwachungszeit wählen. Keine QML-Zeile von Hand formulieren.
 3. Ein zweites Bedienelement entsprechend zuordnen. Sinnvoll beschriften,
    speichern und wieder öffnen; die Auswahl im Dialog kontrollieren.
-4. Eine Sequence-Anzeige in der Kurskopie projektieren und die vorgesehene
-   gespeicherte Hauptkette auswählen. Aktiven Schritt, fehlende Bedingung und
-   aufgeklappte CALL-Schnittstelle in der LOCAL-Beobachtung erklären.
 
 **Grenze von 1.43:** Die Unit-Taste ist ohne installierten Ausführungsowner nicht
 mit der realen Ausführung verbunden. Die erwartete Sperrmeldung gehört zur
@@ -149,7 +146,7 @@ Kettenfunktion und Maskenzuordnung werden deshalb getrennt nachgewiesen.
 
 ### Diagnoseübung und Übergabe
 
-Richtzeit 60 Minuten. Der Partner baut in der Kurskopie einen nachvollziehbaren
+Richtzeit 30 Minuten. Der Partner baut in der Kurskopie einen nachvollziehbaren
 Testfehler ein; der andere erklärt Ursache und vorgesehenen nächsten Schritt.
 
 | Testfall | Erwartete Beobachtung |
@@ -164,6 +161,26 @@ Testfehler ein; der andere erklärt Ursache und vorgesehenen nächsten Schritt.
 Fehler quittieren nach dem aktuell gelehrten Softwarestand: In 1.43 verlangt
 das einen neuen Start ab Initialschritt. Wiederholen am Fehlerschritt erst
 schulen, wenn diese Funktion umgesetzt und geprüft ist.
+
+### Abschließender Aufbau mit Sequence und Sequence Viewer
+
+Richtzeit 60 Minuten.
+
+Diese beiden QML-Elemente werden erst am Ende des Fortgeschrittenenteils
+behandelt, nicht bei den 17 Basic-Grundelementen. Voraussetzung ist eine bereits
+aufgebaute, zugeordnete und lokal geprüfte Schrittkette.
+
+1. Zuerst Schritte, Übergänge, Grundtypen, Units und CALL SK verstehen und selbst
+   aufbauen; Freigaben, Rückmeldungen und Fehler im Sequence Editor prüfen.
+2. Danach die passende Ablaufdarstellung mit **Sequence** in einer eigenen Maske
+   projektieren und gespeicherte Zuordnung sowie Anzeige kontrollieren.
+3. Anschließend **Sequence Viewer** als weiteres Visualisierungselement
+   kennenlernen und die Zuordnung zum vorgesehenen Ablauf prüfen.
+4. Am eigenen Beispiel aktiven Schritt und fehlende Bedingung zeigen. Eine
+   Darstellung erzeugt nicht automatisch die dahinterliegende Ablaufsteuerung.
+
+Die ausführlichen Bildfolgen für diese beiden Abschlussübungen werden noch
+ergänzt. Sie sind nicht Voraussetzung für die Basic-Schulung.
 
 ### Abschlussvorführung
 

@@ -7,11 +7,13 @@ Maschinensteuerungsquellen.
 
 ## Lernweg
 
-- **Basic · zwei Tage:** ausschließlich Oberflächengestaltung im QML Editor,
-  mit einer ausführlichen BMK-LED-Bildfolge und Bildkarten für 17 Grundelemente.
+- **Basic · zwei Tage:** zuerst Konsolenbedienung mit MAIN, Modulen, Seiten,
+  Meldungen, INFO, Zoom und F1–F8. Danach Projektaufbau und Oberflächengestaltung
+  im QML Editor, mit BMK-LED-Bildfolge und Bildkarten für 17 Grundelemente.
 - **Fortgeschrittene · zwei Tage:** Grundtypen, Units, Schnittstellenzuordnung,
   Schrittketten, CALL SK und LOCAL-Diagnose. Dieser Teil ist noch ein Kursentwurf.
-- **Lernmodelle:** Karte/Zielpunkt/Variablenvergleich sowie ein bewusst
+- **Lernmodelle:** Konsolennavigation mit aufklappbaren Menüs und Meldungen,
+  Karte/Zielpunkt/Variablenvergleich sowie ein bewusst
   vereinfachter Unit-Aufruf mit HAND, NC Start, Rückmeldung und Timeout.
 
 Die Unterlagen sind eine **Arbeitsfassung für Software 1.43**, keine
@@ -36,6 +38,8 @@ Der Status steht unter Settings → Pages beziehungsweise Actions.
 - `index.html`: Seitengerüst und Kursnavigation.
 - `styles.css`: zurückhaltende, responsive Darstellung.
 - `app.js`: Navigation, Bildvergrößerung und lokale Lernmodelle.
+- `console-lab.js` und `console-lab.css`: abgegrenztes Browsermodell der
+  Konsolenbedienung; kein importierter Konsolen- oder PLC-Code.
 - `content/*.de.md`: ausgewählte Schulungsinhalte als lesbarer Text.
 - `content.js`: daraus erzeugte HTML-Kapitel für die Website.
 - `tools/build-content.cjs`: Kapitel aus den öffentlichen Markdown-Dateien neu

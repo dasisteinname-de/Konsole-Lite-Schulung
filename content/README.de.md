@@ -28,7 +28,7 @@ Website und Übungen benötigen keine Verbindung zu einer PLC.
 
 | Teil | Tag | Schwerpunkt | Eigenes Ergebnis |
 | --- | --- | --- | --- |
-| [Basic](#/basic) | 1 | QML Editor, Bild und BMK LED | Gespeicherte Sensorübersicht mit Bild und Beschriftung |
+| [Basic](#/basic) | 1 | Konsole bedienen, Kursseite vorbereiten, Bild und BMK LED | Verstandene Navigation und gespeicherte Sensorübersicht |
 | Basic | 2 | Grundelemente, Anzeigevariablen und Maskenaufbau | Selbst gestaltete, verständliche Bedienmaske |
 | [Fortgeschrittene](#/advanced) | 1 | Definitionen, Zuordnung und Wertrevisionen | Eigene Gerätezuordnung und geprüfte Änderungsübung |
 | Fortgeschrittene | 2 | Anwendung zusammensetzen und Fehler eingrenzen | Maske, Hauptkette und dokumentierter LOCAL-Test |
@@ -37,9 +37,11 @@ Nach dem Kurs können Teilnehmer eine Anwendung projektieren, ihre gespeicherten
 Verknüpfungen erklären und die Schrittkette offline prüfen. Eine Freigabe für
 reale Bewegung ist ein gesonderter Schritt, nicht das Ergebnis des Kurses.
 
-**Die Teile bleiben getrennt:** Basic schult ausschließlich Oberflächengestaltung
-im QML Editor und die Auswahl vorhandener Anzeigevariablen. Units, CALL, CALL SK,
-Schrittketten und Programmierung beginnen erst bei Fortgeschrittene.
+**Die Teile bleiben getrennt:** Basic beginnt mit Konsolenbedienung und Navigation,
+danach folgen Modul-/Seitenprojektierung, F1–F8 und die 17 Grundelemente im QML
+Editor. Units, CALL, CALL SK und Schrittkettenlogik beginnen erst bei
+Fortgeschrittene. Dort kommen Sequence und Sequence Viewer zum Abschluss hinzu,
+nachdem die Teilnehmer die dargestellten Abläufe selbst aufgebaut haben.
 
 ## Bildunterlagen für Basic
 

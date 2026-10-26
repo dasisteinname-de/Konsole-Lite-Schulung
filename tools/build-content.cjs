@@ -6,6 +6,8 @@ const root = path.resolve(__dirname, '..');
 const chapters = [
   ['overview', 'Kurs & Vorbereitung', 'README.de.md'],
   ['basic', 'Einstieg & Tagesplan', 'Basic.de.md'],
+  ['orientation', 'Konsole Lite kennenlernen', 'Navigation.de.md'],
+  ['project', 'Module Seiten und F1–F8', 'Projektaufbau.de.md'],
   ['bmk', 'BMK LED Schritt für Schritt', 'BMK-LED.de.md'],
   ['elements', 'Die Grundelemente', 'Elemente.de.md'],
   ['advanced', 'Units & Schrittketten', 'Fortgeschrittene.de.md'],

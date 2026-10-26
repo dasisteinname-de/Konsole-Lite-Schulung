@@ -5,8 +5,8 @@
   const menu = document.querySelector('#menu-toggle');
   const dialog = document.querySelector('#image-dialog');
   const chapters = window.COURSE || {};
-  const titles = { start: 'Dein Lernweg', 'bmk-lab': 'BMK selbst ausprobieren', 'sequence-lab': 'Eine Schrittkette verstehen', reference: 'Begriffe & Grenzen' };
-  const ordered = ['basic', 'bmk', 'elements', 'advanced', 'quickguide'];
+  const titles = { start: 'Dein Lernweg', 'navigation-lab': 'Navigation ausprobieren', 'bmk-lab': 'BMK selbst ausprobieren', 'sequence-lab': 'Eine Schrittkette verstehen', reference: 'Begriffe & Grenzen' };
+  const ordered = ['basic', 'orientation', 'project', 'bmk', 'elements', 'advanced', 'quickguide'];
   let cleanup = () => {};
   const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const readProgress = () => { try { return JSON.parse(localStorage.getItem('konsole-training-read') || '{}'); } catch { return {}; } };
@@ -157,6 +157,7 @@
     const id = chapters[requested] || titles[requested] ? requested : 'start';
     sidebar.classList.remove('open'); menu.setAttribute('aria-expanded', 'false');
     if (chapters[id]) renderChapter(id);
+    else if (id === 'navigation-lab') cleanup = window.createConsoleNavigationLab({ main, escape });
     else if (id === 'bmk-lab') bmkLab();
     else if (id === 'sequence-lab') sequenceLab();
     else main.innerHTML = id === 'reference' ? reference() : home();
