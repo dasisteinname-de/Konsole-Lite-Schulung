@@ -6,7 +6,7 @@ QML-, Python- oder JSON-Programmierkenntnisse. Maschinenkenntnisse der Teilnehme
 sind ausdrücklich erwünscht: Sie bestimmen, welche Rückmeldung ein Ziel
 wirklich bestätigt und welche Bedingungen vor einer Aktion gelten müssen.
 
-**Arbeitsfassung vom 26.10.2026, Softwarestand 1.44.** Zwei Teile mit
+**Arbeitsfassung vom 27.10.2026, Softwarestand 1.44.** Zwei Teile mit
 je zwei Tagen; Richtwert fünf Stunden Arbeitszeit pro Tag zuzüglich Pausen.
 Kurze Erklärung, gemeinsames Vormachen, selbst ausführen und gegenseitig
 erklären wechseln sich ab. Die Unterlagen begleiten die Übungen, nicht umgekehrt.
@@ -52,9 +52,12 @@ Hintergrundmagazin Seite 1 dient als gemeinsames Maskenbeispiel. Es gibt bewusst
 keine feste Seitengrenze: Ein Bild mit erklärtem Bedienziel ist wichtiger als
 ein möglichst kurzes Inhaltsverzeichnis.
 
-Weitere detaillierte Bildfolgen je Element und ein separat geprüftes komplettes
-Übungsprojekt bleiben Ausbauaufgaben. Fortgeschrittene ist weiterhin ein
-Kursentwurf mit Übungen, noch keine vollständig bebilderte Teilnehmerfassung.
+Weitere detaillierte Bildfolgen je Basic-Element und ein separat geprüftes
+komplettes Übungsprojekt bleiben Ausbauaufgaben. Fortgeschrittene besitzt
+jetzt sechs eigene Bildlektionen mit 23 zusätzlichen echten Aufnahmen:
+Grundtyp/Unit, Kettenaufbau, CALL SK, Diagnose, Stationsweg und die abschließende
+Projektierung von Unit-Taste, Sequence und Sequence Viewer. Die Live-Aufnahmen
+zeigen ehrliche Offline-Zustände, keine behauptete Maschinenverbindung.
 
 ## Die Werkzeuge in einem Blick
 

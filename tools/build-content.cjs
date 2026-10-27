@@ -11,7 +11,13 @@ const chapters = [
   ['project', 'Module Seiten und F1–F8', 'Projektaufbau.de.md'],
   ['bmk', 'BMK LED Schritt für Schritt', 'BMK-LED.de.md'],
   ['elements', 'Die Grundelemente', 'Elemente.de.md'],
-  ['advanced', 'Units & Schrittketten', 'Fortgeschrittene.de.md'],
+  ['advanced', 'Fortgeschrittene · Tagesplan', 'Fortgeschrittene.de.md'],
+  ['advanced-units', 'Grundtyp & Unit', 'Fortgeschrittene-Units.de.md'],
+  ['advanced-chain', 'Eine Schrittkette aufbauen', 'Fortgeschrittene-Kette.de.md'],
+  ['advanced-call', 'CALL SK · AUTO & HAND', 'Fortgeschrittene-CALL.de.md'],
+  ['advanced-diagnostics', 'Diagnose & Wiederanlauf', 'Fortgeschrittene-Diagnose.de.md'],
+  ['advanced-station', 'Interface & Stationsweg', 'Fortgeschrittene-Station.de.md'],
+  ['advanced-visualizers', 'Unit-Taste & Ablaufanzeigen', 'Fortgeschrittene-Anzeigen.de.md'],
   ['quickguide', 'CALL SK Kurzbedienung', 'KURZANLEITUNG.de.md']
 ];
 const slug = s => s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
