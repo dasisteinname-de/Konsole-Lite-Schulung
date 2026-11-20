@@ -30,11 +30,15 @@ schaltet keine PLC-Betriebsart und erteilt keine Maschinenfreigabe.
 Die Beispiele heißen **Servicetechniker · 3** und **Experte · 5**.
 Mehrere Namen dürfen dieselbe Zahl besitzen.
 
-1. **Zugriffsprofile · KOP** öffnen.
-2. Mit **+ Signal** ein vorhandenes PLC-/Modellsignal samt Typ und Pfad angeben.
-3. Mit **+ Profil** einen Namen und eine Stufe 0–5 anlegen.
-4. **KOP bearbeiten**: Kontakte in UND-Reihe, alternative ODER-Zweige, NICHT
-   und typisierte Vergleiche verwenden.
+1. Benötigte Variablen im **Interface Editor** speichern, auch aus einer
+   importierten PLC-/DEF-Gruppe. **Zugriffsprofile · KOP** öffnen.
+2. **+ Profil**: Namen, Stufe 0–5 und einen lesbaren eindeutigen ID-Vorschlag
+   prüfen. Die ID kann beim Anlegen frei gewählt werden, z. B. `access.einrichter`.
+3. **KOP bearbeiten → Schließer, Öffner oder Vergleich** und die vorhandene
+   Interface-Variable direkt auswählen. Name, Typ und Pfad werden übernommen.
+4. Über **UND · Reihe**, **ODER · parallel** und **NICHT** verknüpfen.
+   Schließer prüft BOOL=true, Öffner bekanntes BOOL=false. Für Zahlen etwa
+   **Betriebsart = 2** wählen. OK übernimmt auch den letzten Vergleichswert.
 5. Am Modul, an der Seite und in den Elementeigenschaften auswählen:
    **Sichtbar ab**, **Lesbar ab**, **Bedienbar ab**, **Schreiben / Ausführen ab**.
 6. Speichern und die Verwendungen prüfen. Elternrechte gelten zusätzlich.
@@ -43,6 +47,17 @@ Die höchste erfüllte Profilbedingung ergibt die aktuelle Stufe. Ein fehlender
 Eingang bleibt unbekannt, auch unter NICHT. Unbekannt erteilt keine Rechte.
 Die Beispielkontakte sind anfangs `false`; der Ingenieur verbindet sie mit
 den tatsächlichen Signalen seiner Anlage. Die HMI erzeugt keine PLC-Freigabe.
+
+Die untere Tabelle **Verwendete Interface-Eingänge** ist eine Liste von
+Verweisen, kein zweiter Satz PLC-Variablen. Sie füllt sich beim Bestätigen des
+KOP automatisch. **+ Variable aus Interface** kann einen Eingang vorab
+auswählen; derselbe Pfad wird wiederverwendet. Eigene Aliasnamen wie Expert
+oder Service stehen danach in Kontaktbaum, Auswahl und Vorschau.
+Technische Signal-IDs sind standardmäßig verborgen. Vorhandene IDs behalten
+ihre Bedeutung. Abbrechen verwirft auch neue Eingangsverweise im KOP-Dialog.
+Auf der Station muss das gewählte Interface tatsächlich registriert und nach
+dem erforderlichen Modellneustart angeschlossen sein; die Auswahl allein
+bestätigt keine aktuelle PLC-Verbindung.
 
 Eine fehlende zugewiesene Profil-ID sperrt den Zugriff. Sie wird nicht als
 öffentlich interpretiert. Vor dem Löschen verwendete Profile neu zuordnen;
