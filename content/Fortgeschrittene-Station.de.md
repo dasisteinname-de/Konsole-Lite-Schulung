@@ -1,5 +1,7 @@
 # 5 · Vom Interface zur bestätigten Station
 
+**Aktueller Übertragungsweg:** Das neue Kapitel „Vom Editor auf die TNC“ beschreibt den geprüften Pakettransfer, Status und Restart Apps. Dieses ältere Kapitel erklärt weiterhin Interface- und Stationsgrenzen der LOCAL-Übung.
+
 Lernziel: Symbolquelle, lokales Signal, DNC-Verbindung, Laufzeit und physischen
 Ausgang auseinanderhalten. Zunächst nur lesen und in der Kurskopie arbeiten.
 Der Browser dieser Schulung verbindet sich nie mit einer Steuerung.

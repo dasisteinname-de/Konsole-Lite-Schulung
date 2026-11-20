@@ -5,6 +5,8 @@ Seite im QML Editor vor: Modulbereich wählen, Seite anlegen, Namen vergeben und
 die festen Funktionstasten erkennen. Arbeite ausschließlich in der Kurskopie.
 Vorhandene Originalseiten bleiben erhalten.
 
+Für Start / Manual / Run, Zugriffsrechte und Austausch siehe außerdem die Kapitel 1.50.0 im Kursmenü. Die folgenden Aufnahmen zeigen die ursprüngliche Kurskopie.
+
 ## Modul und Seite unterscheiden
 
 Ein **Modul** ist ein Bereich der Konsole, eine **Seite** dessen einzelne Ansicht.
@@ -12,7 +14,7 @@ Ein **Anzeigename** ist der lesbare Text in der Navigation. Ein **technischer Na
 identifiziert die gespeicherte Seite; eine Änderung des Anzeigenamens benennt
 nicht automatisch Dateien, Signalpfade oder Schnittstellen um.
 
-Die Konsole hat zehn feste Modulplätze. Für die Kursübung wird ein Reserveplatz
+Die Konsole besitzt feste Basismodule und ausdrücklich registrierte zusätzliche Module mit eigener stabiler Identität. Für die Kursübung wird ein Reserveplatz
 wie Bereich 06 eingerichtet; Modulnummer und Verzeichnis bleiben stabil.
 
 ## Einen Modulplatz einrichten
@@ -124,3 +126,23 @@ feste Funktionstasten finden. Jetzt folgen [Grundelemente](#/elements) und die
 [BMK-LED-Bildfolge](#/bmk). **Sequence** und **Sequence Viewer** bleiben dem
 Fortgeschrittenenteil vorbehalten: Erst den Ablauf bauen und verstehen, danach
 seine Visualisierung in eine Maske einbinden.
+
+## Python-Modell statt QML-Kontextname
+
+`mainModel_sh` ist ein QML-Kontextname, kein automatisch verfügbarer Python-Global.
+Im Python-Seitencontroller lautet der Modellzugang `self._model`; eine freie
+Seitenfunktion erhält `model` als Argument. In Python `True` und `False`
+schreiben. Den restlichen Pfad über den Interface Editor prüfen.
+
+Auf der Station sind `modules` und `interfaces` Python-Wörterbücher. Beispiel:
+`self._model.modules["Bereich07"].interfaces["vakuum"].bStop.value = True`.
+QML erlaubt für diese Maps Punkte; Python verlangt die eckigen Klammern.
+`AttributeError: 'dict' object has no attribute ...` weist auf diese Schreibweise
+hin, `KeyError` auf einen fehlenden registrierten Modul- oder Gruppennamen.
+PC Live unterstützt denselben Klammerzugriff und lädt beim Neuaufbau nach dem
+Speichern den gespeicherten Seitencontroller neu.
+
+`NameError: mainModel_sh is not defined` wird durch den Start auf einer TNC
+nicht behoben. Erst den Python-Zugriff korrigieren, PC Live testen und nach
+Übernahme der Python-Datei Restart Apps ausführen. Ein gesetzter LOCAL-Merker
+ist eine Anforderung; die tatsächliche Reaktion bestätigt der zuständige Owner.

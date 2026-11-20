@@ -6,10 +6,14 @@ QML-, Python- oder JSON-Programmierkenntnisse. Maschinenkenntnisse der Teilnehme
 sind ausdrücklich erwünscht: Sie bestimmen, welche Rückmeldung ein Ziel
 wirklich bestätigt und welche Bedingungen vor einer Aktion gelten müssen.
 
-**Arbeitsfassung vom 27.10.2026, Softwarestand 1.44.** Zwei Teile mit
+**Arbeitsfassung vom 20.11.2026: aktueller Arbeitsweg 1.50.0; bebilderte Grundübungen aus der LOCAL-Kurskopie 1.44.** Zwei Teile mit
 je zwei Tagen; Richtwert fünf Stunden Arbeitszeit pro Tag zuzüglich Pausen.
 Kurze Erklärung, gemeinsames Vormachen, selbst ausführen und gegenseitig
 erklären wechseln sich ab. Die Unterlagen begleiten die Übungen, nicht umgekehrt.
+
+## Ergänzungen 1.50.0
+
+Die zusätzlichen Kapitel behandeln Start / Manual / Run, Zugriffsprofile und KOP, Explorer / CFG, Projekttransfer sowie Veröffentlichung und Import über den Bausteinpool. Game Portal liegt separat im Pool, Rezepturen veröffentlicht der Teilnehmer selbst. Der CFG-Vollkatalog ist ein ausdrücklicher VM-Messlauf; keine ungeprüfte Maschinenfreigabe.
 
 ## Ablage und Trennung von der Konsole
 

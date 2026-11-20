@@ -6,7 +6,7 @@
   const dialog = document.querySelector('#image-dialog');
   const chapters = window.COURSE || {};
   const titles = { start: 'Dein Lernweg', 'navigation-lab': 'Navigation ausprobieren', 'bmk-lab': 'BMK selbst ausprobieren', 'sequence-lab': 'Eine Schrittkette verstehen', reference: 'Begriffe & Grenzen' };
-  const ordered = ['basic', 'orientation', 'project', 'bmk', 'elements', 'advanced', 'advanced-units', 'advanced-chain', 'advanced-call', 'advanced-diagnostics', 'advanced-station', 'advanced-visualizers', 'quickguide'];
+  const ordered = ['basic', 'orientation', 'project', 'bmk', 'elements', 'advanced', 'advanced-units', 'advanced-chain', 'advanced-call', 'advanced-diagnostics', 'advanced-station', 'advanced-visualizers', 'access-1500', 'transfer-1500', 'pool-1500', 'cfg-1500', 'quickguide'];
   let cleanup = () => {};
   const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const readProgress = () => { try { return JSON.parse(localStorage.getItem('konsole-training-read') || '{}'); } catch { return {}; } };
@@ -23,8 +23,9 @@
     const item = chapters[id];
     const read = !!readProgress()[id];
     const next = ordered[ordered.indexOf(id) + 1];
-    const group = id.startsWith('advanced') || id === 'quickguide' ? 'Fortgeschrittene' : id === 'overview' ? 'Nachschlagen' : 'Basic';
+    const group = id.endsWith('-1500') ? '1.50.0' : id.startsWith('advanced') || id === 'quickguide' ? 'Fortgeschrittene' : id === 'overview' ? 'Nachschlagen' : 'Basic';
     main.innerHTML = `<div class="chapter-toolbar"><span>${group} / ${escape(item.title)}</span><button class="complete-button" aria-pressed="${read}" id="mark-read">${read ? '✓ Als gelesen markiert' : 'Kapitel als gelesen markieren'}</button></div><article class="prose">${item.html}</article><div class="chapter-next"><a href="#/start">← Zum Lernweg</a>${next ? `<a class="button" href="#/${next}">Weiter: ${escape(chapters[next].title)} →</a>` : '<a href="#/sequence-lab">Zum Ablauf-Lernmodell →</a>'}</div>`;
+    installAccessTraining();
     const h1 = main.querySelector('h1');
     if (item.headings.length > 2 && h1) {
       const toc = document.createElement('details'); toc.className = 'contents';
@@ -37,6 +38,21 @@
       e.currentTarget.setAttribute('aria-pressed', String(progress[id]));
       e.currentTarget.textContent = progress[id] ? '✓ Als gelesen markiert' : 'Kapitel als gelesen markieren';
     });
+  }
+  function installAccessTraining() {
+    const lab = main.querySelector('[data-access-lab]');
+    if (!lab) return;
+    lab.innerHTML = `<h3>Nur Browser: Mindeststufen vergleichen</h3><label>Testprofil <select data-access-level><option value="0">Öffentlich · 0</option><option value="3">Servicetechniker · 3</option><option value="5">Experte · 5</option></select></label><p data-access-status aria-live="polite"></p><div class="button-row"><button type="button">Öffentliche Taste</button><button type="button" data-service-visible>Ab 3 sichtbar</button><button type="button" data-expert-operate>Ab 5 bedienbar</button></div><p>Lesbarer Übungswert: <strong data-private-value></strong></p><p>Vereinfachtes Lernmodell. Keine Anmeldung und keine Verbindung zur TNC.</p>`;
+    const select = lab.querySelector('[data-access-level]');
+    function update() {
+      const level = Number(select.value);
+      lab.querySelector('[data-service-visible]').hidden = level < 3;
+      lab.querySelector('[data-expert-operate]').disabled = level < 5;
+      lab.querySelector('[data-private-value]').textContent = level >= 5 ? '42 · lokaler Beispielwert' : 'Leserecht ab Stufe 5 erforderlich';
+      lab.querySelector('[data-access-status]').textContent = `TEST / OFFLINE · Stufe ${level}`;
+    }
+    select.addEventListener('change', update);
+    update();
   }
   function bmkLab() {
     main.innerHTML = `<div class="eyebrow">Basic · Interaktives Lernmodell</div><h1 class="lab-title">Karte, Zielpunkt und Variable</h1><p class="lab-lead">Verschiebe Karte und Zielkreis unabhängig voneinander. Ändere danach den Übungswert und beobachte den Vergleich. Die Zeichnung ist ein vereinfachtes Lernmodell, keine echte Editor-Vorschau.</p><div class="lab-grid"><div><div class="lab-stage"><div class="lab-stage-head"><span>Beladeplatz · schematische Darstellung</span><span>NUR BROWSER</span></div><svg id="bmk-svg" viewBox="0 0 720 390" role="group" aria-label="Verschiebbare BMK-Karte und Sensorzielpunkt"><defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#323d40" stroke-width=".7"/></pattern></defs><rect width="720" height="390" fill="url(#grid)"/><path d="M65 299H405M100 299V165H367V299M130 165V118H336V165" fill="none" stroke="#86968c" stroke-width="3"/><rect x="137" y="185" width="200" height="66" rx="5" fill="#45544b" stroke="#94a68e"/><path d="M167 197V239M306 197V239" stroke="#c1cfb5" stroke-width="4"/><text x="134" y="339" fill="#bdcdb7" font-size="13">Beladeplatz 1</text><text x="117" y="103" fill="#99ac9b" font-size="11">Sensorpunkt in der Zeichnung</text><line id="bmk-line" x1="450" y1="128" x2="170" y2="220" stroke="#d3dfbd" stroke-width="1.5"/><g id="bmk-target" tabindex="0" role="button" aria-label="Sensorzielpunkt verschieben: ziehen oder Pfeiltasten" style="cursor:move"><circle r="20" fill="transparent"/><circle id="bmk-dot" r="9" fill="#8d9b90" stroke="#eff6de" stroke-width="2"/><path d="M-15 0H-10M10 0H15M0-15V-10M0 10V15" stroke="#c7d8b8"/></g><g id="bmk-card" tabindex="0" role="button" aria-label="BMK-Karte verschieben: ziehen oder Pfeiltasten" style="cursor:move"><rect width="230" height="75" rx="5" fill="#313d3e" stroke="#b2c899"/><circle id="bmk-indicator" cx="19" cy="23" r="6" fill="#8d9b90"/><text x="35" y="28" fill="#edf5e6" font-size="15">F9-120BG1</text><text id="bmk-card-description" x="15" y="53" fill="#c0ceba" font-size="12">Beladeplatz 1 · Grundstellung</text></g></svg><div class="lab-state" id="bmk-state" role="status"></div></div><div class="comparison" id="bmk-comparison"><b>Expliziter Vergleich im Lernmodell</b><span></span></div></div><form class="lab-form" id="bmk-form"><label>Datenquelle<select id="bmk-source"><option value="position">Positionsrückmeldung · Übungsvariable</option><option value="none">Keine Quelle zugeordnet</option></select><small>Eine Beschriftung allein ist noch keine Datenquelle.</small></label><label>Aktiver Vergleichswert<select id="bmk-expected"><option value="1">1 · Grundstellung</option><option value="2">2 · Arbeitsstellung</option></select></label><label>Aktueller Übungswert<select id="bmk-actual"><option value="1">1 · Grundstellung</option><option value="2">2 · Arbeitsstellung</option><option value="unknown">UNKNOWN · keine Rückmeldung</option></select></label><label>Aktive Farbe<select id="bmk-color"><option value="#d7b35c">Gelb · Hinweis</option><option value="#76be8b">Grün · bestätigt</option><option value="#6aacc6">Blau · Information</option></select><small>Farbe stellt das Ergebnis dar, sie erzeugt keine Rückmeldung.</small></label><button type="button" class="button form-full" id="bmk-reset">Anordnung zurücksetzen</button></form></div><section class="task-box"><h2>Probiere es in dieser Reihenfolge</h2><ol><li>Karte ziehen: Der Zielpunkt bleibt an seiner Stelle. Alternativ Karte fokussieren und Pfeiltasten verwenden.</li><li>Zielkreis ziehen: Die Karte bleibt stehen, nur die Verbindung folgt.</li><li>Übungswert auf <strong>2</strong> setzen, Vergleichswert auf <strong>1</strong> lassen. Die Anzeige ist nicht aktiv.</li><li>Vergleichswert ebenfalls auf <strong>2</strong> setzen. Jetzt stimmt der gelesene Wert mit der Erwartung überein.</li><li>Datenquelle entfernen: Es wird <strong>UNKNOWN</strong> gezeigt, nicht fälschlich „inaktiv“.</li></ol><a href="#/bmk">Den Bedienweg im echten Editor ansehen →</a></section>`;

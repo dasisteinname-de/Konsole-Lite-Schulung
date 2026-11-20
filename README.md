@@ -21,9 +21,13 @@ Maschinensteuerungsquellen.
   Karte/Zielpunkt/Variablenvergleich sowie ein bewusst
   vereinfachter Unit-Aufruf mit HAND, NC Start, Rückmeldung und Timeout.
 
-Die Unterlagen sind eine **Arbeitsfassung für Software 1.44**, keine
-Maschinenfreigabe. Browsermodelle sind keine vollständige Nachbildung der
+Die Unterlagen sind eine **Arbeitsfassung mit aktuellem Arbeitsweg für Software 1.50.0**, keine
+Maschinenfreigabe. Die vorhandenen Grundkursbilder stammen aus der LOCAL-Übungskopie 1.44; die neuen Kapitel kennzeichnen den aktuellen Bedienweg. Browsermodelle sind keine vollständige Nachbildung der
 Editoren. Geplante Funktionen werden nicht als fertig dargestellt.
+
+## Ergänzungen 1.50.0
+
+Konsolenverteilung Start / Manual / Run, benannte Zugriffsprofile 0–5 mit KOP, ein lokales Zugriffslabor, geprüfter Projekttransfer, Veröffentlichung und Import im Bausteinpool (Game Portal als separates Beispiel) sowie vollständiger CFG-VM-Katalog und Parameterlisten für Rezepturen. Die Website enthält nur Schulungsinhalte, keinen importierten Produktcode.
 
 ## GitHub Pages einmalig aktivieren
 

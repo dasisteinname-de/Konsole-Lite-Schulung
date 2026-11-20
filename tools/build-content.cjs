@@ -18,6 +18,10 @@ const chapters = [
   ['advanced-diagnostics', 'Diagnose & Wiederanlauf', 'Fortgeschrittene-Diagnose.de.md'],
   ['advanced-station', 'Interface & Stationsweg', 'Fortgeschrittene-Station.de.md'],
   ['advanced-visualizers', 'Unit-Taste & Ablaufanzeigen', 'Fortgeschrittene-Anzeigen.de.md'],
+  ['access-1500', '1.50.0 · Konsolen & Zugriffsrechte', 'Zugriff-1500.de.md'],
+  ['transfer-1500', 'Vom Editor auf die TNC', 'Transfer-1500.de.md'],
+  ['pool-1500', 'Bausteinpool · veröffentlichen & importieren', 'Bausteinpool-1500.de.md'],
+  ['cfg-1500', 'CFG · Vollkatalog & Rezepturvorlagen', 'CFG-1500.de.md'],
   ['quickguide', 'CALL SK Kurzbedienung', 'KURZANLEITUNG.de.md']
 ];
 const slug = s => s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
