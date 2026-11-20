@@ -59,6 +59,16 @@ Auf der Station muss das gewählte Interface tatsächlich registriert und nach
 dem erforderlichen Modellneustart angeschlossen sein; die Auswahl allein
 bestätigt keine aktuelle PLC-Verbindung.
 
+Bei `KeyError: 'vakuum'` kann eine andere Zusatzgruppe den Start blockieren:
+Ein überholter Registerhash nach dem Wechsel einer leeren/LOCAL-Gruppe zu
+PLC-Code wird vor dem Import abgewiesen. Build 5 zeigt die ursprüngliche
+Startursache im Journal und in `interfaces.json` des Transferdiagnose-ZIP.
+Beim bestätigten Speichern bleibt eine solche PLC-Quelle Integrationsentwurf;
+ihr überholter Startverweis wird zurückgenommen, andere Gruppen bleiben
+erhalten. Quelle und Register zusammen übernehmen und das Modell neu starten.
+Die PLC-Integration bleibt ein eigener Prüfschritt; unbekannte Eingänge
+erteilen keine Zugriffsrechte.
+
 Eine fehlende zugewiesene Profil-ID sperrt den Zugriff. Sie wird nicht als
 öffentlich interpretiert. Vor dem Löschen verwendete Profile neu zuordnen;
 der Dialog benennt den Umfang und beginnt mit Abbrechen als Standard.
