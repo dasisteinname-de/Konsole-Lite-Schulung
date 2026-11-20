@@ -142,6 +142,21 @@ hin, `KeyError` auf einen fehlenden registrierten Modul- oder Gruppennamen.
 PC Live unterstützt denselben Klammerzugriff und lädt beim Neuaufbau nach dem
 Speichern den gespeicherten Seitencontroller neu.
 
+Im Dialog **Variable auswählen** den dritten **Python-Wertpfad** kopieren.
+Seitenklasse `self._model` oder freie Funktion `model` bewusst auswählen.
+**Variable → Python** in der Quelltextleiste öffnet die Auswahl und fügt den
+Ausdruck am Cursor ein. Kopieren ändert keine Elementbindung.
+
+Die Quelltextleiste übernimmt den Blockeinfüger aus dem Sequence Editor.
+**Seiten-Python** bietet if/else, if/elif, match/case (Python 3.10+), for,
+while, try/except, Rückgabe, Meldung, Variablen, Qt-Timer und Hilfsmethoden.
+**Sequence CALL · ctx** enthält die CALL-Vorlagen mit IN&, OUT, Timeout und
+yield; diese benötigen weiterhin den Executor-Kontext `ctx`.
+QML verwendet seine eigenen JavaScript-Vorlagen. Ein Block ist eine Undo-
+Aktion, Einfügen führt nichts aus. **Merken / Strg+F2** setzt lokale
+Lesezeichen, F2 / Umschalt+F2 springt zwischen ihnen. Marken gehören zur
+PC-Ansicht einer Datei und sind keine Maschinen-Breakpoints.
+
 `NameError: mainModel_sh is not defined` wird durch den Start auf einer TNC
 nicht behoben. Erst den Python-Zugriff korrigieren, PC Live testen und nach
 Übernahme der Python-Datei Restart Apps ausführen. Ein gesetzter LOCAL-Merker
