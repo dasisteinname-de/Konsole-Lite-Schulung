@@ -6,29 +6,30 @@ const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const chapters = [
   ['overview', 'Kurs & Vorbereitung', 'README.de.md'],
-  ['basic', 'Einstieg & Tagesplan', 'Basic.de.md'],
-  ['orientation', 'Konsole Lite kennenlernen', 'Navigation.de.md'],
-  ['project', 'Module Seiten und F1–F8', 'Projektaufbau.de.md'],
-  ['bmk', 'BMK LED Schritt für Schritt', 'BMK-LED.de.md'],
-  ['elements', 'Die Grundelemente', 'Elemente.de.md'],
-  ['advanced', 'Fortgeschrittene · Tagesplan', 'Fortgeschrittene.de.md'],
-  ['advanced-units', 'Grundtyp & Unit', 'Fortgeschrittene-Units.de.md'],
-  ['advanced-chain', 'Eine Schrittkette aufbauen', 'Fortgeschrittene-Kette.de.md'],
-  ['advanced-call', 'CALL SK · AUTO & HAND', 'Fortgeschrittene-CALL.de.md'],
-  ['advanced-diagnostics', 'Diagnose & Wiederanlauf', 'Fortgeschrittene-Diagnose.de.md'],
-  ['advanced-station', 'Interface & Stationsweg', 'Fortgeschrittene-Station.de.md'],
-  ['advanced-visualizers', 'Unit-Taste & Ablaufanzeigen', 'Fortgeschrittene-Anzeigen.de.md'],
+  ['basic', 'Einstieg & Tagesplan', 'Basic.de.md', '1.44'],
+  ['orientation', 'Konsole Lite kennenlernen', 'Navigation.de.md', '1.44'],
+  ['project', 'Module Seiten und F1–F8', 'Projektaufbau.de.md', '1.44'],
+  ['bmk', 'BMK LED Schritt für Schritt', 'BMK-LED.de.md', '1.44'],
+  ['elements', 'Die Grundelemente', 'Elemente.de.md', '1.44'],
+  ['advanced', 'Fortgeschrittene · Tagesplan', 'Fortgeschrittene.de.md', '1.44'],
+  ['advanced-units', 'Grundtyp & Unit', 'Fortgeschrittene-Units.de.md', '1.44'],
+  ['advanced-chain', 'Eine Schrittkette aufbauen', 'Fortgeschrittene-Kette.de.md', '1.44'],
+  ['advanced-call', 'CALL SK · AUTO & HAND', 'Fortgeschrittene-CALL.de.md', '1.44'],
+  ['advanced-diagnostics', 'Diagnose & Wiederanlauf', 'Fortgeschrittene-Diagnose.de.md', '1.44'],
+  ['advanced-station', 'Interface & Stationsweg', 'Fortgeschrittene-Station.de.md', '1.44'],
+  ['advanced-visualizers', 'Unit-Taste & Ablaufanzeigen', 'Fortgeschrittene-Anzeigen.de.md', '1.44'],
   ['access-1500', '1.50.0 · Konsolen & Zugriffsrechte', 'Zugriff-1500.de.md'],
   ['transfer-1500', 'Vom Editor auf die TNC', 'Transfer-1500.de.md'],
   ['pool-1500', 'Bausteinpool · veröffentlichen & importieren', 'Bausteinpool-1500.de.md'],
   ['cfg-1500', 'CFG · Vollkatalog & Rezepturvorlagen', 'CFG-1500.de.md'],
+  ['trend-1500', 'Trend-/XY-Diagramm · Aufnahme & Ansicht', 'Trend-1500.de.md'],
   ['quickguide', 'CALL SK Kurzbedienung', 'KURZANLEITUNG.de.md']
 ];
 const slug = s => s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 async function build() {
   const { marked } = await import('marked');
   const data = {};
-  for (const [id, title, file] of chapters) {
+  for (const [id, title, file, imageVersion] of chapters) {
     const md = fs.readFileSync(path.join(root, 'content', file), 'utf8');
     const headings = [];
     const usedAnchors = new Map();
@@ -42,8 +43,9 @@ async function build() {
       if (level === '2') headings.push({ text: plain, anchor });
       return `<h${level} id="${anchor}">${text}</h${level}>`;
     }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) => {
+      if (!imageVersion) throw new Error(`Bildstand für ${file} fehlt`);
       const digest=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/images',name))).digest('hex').slice(0,12);
-      return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt}" loading="lazy" tabindex="0"><figcaption>${alt} · Anklicken zum Vergrößern</figcaption></figure>`;
+      return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt} · LOCAL-Kurskopie ${imageVersion}" loading="lazy" tabindex="0"><figcaption>${alt} · LOCAL-Kurskopie ${imageVersion} · Anklicken zum Vergrößern</figcaption></figure>`;
     });
     data[id] = { title, html, headings, search: md.replace(/!\[[^\]]*\]\([^)]*\)/g, '') };
   }

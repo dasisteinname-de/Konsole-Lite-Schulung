@@ -135,7 +135,7 @@ Seitenfunktion erhält `model` als Argument. In Python `True` und `False`
 schreiben. Den restlichen Pfad über den Interface Editor prüfen.
 
 Auf der Station sind `modules` und `interfaces` Python-Wörterbücher. Beispiel:
-`self._model.modules["Bereich07"].interfaces["vakuum"].bStop.value = True`.
+`self._model.modules["Bereich07"].interfaces["vakuum"].bStop.value` (nur der Wertpfad, keine Schreibanweisung).
 QML erlaubt für diese Maps Punkte; Python verlangt die eckigen Klammern.
 `AttributeError: 'dict' object has no attribute ...` weist auf diese Schreibweise
 hin, `KeyError` auf einen fehlenden registrierten Modul- oder Gruppennamen.

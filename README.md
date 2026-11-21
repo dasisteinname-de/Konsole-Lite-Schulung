@@ -27,6 +27,9 @@ Editoren. Geplante Funktionen werden nicht als fertig dargestellt.
 
 ## Ergänzungen 1.50.0
 
+Das zusätzliche Kapitel **Trend-/XY-Diagramm** erklärt Kanäle, Zonen, Aufnahme,
+Ansicht und den optionalen Minutenring anhand einer LOCAL-Übung.
+
 Konsolenverteilung Start / Manual / Run, benannte Zugriffsprofile 0–5 mit KOP, ein lokales Zugriffslabor, geprüfter Projekttransfer, Veröffentlichung und Import im Bausteinpool (Game Portal als separates Beispiel) sowie vollständiger CFG-VM-Katalog und Parameterlisten für Rezepturen. Die Website enthält nur Schulungsinhalte, keinen importierten Produktcode.
 
 ## GitHub Pages einmalig aktivieren
@@ -65,6 +68,9 @@ Der Browser benötigt diese Entwicklungsabhängigkeit nicht. Den Bedienweg gegen
 den angegebenen Softwarestand prüfen. `private: true` in `package.json`
 verhindert nur eine versehentliche Veröffentlichung als npm-Paket; die Website
 und dieses GitHub-Repository bleiben öffentlich.
+
+Der [Schulungsabgleich 1.50.0](docs/Pruefung-Schulung-1500.de.md) nennt bestätigte
+Nachweise und die noch offenen Prüfungen vor Veröffentlichung.
 
 ## Daten und Sicherheit
 
