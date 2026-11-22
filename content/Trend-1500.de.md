@@ -36,6 +36,13 @@ einer realen Spannstelle ableiten.
 
 ## Einen Trend im QML Editor vorbereiten
 
+Die Eigenschaften besitzen jetzt **sechs statt neun Abschnitte**. Legende,
+Messcursor, Datenpuffer und Dateiprotokoll stehen gemeinsam unter
+**Anzeige, Puffer und Protokoll**. Kanäle, Aufnahmebefehle, Achsen, Zonen und
+Grenzlinien bleiben eigene Aufgaben. Das geöffnete Formular erhält die Höhe
+seiner Felder; lange Eigenschaften werden in der äußeren Tabelle gescrollt.
+Ein Abschnittswechsel übernimmt oder speichert keine Eingaben.
+
 1. Den richtigen Projektordner und eine editierbare Übungsseite öffnen.
 2. Eine numerische LOCAL-Übungsvariable im Interface Editor vorbereiten und
    speichern. Für diese Übung stellt sie einen **Vakuumwert in mBar**
@@ -53,7 +60,7 @@ einer realen Spannstelle ableiten.
    `mBar`, **Minimum Y** −1000, **Maximum Y** 0 und **Zeitfenster [s], bis 72000**
    auf 60 einstellen. **Y automatisch** für die feste Übungsskala ausschalten.
    Die X-Achse kommt aus der internen Uhr; eine X-Variable ist nicht nötig.
-7. Unter **Datenpuffer** mit **Erfassung [ms]** 100, **Zeichentakt [ms]** 250
+7. Unter **Anzeige, Puffer und Protokoll** mit **Erfassung [ms]** 100, **Zeichentakt [ms]** 250
    und **RAM-Ring [MiB]** 8 beginnen. Das sind lokale Ausgangswerte, keine
    zugesicherte PLC-Abtastrate.
 8. Unter **Aufnahme · Start / Pause / Stop → Aufnahmebeginn** bewusst
@@ -64,6 +71,25 @@ einer realen Spannstelle ableiten.
    **Trend-Eigenschaften übernehmen** übernimmt nur in den Seitenentwurf.
 10. **PC Live** öffnen und **Start** drücken. Den LOCAL-Wert verändern und
     prüfen, ob Legende und Kurve dieselbe Quelle zeigen.
+
+### Kanal und Messquelle auswählen
+
+![Aktuelle Kanal-Eigenschaften: Name, Messquelle, optionale Qualität und X-Variable sowie Farbe und Linienbild](images/trend-vakuum-parameter-detail-kanaele-local-1500.png)
+
+Diese und die folgenden Eigenschaftenausschnitte stammen aus dem aktuellen
+Editor in einer isolierten LOCAL-Übungskopie. Die vorbereitete Quelle kann in
+deinem Projekt anders heißen; wähle deine eigene numerische Übungsvariable.
+Im Zeittrend bleibt **Variable X (XY)** unbenutzt. Alle Felder des Kanals sind
+ohne zusätzliche innere Vertikalrolle sichtbar.
+
+### Anzeige und Aufzeichnung an einem Ort
+
+![Gemeinsamer Abschnitt für Legende, Messcursor, Abtastung, RAM und optionales Dateiprotokoll](images/trend-vakuum-parameter-detail-puffer-local-1500.png)
+
+**Legende** und **Messcursor verfügbar** steuern die Anzeige. **RAM-Ring [MiB]**
+begrenzt den flüchtigen Speicher; **Protokolldauer [h]** begrenzt dagegen die
+optionale Dateiablage. Das sind unterschiedliche Einstellungen. Für den ersten
+Versuch **Dateiprotokoll aktiv** ausgeschaltet lassen.
 
 ## Farbige Zonen und eine Sollwertlinie
 
@@ -76,9 +102,17 @@ anlegen. Die Signalbindungen ihrer Grenzen bleiben leer.
 | Warnung · Beispiel | −600 | −500 | Gelb |
 | OK · Beispiel | −1000 | −600 | Grün |
 
+![Zonenformular mit Obergrenze über Untergrenze sowie Farbe und Deckkraft](images/trend-vakuum-parameter-detail-zonen-local-1500.png)
+
+Die räumliche Reihenfolge hilft beim Nachbauen: **Obergrenze** steht im Formular
+über **Untergrenze**. Eine ausdrücklich gewählte Signalbindung liefert die
+jeweilige Grenze dynamisch; für die feste Übung bleiben diese Bindungen leer.
+
 Unter **Grenzlinien · nur Anzeige** eine Linie **Sollwert** mit **Wert**
 −800 hinzufügen. Name, Farbe und **Deckkraft 0…1** der Zonen so wählen, dass
 die Kurve lesbar bleibt. Speichern und die Darstellung erneut prüfen.
+
+![Sollwertlinie mit festem Beispielwert −800 mBar, optionaler Signalbindung und punktierter Linienart](images/trend-vakuum-parameter-detail-sollwert-local-1500.png)
 
 Diese Grenzen färben die Anzeige. Sie lösen weder beim Hochlauf noch bei
 fallendem Wert einen Maschinenstopp aus. Die Laufzeit kennzeichnet das als
@@ -157,7 +191,8 @@ Für den ersten Versuch genügen die eingebauten Aufnahmetasten.
 
 ## Optional: Dateiprotokoll als Minutenring
 
-Erst nach dem RAM-Versuch unter **Dateiprotokoll · Minutenring** einschalten.
+Erst nach dem RAM-Versuch unter **Anzeige, Puffer und Protokoll** das Feld
+**Dateiprotokoll aktiv** einschalten.
 Einen eigenen Übungsordner auf dem Zielgerät wählen; die relative Vorgabe
 `KonsoleLite/DATA/Trend` bezieht sich auf den gewählten Projektordner.
 **Protokollname** und **Protokolldauer [h]** prüfen; Standard sind 20 Stunden.

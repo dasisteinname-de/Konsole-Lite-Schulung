@@ -26,6 +26,10 @@ const chapters = [
   ['quickguide', 'CALL SK Kurzbedienung', 'KURZANLEITUNG.de.md']
 ];
 const slug = s => s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+// Diese Bilder stammen aus einer isolierten Qt-LOCAL-Kopie des aktuellen
+// Editors. Die beiden Laufzeitbilder daneben bleiben Anwenderaufnahmen.
+const localEditorImages = new Set(['kanaele', 'puffer', 'zonen', 'sollwert'].map(
+  name => `trend-vakuum-parameter-detail-${name}-local-1500.png`));
 async function build() {
   const { marked } = await import('marked');
   const data = {};
@@ -45,7 +49,8 @@ async function build() {
     }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) => {
       if (!imageVersion) throw new Error(`Bildstand für ${file} fehlt`);
       const digest=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/images',name))).digest('hex').slice(0,12);
-      return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt} · ${imageOrigin} ${imageVersion}" loading="lazy" tabindex="0"><figcaption>${alt} · ${imageOrigin} ${imageVersion} · Anklicken zum Vergrößern</figcaption></figure>`;
+      const origin = localEditorImages.has(name) ? 'LOCAL-Editoraufnahme' : imageOrigin;
+      return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt} · ${origin} ${imageVersion}" loading="lazy" tabindex="0"><figcaption>${alt} · ${origin} ${imageVersion} · Anklicken zum Vergrößern</figcaption></figure>`;
     });
     data[id] = { title, html, headings, search: md.replace(/!\[[^\]]*\]\([^)]*\)/g, '') };
   }
