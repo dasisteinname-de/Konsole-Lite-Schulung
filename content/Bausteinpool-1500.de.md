@@ -45,6 +45,40 @@ Mit den Pfeilen durch die Bilder blättern. Ein Klick auf das Vorschaubild
 Auflösung mit Bildlaufleisten gezeigt. Game Portal enthält echte LOCAL-Bilder
 von Snake, Mines und Tic-Tac-Toe. Diese PC-Aufnahmen sind keine Maschinenprüfung.
 
+## Gemeinsame Bewertungen und Kommentare
+
+![Gemeinsame GitHub-Bewertungen und Formular für den eigenen Beitrag](images/app-pool-bewertungen-local-1500.png)
+
+1. App links wählen, dann **Bewertungen & Kommentare** öffnen oder in der
+   Übersicht **Gemeinsame Bewertungen ansehen** anklicken.
+2. Mit persönlicher GitHub-Anmeldung laden. **Bewertungen aktualisieren**
+   liest neue Beiträge direkt aus dem gemeinsamen privaten AppPool.
+3. Ein bis fünf Sterne wählen und optional einen Kommentar schreiben.
+   Für einen reinen Kommentar **Nur Kommentar** stehen lassen.
+4. **Auf GitHub veröffentlichen** sendet den Beitrag. Erst die Bestätigung
+   bedeutet, dass er im gemeinsamen Thema gespeichert wurde.
+
+Alle berechtigten AppPool-Nutzer sehen dieselben Beiträge. Als Autor gilt die
+von GitHub bestätigte Nutzer-ID. Die letzte Sternebewertung je Konto zählt
+einmal im Durchschnitt; Kommentare ohne Sterne verändern sie nicht.
+Frühere Beiträge bleiben im Thema lesbar. Freie Kommentare direkt auf GitHub
+werden ebenfalls angezeigt. Die Abbildung zeigt den tatsächlichen geladenen
+Stand, ohne vorgegebene Sterne oder erfundene Nutzerbewertungen.
+
+Git muss auf dem PC verfügbar und das eigene Konto über Git / VS Code
+angemeldet sein. Der Editor liest die vorhandene Git-Anmeldung; Zugangsdaten
+gehören nicht in Apps oder Katalogdateien. Fehlender privater Repository-Zugriff
+wird als Fehler erklärt. Ein Git Pull ist zum Lesen der Beiträge nicht nötig.
+Die Vitrine fragt beim Öffnen dieser Ansicht und auf ausdrückliche Aktualisierung
+ab; eine dauernde Hintergrundabfrage gibt es nicht.
+
+Bei unbekanntem Sendestatus zunächst **Bewertungen aktualisieren** wählen.
+Der Entwurf bleibt erhalten. Beim Wechsel zwischen Apps bleiben ungesendete
+Texte im geöffneten Fenster bestehen; Schließen fragt nach dem Verwerfen.
+**Beiträge exportieren …** sichert die geladenen Beiträge ohne Zugangsdaten
+als neue JSON-Datei. GitHub-Issues gehören nicht zu einem normalen Git-Klon:
+Beim späteren Firmenumzug müssen sie beziehungsweise ihr Export mitwandern.
+
 ## Vom eigenen Projekt in einen Pool
 
 1. Projekt sichern und alle gewünschten QML-/Python-Änderungen speichern.
@@ -104,18 +138,19 @@ diese Bibliothek ausdrücklich per Git geklont beziehungsweise aktualisiert;
 im Editor wird deren lokaler Katalogordner geöffnet. Im br_sh-Repository liegt
 weiterhin ein kleiner Game-Portal-Beispielpool für unabhängige Übungen.
 
-Gemeinsame Bewertungen, Kommentare, Eigentümerrechte und Updatehinweise sind
-vereinbart und noch nicht angeschlossen. Die freie Herausgeberangabe ist
-kein Berechtigungsnachweis. Später prüft der gemeinsame Dienst: Nur Eigentümer
-oder beauftragtes Pflegeteam dürfen eine neue Version veröffentlichen oder
-die gemeinsame Veröffentlichung zurückziehen. Die jetzige Taste entfernt
-ausdrücklich nur eine **lokale** Poolkopie.
+Gemeinsame Bewertungen und Kommentare sind über GitHub Issues verbunden.
+Zugang erhalten Nutzer mit Berechtigung für das private AppPool-Repository;
+diese Funktion vergibt keine zusätzlichen Repository-Rechte.
 
-Abonnenten mit einer älteren installierten App sollen einen Hinweis erhalten
-und das Update selbst im AppPool prüfen und starten. Bewertungen werden erst
-mit gemeinsamer Ablage als gemeinsame Bewertungen gezeigt. Für den späteren
-Firmenumzug bleiben App-IDs und Beziehungen erhalten; Quellen, Medien und
-die zukünftigen Community-Daten werden zusammen übertragen.
+Eigentümerrechte an **App-Veröffentlichungen**, Updateübernahme und
+Abonnements sind weitere Schritte. Die freie Herausgeberangabe erteilt keine
+Berechtigung. Die jetzige Entfernungstaste betrifft eine lokale Poolkopie;
+sie zieht keine gemeinsame Veröffentlichung von GitHub zurück.
+
+Später sollen Abonnenten mit einer älteren installierten App einen Hinweis
+erhalten und das Update selbst prüfen und starten. Quellen, Medien und
+gemeinsame Themen beziehungsweise Community-Exporte werden beim Firmenumzug
+zusammen übernommen; App-IDs und Beziehungen bleiben erhalten.
 
 **Übung:** Eine App in eine eigene Übungskopie importieren, nur für Manual
 aktivieren und im Live-Modus testen. Danach das Modul archivieren und erneut
