@@ -79,6 +79,42 @@ Texte im geöffneten Fenster bestehen; Schließen fragt nach dem Verwerfen.
 als neue JSON-Datei. GitHub-Issues gehören nicht zu einem normalen Git-Klon:
 Beim späteren Firmenumzug müssen sie beziehungsweise ihr Export mitwandern.
 
+## Eigentümer verwalten gemeinsame App-Veröffentlichungen
+
+![Eigentümeransicht mit neuer Version, Rücknahme und Wiederherstellung](images/app-pool-eigentuemer-local-1500.png)
+
+Unter **Gemeinsame Veröffentlichung** die gemeinsame App wählen und den
+**Veröffentlichungsstatus laden**. Die Auswahl enthält auch zurückgenommene
+Apps und funktioniert ohne lokale Paketkopie. Die linke Liste bleibt der
+gewählte lokale Pool. Der Server verwendet die bestätigte GitHub-Nutzer-ID
+des Eigentümers; der frei eingegebene Herausgebername erteilt keine Rechte.
+
+| Aktion des Eigentümers | Ergebnis |
+| --- | --- |
+| Neue Version veröffentlichen … | Größere Version und Änderungen angeben, danach Dateiliste und Umfang der Exportkopie prüfen und bestätigen. Die Originalquellen im Projekt werden nicht umversioniert. |
+| Aus gemeinsamem AppPool nehmen … | Benannte App/Version mit Abbrechen als Standard bestätigen. Der Eintrag verschwindet aus dem gemeinsamen Katalog. Installierte Projekte, Bewertungen und Git-Historie bleiben erhalten. |
+| Veröffentlichung wiederherstellen … | Die zurückgenommene Veröffentlichung wird wieder sichtbar; vorhandene Projektkopien werden nicht ersetzt. |
+
+**Auftrag übergeben** bedeutet noch nicht **veröffentlicht**. GitHub Actions
+prüft den tatsächlichen Absender, Eigentümer, Paket und aktuellen Stand auf
+dem Server. Den Status erneut laden oder den letzten Auftrag auf GitHub
+öffnen. Ein alter Auftrag ersetzt keine inzwischen neuere Version. Paketcode
+wird bei dieser Prüfung nicht ausgeführt.
+
+Rezepturen ist dem Konto des Herausgebers zugeordnet. Game Portal bleibt
+eine geschützte Referenz ohne erfundenen KI-Eigentümer; ihre normalen
+Änderungsaktionen sind gesperrt, bis ein verantwortlicher Mensch benannt ist.
+Die lokale Taste **Aus lokalem AppPool entfernen …** ist eine andere Aktion
+und zieht keine gemeinsame Veröffentlichung zurück.
+
+Der private Pilot lässt nur vertrauenswürdige Administratoren als direkte
+Repository-Schreiber zu. Weitere direkte Schreiber sperren den Dienst.
+Diese Prüfung ersetzt keinen Schutz gegen Personen, die bereits den
+Servicecode ändern dürfen. Niederlassungsnutzer brauchen deshalb passende
+Read-Rollen beziehungsweise eine gesondert abgesicherte Bereitstellung;
+neue Rechte werden nicht automatisch vergeben. Für den aktuellen privaten
+Tarif steht Branchschutz nicht zur Verfügung.
+
 ## Vom eigenen Projekt in einen Pool
 
 1. Projekt sichern und alle gewünschten QML-/Python-Änderungen speichern.
@@ -142,10 +178,10 @@ Gemeinsame Bewertungen und Kommentare sind über GitHub Issues verbunden.
 Zugang erhalten Nutzer mit Berechtigung für das private AppPool-Repository;
 diese Funktion vergibt keine zusätzlichen Repository-Rechte.
 
-Eigentümerrechte an **App-Veröffentlichungen**, Updateübernahme und
-Abonnements sind weitere Schritte. Die freie Herausgeberangabe erteilt keine
-Berechtigung. Die jetzige Entfernungstaste betrifft eine lokale Poolkopie;
-sie zieht keine gemeinsame Veröffentlichung von GitHub zurück.
+Eigentümeraktionen sind über den GitHub-Actions-Dienst verbunden.
+Die eigene gemeinsame App-Auswahl enthält auch zurückgenommene Einträge.
+Lokales Entfernen und gemeinsame Rücknahme sind getrennt. Die Übernahme
+installierter Updates sowie Abonnements bleiben weitere Schritte.
 
 Später sollen Abonnenten mit einer älteren installierten App einen Hinweis
 erhalten und das Update selbst prüfen und starten. Quellen, Medien und
