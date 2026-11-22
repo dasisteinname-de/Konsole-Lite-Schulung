@@ -22,14 +22,14 @@ const chapters = [
   ['transfer-1500', 'Vom Editor auf die TNC', 'Transfer-1500.de.md'],
   ['pool-1500', 'Bausteinpool · veröffentlichen & importieren', 'Bausteinpool-1500.de.md'],
   ['cfg-1500', 'CFG · Vollkatalog & Rezepturvorlagen', 'CFG-1500.de.md'],
-  ['trend-1500', 'Trend-/XY-Diagramm · Aufnahme & Ansicht', 'Trend-1500.de.md'],
+  ['trend-1500', 'Trend-/XY-Diagramm · Aufnahme & Ansicht', 'Trend-1500.de.md', '1.50.0', 'Anwenderaufnahme'],
   ['quickguide', 'CALL SK Kurzbedienung', 'KURZANLEITUNG.de.md']
 ];
 const slug = s => s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 async function build() {
   const { marked } = await import('marked');
   const data = {};
-  for (const [id, title, file, imageVersion] of chapters) {
+  for (const [id, title, file, imageVersion, imageOrigin = 'LOCAL-Kurskopie'] of chapters) {
     const md = fs.readFileSync(path.join(root, 'content', file), 'utf8');
     const headings = [];
     const usedAnchors = new Map();
@@ -45,7 +45,7 @@ async function build() {
     }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) => {
       if (!imageVersion) throw new Error(`Bildstand für ${file} fehlt`);
       const digest=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/images',name))).digest('hex').slice(0,12);
-      return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt} · LOCAL-Kurskopie ${imageVersion}" loading="lazy" tabindex="0"><figcaption>${alt} · LOCAL-Kurskopie ${imageVersion} · Anklicken zum Vergrößern</figcaption></figure>`;
+      return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt} · ${imageOrigin} ${imageVersion}" loading="lazy" tabindex="0"><figcaption>${alt} · ${imageOrigin} ${imageVersion} · Anklicken zum Vergrößern</figcaption></figure>`;
     });
     data[id] = { title, html, headings, search: md.replace(/!\[[^\]]*\]\([^)]*\)/g, '') };
   }
