@@ -49,7 +49,7 @@ Editoren. Geplante Funktionen werden nicht als fertig dargestellt.
 Das zusätzliche Kapitel **Trend-/XY-Diagramm** erklärt Kanäle, Zonen, Aufnahme,
 Ansicht und den optionalen Minutenring anhand einer LOCAL-Übung.
 
-Konsolenverteilung Start / Manual / Run, benannte Zugriffsprofile 0–5 mit KOP, ein lokales Zugriffslabor, geprüfter Projekttransfer, Veröffentlichung und Import im Bausteinpool (Game Portal als separates Beispiel) sowie vollständiger CFG-VM-Katalog und Parameterlisten für Rezepturen. Die Website enthält nur Schulungsinhalte, keinen importierten Produktcode.
+Konsolenverteilung Start / Manual / Run, benannte Zugriffsprofile 0–5 mit KOP, ein lokales Zugriffslabor, geprüfter Projekttransfer, Veröffentlichung und Import im AppPool (Game Portal als separates Beispiel) sowie vollständiger CFG-VM-Katalog und Parameterlisten für Rezepturen. Die Website enthält nur Schulungsinhalte, keinen importierten Produktcode.
 
 ## GitHub Pages einmalig aktivieren
 

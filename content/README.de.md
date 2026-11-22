@@ -16,7 +16,7 @@ erklären wechseln sich ab. Die Unterlagen begleiten die Übungen, nicht umgekeh
 Das zusätzliche Kapitel **Trend-/XY-Diagramm** erklärt Kanäle, Zonen, Aufnahme,
 Ansicht und den optionalen Minutenring anhand einer LOCAL-Übung.
 
-Die zusätzlichen Kapitel behandeln Start / Manual / Run, Zugriffsprofile und KOP, Explorer / CFG, Projekttransfer sowie Veröffentlichung und Import über den Bausteinpool. Game Portal liegt separat im Pool, Rezepturen veröffentlicht der Teilnehmer selbst. Der CFG-Vollkatalog ist ein ausdrücklicher VM-Messlauf; keine ungeprüfte Maschinenfreigabe.
+Die zusätzlichen Kapitel behandeln Start / Manual / Run, Zugriffsprofile und KOP, Explorer / CFG, Projekttransfer sowie Veröffentlichung und Import über den AppPool. Game Portal liegt separat im Pool, Rezepturen veröffentlicht der Teilnehmer selbst. Der CFG-Vollkatalog ist ein ausdrücklicher VM-Messlauf; keine ungeprüfte Maschinenfreigabe.
 
 ## Ablage und Trennung von der Konsole
 

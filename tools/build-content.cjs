@@ -20,7 +20,7 @@ const chapters = [
   ['advanced-visualizers', 'Unit-Taste & Ablaufanzeigen', 'Fortgeschrittene-Anzeigen.de.md', '1.44'],
   ['access-1500', '1.50.0 · Konsolen & Zugriffsrechte', 'Zugriff-1500.de.md'],
   ['transfer-1500', 'Vom Editor auf die TNC', 'Transfer-1500.de.md'],
-  ['pool-1500', 'Bausteinpool · veröffentlichen & importieren', 'Bausteinpool-1500.de.md'],
+  ['pool-1500', 'AppPool · veröffentlichen & importieren', 'Bausteinpool-1500.de.md'],
   ['cfg-1500', 'CFG · Vollkatalog & Rezepturvorlagen', 'CFG-1500.de.md'],
   ['trend-1500', 'Trend-/XY-Diagramm · Aufnahme & Ansicht', 'Trend-1500.de.md', '1.50.0', 'Anwenderaufnahme'],
   ['quickguide', 'CALL SK Kurzbedienung', 'KURZANLEITUNG.de.md']
