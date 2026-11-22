@@ -5,6 +5,25 @@ kleine interaktive Browser-Lernmodelle. Das Softwareprojekt bleibt separat und
 privat. Dieses Repository enthält keine produktiven Editor-, PLC- oder
 Maschinensteuerungsquellen.
 
+## Schnellzugriff
+
+| Ziel | Öffnen |
+| --- | --- |
+| Lernen und ausprobieren | [Lernwerkstatt](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/) |
+| Aktuelle Bedienwege | [Zugriff](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/access-1500), [Transfer](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/transfer-1500), [CFG](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/cfg-1500) |
+| Nachschlagen | [Grundelemente](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/elements), [Trend / XY](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/trend-1500), [Begriffe](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/reference) |
+
+## Aktueller Stand in main
+
+Die gepflegte Schulung liegt in **main**. Neue Softwarestände werden hier
+eingearbeitet, ohne dafür dauerhaft eigene Versionsbranches anzulegen.
+Die Kapitel nennen den jeweils behandelten Softwarestand; ältere Kursbilder
+bleiben ausdrücklich als solche gekennzeichnet.
+
+Die Website bietet Lernfolgen und öffentliche Nachschlageseiten. Eine
+integrierte Hilfe im INFO-Portal der Konsole und im QML Editor bleibt ein eigener
+Integrationsschritt; diese Veröffentlichung behauptet diese Anbindung nicht.
+
 ## Lernweg
 
 - **Basic · zwei Tage:** zuerst Konsolenbedienung mit MAIN, Modulen, Seiten,
