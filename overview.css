@@ -1,5 +1,12 @@
 /* Die Übersicht bleibt bei Full HD auf einer Fläche. Kurskapitel behalten
    ihren lesbaren Seitenfluss; das Kursmenü ist hier bewusst aufklappbar. */
+.topbar-home { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #2e4435; flex: none; }
+.topbar-home-mark { display: block; background: #29372e; color: #eef4dc; border-radius: 5px; font-size: 26px; line-height: 1; font-weight: 650; padding: 6px 7px; }
+.topbar-home-mark > span { color: #d6e799; }
+.topbar-home > span:last-child { font-size: 12px; font-weight: 650; line-height: 1.2; }
+.topbar-home small { display: block; font-size: 7px; letter-spacing: 1.3px; font-weight: 400; margin-top: 4px; }
+@media (max-width: 900px) { .topbar .breadcrumb { display: none; } }
+@media (max-width: 500px) { .topbar-home > span:last-child { display: none; } .topbar .draft-badge { display: none; } }
 body[data-page="start"] .workspace { margin-left: 0; }
 body[data-page="start"] .sidebar { transform: translateX(-100%); transition: transform .18s ease; z-index: 60; }
 body[data-page="start"] .sidebar.open { transform: translateX(0); box-shadow: 15px 0 50px #18211d55; }
@@ -46,6 +53,7 @@ body[data-page="start"] #main { max-width: none; padding: 23px 36px 28px; height
 .overview-editors > button:hover { background: #e8eee3; }
 .overview-editors > button[aria-pressed="true"] { background: #29372e; color: #f6f8ef; border-color: #29372e; }
 .overview-editor-number { font-size: 11px; color: #829278; min-width: 20px; font-variant-numeric: tabular-nums; }
+.overview-editor-icon { width: 40px; height: 40px; flex: none; }
 .overview-editors > button[aria-pressed="true"] .overview-editor-number { color: #d6e799; }
 .overview-editors strong { display: block; font-size: 15px; font-weight: 600; line-height: 1.35; }
 .overview-editors small { display: block; font-size: 11px; font-weight: 400; color: #74806f; margin-top: 3px; line-height: 1.4; }
@@ -68,6 +76,7 @@ body[data-page="start"] #main { max-width: none; padding: 23px 36px 28px; height
   .overview-heading { padding-bottom: 14px; }
   .overview-heading h1 { font-size: 32px; }
   .overview-editors > button { padding-block: 6px; min-height: 39px; }
+  .overview-editor-icon { width: 32px; height: 32px; }
   .overview-editors small { margin-top: 1px; font-size: 10px; }
   .overview-caption { padding-top: 16px; min-height: 132px; }
 }

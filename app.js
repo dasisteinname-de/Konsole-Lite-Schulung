@@ -156,7 +156,7 @@
     evaluate();
   }
   function setupImages() {
-    main.querySelectorAll('img').forEach(img => {
+    main.querySelectorAll('img:not([aria-hidden="true"])').forEach(img => {
       const open = () => { document.querySelector('#image-large').src = img.src; document.querySelector('#image-large').alt = img.alt; document.querySelector('#image-caption').textContent = img.alt; dialog.showModal(); };
       img.addEventListener('click', open);
       img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
