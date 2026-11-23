@@ -4,6 +4,12 @@ Diese Ergänzung beschreibt den Bedienweg von 1.50.0. Die älteren bebilderten
 Grundübungen bleiben als Übungskopie erkennbar; ihre Aufnahmen sind kein
 Nachweis einer getesteten Kundenmaschine.
 
+![ConsoleConfigurator mit Laden, Anzeigenamen, TextDB, Sichtbarkeit, Bedienbarkeit, BOOL-Bedingung und Arbeitsbereichen](images/overview/config-anwender-1510.png)
+
+Die aktuelle Aufnahme zeigt den vereinten Konfigurator von 1.51.0. Namen,
+TextDB-Schlüssel, Sichtbarkeit und Bedienbarkeit werden direkt in der Tabelle
+verwaltet; **Laden** bleibt von **Anzeigen im Arbeitsbereich** getrennt.
+
 ## Drei Konsolen, eine Quelle
 
 Im **KonsoleConfigurator → Module / Seiten** gibt es getrennte Spalten

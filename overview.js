@@ -3,7 +3,7 @@
 // Einstieg für die Präsentation: erst sehen und ausprobieren, dann nachlesen.
 // Das Browsermodell verwendet nur Kursbilder und lokale Navigationszustände.
 window.createWorkshopOverview = function ({ main, escape }) {
-  const picture = (file, caption) => ({ file: `assets/images/${file}`, caption });
+  const picture = (file, caption, origin = 'Kurskopie') => ({ file: `assets/images/${file}`, caption, origin });
   const editors = [
     { id: 'console', title: 'Console · Übersicht', tag: 'Bedienen', number: '01' },
     { id: 'interface', title: 'Interface Editor', tag: 'Variablen verbinden', number: '02',
@@ -15,12 +15,16 @@ window.createWorkshopOverview = function ({ main, escape }) {
       heading: 'Aus Elementen wird eine Bedienseite',
       text: 'Elemente platzieren, beschriften und mit Variablen verbinden. Entwurf und Live-Vorschau helfen beim Gestalten; 20 Elementtypen stehen für die Bedienoberfläche zur Verfügung.',
       route: 'elements', link: 'Die Elemente entdecken',
-      images: [picture('00-editor-hintergrundmagazin.png', 'QML Editor · Hintergrundmagazin in der Kurskopie'), picture('07-bmk-variable-zugeordnet.png', 'Eine Variable direkt einem Element zuordnen.'), picture('trend-vakuum-anwender-1500.png', 'Das Ziel der heutigen Übung: eine Vakuumkurve sichtbar machen.')] },
+      images: [
+        picture('overview/qml-layout-anwender-1510.png', 'QML Editor 1.51.0 · Layout und Eigenschaften am Hintergrundmagazin.', 'Anwenderaufnahme 1.51.0'),
+        picture('overview/qml-live-hgm-anwender-1510.png', 'QML Editor 1.51.0 · Hintergrundmagazin in der lokalen Live-Ansicht.', 'Anwenderaufnahme 1.51.0'),
+        picture('overview/qml-sequence-viewer-anwender-1510.png', 'QML Editor 1.51.0 · Sequence Viewer in der lokalen Konsolenansicht.', 'Anwenderaufnahme 1.51.0')
+      ] },
     { id: 'config', title: 'ConsoleConfigurator', tag: 'Konsolen einrichten', number: '04',
       heading: 'Die passende Konsole für jede Aufgabe',
-      text: 'Module und Seiten für Start, Manual und Run zusammenstellen. Die Auswahl bestimmt, welche Inhalte an welchem Konsolenplatz erscheinen.',
+      text: 'Module und Seiten laden, ihre Sichtbarkeit und Bedienbarkeit festlegen und BOOL-Bedingungen zuordnen. Start, Manual und Run bestimmen, in welchem Arbeitsbereich die Inhalte erscheinen.',
       route: 'access-1500', link: 'Konsolen konfigurieren',
-      images: [picture('overview/config-module.png', 'ConsoleConfigurator · Module und Seiten auf Konsolen verteilen.'), picture('overview/config-ressourcen.png', 'Ressourcen und Zugriffsprofile übersichtlich zuordnen.')] },
+      images: [picture('overview/config-anwender-1510.png', 'ConsoleConfigurator 1.51.0 · Namen, TextDB, Sichtbarkeit, Bedienbarkeit und Arbeitsbereiche in einer Tabelle.', 'Anwenderaufnahme 1.51.0')] },
     { id: 'access', title: 'Zugriffsprofile', tag: 'Zugriff nachvollziehbar machen', number: '05',
       heading: 'Sichtbar, lesbar, bedienbar',
       text: 'Benannte Profile legen fest, wer Inhalte sehen und bedienen darf. Die Zuordnung lässt sich an der Seite oder am einzelnen Element nachvollziehen.',
@@ -55,7 +59,7 @@ window.createWorkshopOverview = function ({ main, escape }) {
       heading: 'Vorhandenes entdecken und wiederverwenden',
       text: 'Anwendungen mit Beschreibung und Bildern ansehen und in ein Projekt übernehmen. Eigene Bausteine lassen sich als nachvollziehbares Paket weitergeben.',
       route: 'pool-1500', link: 'Den AppPool kennenlernen',
-      images: [picture('app-pool-liste-local-1500.png', 'AppPool · Anwendungen mit Beschreibung und Bildern.'), picture('app-pool-galerie-local-1500.png', 'Die Bildergalerie vor der Übernahme ansehen.'), picture('app-pool-eigentuemer-local-1500.png', 'Eigene Veröffentlichungen verwalten.')] }
+      images: [picture('overview/app-pool-anwender-1510.png', 'AppPool 1.51.0 · Installierte und weitere Apps mit Beschreibung, Galerie und gemeinsamer Veröffentlichung.', 'Anwenderaufnahme 1.51.0')] }
   ];
   let selected = 'console';
   let slide = 0;
@@ -95,7 +99,8 @@ window.createWorkshopOverview = function ({ main, escape }) {
     stopConsole();
     stopConsole = () => {};
     const image = editor.images[slide];
-    stage.innerHTML = `<div class="overview-gallery"><div class="overview-gallery-bar"><span>${escape(editor.title)}</span><span>Echte Editor-Aufnahmen · Kurskopie</span></div><button class="overview-gallery-picture" data-enlarge aria-label="${escape(editor.title)} vergrößern"><img src="${image.file}" alt="${escape(image.caption)}"></button><div class="overview-gallery-navigation"><button data-slide="-1" aria-label="Vorheriges Bild">←</button><p>${escape(image.caption)}</p><span>${slide + 1} / ${editor.images.length}</span><button data-slide="1" aria-label="Nächstes Bild">→</button></div></div>`;
+    const slideDisabled = editor.images.length === 1 ? ' disabled' : '';
+    stage.innerHTML = `<div class="overview-gallery"><div class="overview-gallery-bar"><span>${escape(editor.title)}</span><span>Echte Editor-Aufnahmen · ${escape(image.origin)}</span></div><button class="overview-gallery-picture" data-enlarge aria-label="${escape(editor.title)} vergrößern"><img src="${image.file}" alt="${escape(image.caption)}"></button><div class="overview-gallery-navigation"><button data-slide="-1" aria-label="Vorheriges Bild"${slideDisabled}>←</button><p>${escape(image.caption)}</p><span>${slide + 1} / ${editor.images.length}</span><button data-slide="1" aria-label="Nächstes Bild"${slideDisabled}>→</button></div></div>`;
     caption.innerHTML = `<div><span class="overview-caption-kicker">${escape(editor.tag)}</span><h2>${escape(editor.heading)}</h2><p>${escape(editor.text)}</p></div><a href="#/${editor.route}">${escape(editor.link)} <span aria-hidden="true">→</span></a>`;
   }
 

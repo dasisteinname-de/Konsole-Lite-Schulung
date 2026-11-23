@@ -15,7 +15,7 @@ wird Schritt für Schritt um verständliche Sensoranzeigen ergänzt. Alles erfol
 in einer eigenen OFFLINE-Projektkopie; Originalseiten und Maschinenwerte bleiben
 unverändert. Vorbereitung: [Kursübersicht](#/overview).
 
-![Der echte QML Editor mit Elementbibliothek links, HGM Maske in der Mitte und Eigenschaften rechts](images/00-editor-hintergrundmagazin.png)
+![QML Editor mit Elementbibliothek links, Hintergrundmagazin im Layout und Eigenschaften rechts](images/overview/qml-layout-anwender-1510.png)
 
 ## So arbeitest du mit den Bildkapiteln
 

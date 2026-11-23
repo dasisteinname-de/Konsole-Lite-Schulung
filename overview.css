@@ -71,6 +71,7 @@ body[data-page="start"] #main { max-width: none; padding: 23px 36px 28px; height
 .overview-gallery-navigation p { font-size: 12px; line-height: 1.5; margin: 0; flex: 1; }
 .overview-gallery-navigation > span { font-size: 11px; font-variant-numeric: tabular-nums; }
 .overview-gallery-navigation button { border: 1px solid #64735f; background: transparent; border-radius: 4px; color: #e4ebdf; width: 38px; height: 32px; cursor: pointer; }
+.overview-gallery-navigation button:disabled { opacity: .35; cursor: default; }
 .workshop-overview button:focus-visible, .workshop-overview a:focus-visible { outline: 3px solid #93b354; outline-offset: 2px; }
 @media (max-height: 850px) and (min-width: 1100px) {
   body[data-page="start"] #main { padding-top: 15px; padding-bottom: 18px; }

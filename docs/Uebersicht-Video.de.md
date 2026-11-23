@@ -44,8 +44,12 @@ Vakuumkurve ist eine Aufnahme, kein live mit einer PLC verbundener Browsertrend.
   Texte oder Bedienelemente zu verzerren. Bei Rezepturen bleiben der alte
   Navigationskopf und die alte F-Tastenleiste außerhalb des Ausschnitts.
   Die Originalbilder in den Kurskapiteln und die Vakuumansicht bleiben erhalten.
-- Die Galerie zeigt je Werkzeug zwei bis drei Bilder und einen kurzen Zweck.
+- Die Galerie zeigt je Werkzeug eine bis drei Aufnahmen und einen kurzen Zweck.
   Die zugehörigen Kapitel bleiben über den Link unter dem Bild erreichbar.
+- QML Editor, ConsoleConfigurator und AppPool verwenden die fünf vom Anwender
+  bereitgestellten Aufnahmen von 1.51.0. Dieselben aktuellen Einstiegsbilder
+  stehen auch in Basic, Konsolen/Zugriffsrechte und AppPool. Ältere bebilderte
+  Einzelschritte behalten ihren ursprünglichen Stand und ihre Kennzeichnung.
 
 Für die spätere Überarbeitung der Elementkapitel gilt: Bild und erste Schritte
 zuerst; zusätzliche Parameter bei Bedarf aufklappen. Diese Veröffentlichung

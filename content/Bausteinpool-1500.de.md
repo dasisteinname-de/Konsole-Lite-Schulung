@@ -7,7 +7,7 @@ Rechte und gegebenenfalls Maschinenanschlüsse ausdrücklich eingerichtet.
 
 ## Apps finden und ihren Status erkennen
 
-![AppPool mit gruppierter App-Liste, Versionen und Galerie](images/app-pool-liste-local-1500.png)
+![AppPool mit installierten und weiteren Apps, Versionen und Galerie](images/overview/app-pool-anwender-1510.png)
 
 Links stehen die Apps mit Symbol, Name, Herausgeber und Kurzbeschreibung.
 Die Suche findet Namen, Funktionen und Entwickler; Kategorie und

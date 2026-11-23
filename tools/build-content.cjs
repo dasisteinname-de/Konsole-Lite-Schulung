@@ -30,6 +30,13 @@ const slug = s => s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, 
 // Editors. Die beiden Laufzeitbilder daneben bleiben Anwenderaufnahmen.
 const localEditorImages = new Set(['kanaele', 'puffer', 'zonen', 'sollwert'].map(
   name => `trend-vakuum-parameter-detail-${name}-local-1500.png`));
+// Neue Anwenderaufnahmen behalten ihren eigenen Stand, auch wenn sie eine
+// ältere Grundübung illustrieren. Historische Schrittbilder bleiben datiert.
+const suppliedEditorImages = new Set([
+  'overview/qml-layout-anwender-1510.png',
+  'overview/config-anwender-1510.png',
+  'overview/app-pool-anwender-1510.png'
+]);
 async function build() {
   const { marked } = await import('marked');
   const data = {};
@@ -47,10 +54,11 @@ async function build() {
       if (level === '2') headings.push({ text: plain, anchor });
       return `<h${level} id="${anchor}">${text}</h${level}>`;
     }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) => {
-      if (!imageVersion) throw new Error(`Bildstand für ${file} fehlt`);
+      const version = suppliedEditorImages.has(name) ? '1.51.0' : imageVersion;
+      if (!version) throw new Error(`Bildstand für ${file} fehlt`);
       const digest=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/images',name))).digest('hex').slice(0,12);
-      const origin = localEditorImages.has(name) ? 'LOCAL-Editoraufnahme' : imageOrigin;
-      return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt} · ${origin} ${imageVersion}" loading="lazy" tabindex="0"><figcaption>${alt} · ${origin} ${imageVersion} · Anklicken zum Vergrößern</figcaption></figure>`;
+      const origin = suppliedEditorImages.has(name) ? 'Anwenderaufnahme' : localEditorImages.has(name) ? 'LOCAL-Editoraufnahme' : imageOrigin;
+      return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt} · ${origin} ${version}" loading="lazy" tabindex="0"><figcaption>${alt} · ${origin} ${version} · Anklicken zum Vergrößern</figcaption></figure>`;
     });
     data[id] = { title, html, headings, search: md.replace(/!\[[^\]]*\]\([^)]*\)/g, '') };
   }
@@ -59,7 +67,7 @@ async function build() {
   // the old router while displaying a new navigation menu after deployment.
   const indexPath = path.join(root, 'index.html');
   let index = fs.readFileSync(indexPath, 'utf8');
-  for (const name of ['styles.css', 'console-lab.css', 'content.js', 'console-lab.js', 'app.js']) {
+  for (const name of ['styles.css', 'console-lab.css', 'overview.css', 'overview.js', 'content.js', 'console-lab.js', 'app.js']) {
     const digest = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, name))).digest('hex').slice(0, 12);
     const pattern = new RegExp(`((?:src|href)=")${name.replace(/\./g, '\\.')}\\??[^"\\s]*(")`, 'g');
     index = index.replace(pattern, `$1${name}?v=${digest}$2`);
