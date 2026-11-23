@@ -26,6 +26,12 @@ Integrationsschritt; diese Veröffentlichung behauptet diese Anbindung nicht.
 
 ## Lernweg
 
+Die neue **Übersicht** ist der bildbetonte Einstieg: vorhandene interaktive
+Konsolenbedienung mit Hintergrundmagazin, Balancing, INFO, Rezepturen und
+Vakuum Clamp sowie zehn Werkzeuggalerien. Das Kursmenü öffnet die vollständigen
+Unterlagen. Der [kurze Videoablauf und die Bildherkunft](docs/Uebersicht-Video.de.md)
+erklären die Präsentation und den Unterschied zwischen Bildtour und echter VM.
+
 - **Basic · zwei Tage:** zuerst Konsolenbedienung mit MAIN, Modulen, Seiten,
   Meldungen, INFO, Zoom und F1–F8. Danach Projektaufbau und Oberflächengestaltung
   im QML Editor, mit BMK-LED-Bildfolge und Übungen für 17 Grundelemente.
@@ -71,6 +77,8 @@ Der Status steht unter Settings → Pages beziehungsweise Actions.
 - `app.js`: Navigation, Bildvergrößerung und lokale Lernmodelle.
 - `console-lab.js` und `console-lab.css`: abgegrenztes Browsermodell der
   Konsolenbedienung; kein importierter Konsolen- oder PLC-Code.
+- `overview.js` und `overview.css`: Einstieg mit Werkzeuggalerien und kompakter
+  Einbettung desselben Konsolen-Lernmodells.
 - `content/*.de.md`: ausgewählte Schulungsinhalte als lesbarer Text.
 - `content.js`: daraus erzeugte HTML-Kapitel für die Website.
 - `tools/build-content.cjs`: Kapitel aus den öffentlichen Markdown-Dateien neu

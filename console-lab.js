@@ -1,23 +1,26 @@
 'use strict';
 // Browser-only teaching model. No controller code, machine API or file access.
-window.createConsoleNavigationLab = function ({ main, escape }) {
+window.createConsoleNavigationLab = function ({ main, escape, compact = false, onModuleChange = () => {} }) {
   const modules = [
     { id: 1, name: 'Hintergrundmagazin', pages: ['Übersicht', 'Elektrische Bewegungen', 'Pneumatische Bewegungen', 'Positionen & Teach', 'Achspositionen', 'Safety Monitor', 'Parameter & Datensicherung', 'Ablaufmonitor', 'Meldungen & Antriebe', 'Reserve'] },
-    { id: 6, name: 'Bereich 06', pages: ['Page 1', 'Page 2', 'Page 3'] },
-    { id: 9, name: 'INFO', pages: ['Dokumente', 'Protokolle', 'Log-Dateien', 'Tabellen'] }
+    { id: 3, name: 'Balancing', pages: ['Übersicht'] },
+    { id: 9, name: 'INFO', pages: ['Dokumente', 'Protokolle', 'Log-Dateien', 'Tabellen'] },
+    { id: 11, name: 'Rezepturen', pages: ['Rezepturwerte'] },
+    { id: 12, name: 'Vakuum Clamp', pages: ['Vakuum Spannstelle'] }
   ];
   const tasks = ['MAIN öffnen', 'Modulliste öffnen', 'Seitenliste öffnen', '150 % wählen', '200 % wählen', '100 % wiederherstellen', 'Meldungen öffnen und schließen', 'INFO besuchen', 'F-Taste untersuchen'];
   const completed = new Set();
   const remembered = new Map();
-  let moduleIndex = 0, pageIndex = 0, isMain = true, zoom = 1, menu = '', messageVisited = false;
+  let moduleIndex = 0, pageIndex = 0, isMain = !compact, zoom = 1, menu = '', messageVisited = false;
   let opener = null;
   let disposed = false;
+  main.classList.toggle('compact-console-lab', compact);
   main.innerHTML = `
     <div class="eyebrow">Basic · Konsolenbedienung ausprobieren</div>
     <h1 class="lab-title">Erst orientieren, dann gestalten</h1>
-    <p class="lab-lead">Öffne Menüs, wechsle Module und Seiten und probiere die Lupe. Die Anordnung folgt dem Konsolenrahmen. Das vereinfachte Modell zeigt drei Beispielmodule und keine Maschinenfunktionen.</p>
+    <p class="lab-lead">Öffne Menüs, wechsle Module und Seiten und probiere die Lupe. Die Anordnung folgt dem Konsolenrahmen. Das Lernmodell zeigt fünf Beispielmodule mit Kursansichten und keine Maschinenfunktionen.</p>
     <div class="console-training" aria-label="Interaktives Konsolen-Lernmodell">
-      <div class="console-training-label">KONSOLE LITE · NAVIGATIONS-LERNMODELL <span>OFFLINE · KEINE PLC</span></div>
+      <div class="console-training-label">KONSOLE LITE · KONSOLENBEDIENUNG <span>Browsermodell · ohne Maschinenverbindung</span></div>
       <div class="console-toolbar">
         <button id="console-main" class="console-control">MAIN</button>
         <div class="console-picker console-module-picker">
@@ -95,6 +98,18 @@ window.createConsoleNavigationLab = function ({ main, escape }) {
     if (disposed) return;
     const viewport = q('console-viewport');
     const baseWidth = Math.max(240, viewport.clientWidth);
+    if (compact) {
+      // Derselbe Navigationsbaustein, aber in der festen Präsentationsfläche.
+      const height = viewport.clientHeight;
+      q('console-space').style.width = `${baseWidth * zoom}px`;
+      q('console-space').style.height = `${height * zoom}px`;
+      q('console-sheet').style.width = `${baseWidth}px`;
+      q('console-sheet').style.height = `${height}px`;
+      q('console-sheet').style.minHeight = '0';
+      q('console-sheet').style.transform = `scale(${zoom})`;
+      return;
+    }
+
     q('console-space').style.width = `${baseWidth * zoom}px`;
     q('console-sheet').style.width = `${baseWidth}px`;
     q('console-sheet').style.height = 'auto';
@@ -114,12 +129,18 @@ window.createConsoleNavigationLab = function ({ main, escape }) {
     main.querySelector('.console-working-area').classList.toggle('has-functions', !isMain);
     q('console-functions').innerHTML = Array.from({ length: 8 }, (_, i) => `<button data-fkey="${i + 1}"><b>F${i + 1}</b><small>Lernhinweis</small></button>`).join('');
     const sheet = q('console-sheet');
-    if (isMain) sheet.innerHTML = `<h2>KonsoleLite</h2><p>Bereich auswählen · drei Beispielmodule</p><div class="console-module-tiles">${modules.map((m, i) => `<button data-module="${i}"><span>${String(m.id).padStart(2, '0')}</span><strong>${escape(m.name)}</strong></button>`).join('')}</div>`;
+    if (isMain) sheet.innerHTML = `<h2>KonsoleLite</h2><p>Bereich auswählen · fünf Beispielmodule</p><div class="console-module-tiles">${modules.map((m, i) => `<button data-module="${i}"><span>${String(m.id).padStart(2, '0')}</span><strong>${escape(m.name)}</strong></button>`).join('')}</div>`;
     else if (module.id === 9) sheet.innerHTML = `<h2>INFO · ${escape(module.pages[pageIndex])}</h2><p>Vereinfachte Informationsansicht im Lernmodell.</p><div class="console-document"><h3>Hinweise zur Kurskopie</h3><p>Die Kursunterlagen erklären Bedienung und Projektierung. Originalseiten bleiben erhalten. Eine Information zu öffnen startet keine Maschinenaktion.</p><p>In der echten Konsole können hier bereitgestellte Dokumente, Protokolle oder Tabellen erscheinen. Dieses Modell liest keine Dateien von deinem PC.</p></div>`;
-    else if (module.id === 1 && pageIndex === 0) sheet.innerHTML = `<h2>Hintergrundmagazin · Übersicht</h2><p>Referenzbild aus der Layoutansicht · keine aktuellen Sensorwerte</p><img class="console-reference-image" src="assets/images/00-hintergrundmagazin-seite1.png" alt="Hintergrundmagazin-Maskenbeispiel aus dem Editor">`;
-    else sheet.innerHTML = `<h2>${escape(module.name)}</h2><div class="console-sample-page"><span>SEITE ${pageIndex + 1}</span><h3>${escape(module.pages[pageIndex])}</h3><p>Du hast die Seite innerhalb des Moduls gewechselt. Ihr Inhalt ist hier ein Platzhalter; Maschinen- und Servicefunktionen werden nicht ausgeführt.</p></div>`;
+    else {
+      const file = module.id === 1 ? `overview/hgm-${pageIndex + 1}.png`
+        : module.id === 3 ? 'overview/balancing.png'
+        : module.id === 11 ? 'live-element-recipe.png'
+        : 'trend-vakuum-anwender-1500.png';
+      sheet.innerHTML = `<img class="console-reference-image" src="assets/images/${file}" alt="${escape(module.name)} · ${escape(module.pages[pageIndex])} · Offline-Kursansicht">`;
+    }
     q('console-location').textContent = isMain ? 'MAIN · gemeinsame Übersicht' : `${module.name} → ${module.pages[pageIndex]} · F1–F8 gehören zu dieser Seite`;
     drawMenu(); drawTasks(); requestAnimationFrame(drawScale);
+    onModuleChange(module, isMain);
   }
   q('console-main').addEventListener('click', () => { isMain = true; menu = ''; task('MAIN öffnen'); draw(); describe('MAIN zeigt die gemeinsame Übersicht. Es ist nicht automatisch die erste Seite eines Moduls.'); });
   q('console-module').addEventListener('click', () => toggleMenu('module'));
@@ -166,5 +187,5 @@ window.createConsoleNavigationLab = function ({ main, escape }) {
   document.addEventListener('click', outside); document.addEventListener('keydown', key);
   const resize = new ResizeObserver(drawScale); resize.observe(q('console-viewport'));
   draw();
-  return () => { disposed = true; resize.disconnect(); document.removeEventListener('click', outside); document.removeEventListener('keydown', key); };
+  return () => { disposed = true; main.classList.remove('compact-console-lab'); resize.disconnect(); document.removeEventListener('click', outside); document.removeEventListener('keydown', key); };
 };
