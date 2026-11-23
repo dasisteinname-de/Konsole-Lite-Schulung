@@ -1,4 +1,4 @@
-# Konsole Lite · Lernwerkstatt
+# ConsoleLite · Lernwerkstatt
 
 Öffentliche Schulungswebsite für Servicetechniker: bebilderte Bedienfolgen und
 kleine interaktive Browser-Lernmodelle. Das Softwareprojekt bleibt separat und

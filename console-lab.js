@@ -20,7 +20,7 @@ window.createConsoleNavigationLab = function ({ main, escape, compact = false, o
     <h1 class="lab-title">Erst orientieren, dann gestalten</h1>
     <p class="lab-lead">Öffne Menüs, wechsle Module und Seiten und probiere die Lupe. Die Anordnung folgt dem Konsolenrahmen. Das Lernmodell zeigt fünf Beispielmodule mit Kursansichten und keine Maschinenfunktionen.</p>
     <div class="console-training" aria-label="Interaktives Konsolen-Lernmodell">
-      <div class="console-training-label">KONSOLE LITE · KONSOLENBEDIENUNG <span>Browsermodell · ohne Maschinenverbindung</span></div>
+      <div class="console-training-label">CONSOLELITE · KONSOLENBEDIENUNG <span>Browsermodell · ohne Maschinenverbindung</span></div>
       <div class="console-toolbar">
         <button id="console-main" class="console-control">MAIN</button>
         <div class="console-picker console-module-picker">
@@ -129,7 +129,7 @@ window.createConsoleNavigationLab = function ({ main, escape, compact = false, o
     main.querySelector('.console-working-area').classList.toggle('has-functions', !isMain);
     q('console-functions').innerHTML = Array.from({ length: 8 }, (_, i) => `<button data-fkey="${i + 1}"><b>F${i + 1}</b><small>Lernhinweis</small></button>`).join('');
     const sheet = q('console-sheet');
-    if (isMain) sheet.innerHTML = `<h2>KonsoleLite</h2><p>Bereich auswählen · fünf Beispielmodule</p><div class="console-module-tiles">${modules.map((m, i) => `<button data-module="${i}"><span>${String(m.id).padStart(2, '0')}</span><strong>${escape(m.name)}</strong></button>`).join('')}</div>`;
+    if (isMain) sheet.innerHTML = `<h2>ConsoleLite</h2><p>Bereich auswählen · fünf Beispielmodule</p><div class="console-module-tiles">${modules.map((m, i) => `<button data-module="${i}"><span>${String(m.id).padStart(2, '0')}</span><strong>${escape(m.name)}</strong></button>`).join('')}</div>`;
     else if (module.id === 9) sheet.innerHTML = `<h2>INFO · ${escape(module.pages[pageIndex])}</h2><p>Vereinfachte Informationsansicht im Lernmodell.</p><div class="console-document"><h3>Hinweise zur Kurskopie</h3><p>Die Kursunterlagen erklären Bedienung und Projektierung. Originalseiten bleiben erhalten. Eine Information zu öffnen startet keine Maschinenaktion.</p><p>In der echten Konsole können hier bereitgestellte Dokumente, Protokolle oder Tabellen erscheinen. Dieses Modell liest keine Dateien von deinem PC.</p></div>`;
     else {
       const file = module.id === 1 ? `overview/hgm-${pageIndex + 1}.png`

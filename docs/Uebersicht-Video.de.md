@@ -3,7 +3,7 @@
 Die Startseite zeigt links die vorhandene interaktive Konsolenbedienung und
 rechts die Konsole mit zehn Werkzeugen. Sie passt bei 1920 × 1080 und
 1920 × 980 ohne Seitenscroll auf den Bildschirm. Das Kursmenü bleibt erreichbar.
-Das K-Emblem in der oberen Leiste führt aus jedem Kapitel zurück zur Übersicht.
+Das C-Emblem in der oberen Leiste führt aus jedem Kapitel zurück zur Übersicht.
 Die elf Werkzeug-Icons sind derselbe SVG-Bestand wie in den PC-Editoren.
 
 ## Kurzer Weg durch das erste Video
@@ -45,3 +45,9 @@ Vakuumkurve ist eine Aufnahme, kein live mit einer PLC verbundener Browsertrend.
 Für die spätere Überarbeitung der Elementkapitel gilt: Bild und erste Schritte
 zuerst; zusätzliche Parameter bei Bedarf aufklappen. Diese Veröffentlichung
 ändert die vorhandenen vollständigen Kapitel noch nicht grundlegend.
+
+## Produktname
+
+Der aktuelle Markenname lautet ConsoleLite. Emblem, Seitentitel und neue
+Editoraufnahmen zeigen C. Historische Aufnahmen sowie technische Pfade und
+bereits verteilte Schulungs- und Repository-Links bleiben gültig.

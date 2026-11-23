@@ -175,7 +175,7 @@
     else if (id === 'sequence-lab') sequenceLab();
     else main.innerHTML = reference();
     const title = chapters[id]?.title || titles[id];
-    document.title = `${title} · Konsole Lite Lernwerkstatt`;
+    document.title = `${title} · ConsoleLite Lernwerkstatt`;
     document.querySelector('#breadcrumb').textContent = `Lernwerkstatt / ${title}`;
     document.querySelectorAll('nav a').forEach(a => { const active = a.dataset.page === id; a.classList.toggle('active', active); if (active) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
     setupImages();

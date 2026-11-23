@@ -1,4 +1,4 @@
-# KonsoleLite 1.44 CALL SK im lokalen Simulator
+# ConsoleLite 1.44 CALL SK im lokalen Simulator
 
 Für vorhandene Units wie Ax51 und Ax52. **Nur PC/LOCAL: keine PLC-Verbindung,
 keine Maschinenbewegung.**

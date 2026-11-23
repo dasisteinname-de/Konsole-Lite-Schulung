@@ -5,7 +5,7 @@
 window.createWorkshopOverview = function ({ main, escape }) {
   const picture = (file, caption) => ({ file: `assets/images/${file}`, caption });
   const editors = [
-    { id: 'console', title: 'Konsole · Übersicht', tag: 'Bedienen', number: '01' },
+    { id: 'console', title: 'Console · Übersicht', tag: 'Bedienen', number: '01' },
     { id: 'interface', title: 'Interface Editor', tag: 'Variablen verbinden', number: '02',
       heading: 'Die Verbindung zur Maschine',
       text: 'PLC-Symbole auswählen, Datentypen prüfen und als Interface bereitstellen. Dieselbe Variable lässt sich anschließend mit Anzeigen, Eingabefeldern und Slidern verbinden.',
@@ -16,16 +16,16 @@ window.createWorkshopOverview = function ({ main, escape }) {
       text: 'Elemente platzieren, beschriften und mit Variablen verbinden. Entwurf und Live-Vorschau helfen beim Gestalten; 20 Elementtypen stehen für die Bedienoberfläche zur Verfügung.',
       route: 'elements', link: 'Die Elemente entdecken',
       images: [picture('00-editor-hintergrundmagazin.png', 'QML Editor · Hintergrundmagazin in der Kurskopie'), picture('07-bmk-variable-zugeordnet.png', 'Eine Variable direkt einem Element zuordnen.'), picture('trend-vakuum-anwender-1500.png', 'Das Ziel der heutigen Übung: eine Vakuumkurve sichtbar machen.')] },
-    { id: 'config', title: 'KonsoleConfigurator', tag: 'Konsolen einrichten', number: '04',
+    { id: 'config', title: 'ConsoleConfigurator', tag: 'Konsolen einrichten', number: '04',
       heading: 'Die passende Konsole für jede Aufgabe',
       text: 'Module und Seiten für Start, Manual und Run zusammenstellen. Die Auswahl bestimmt, welche Inhalte an welchem Konsolenplatz erscheinen.',
       route: 'access-1500', link: 'Konsolen konfigurieren',
-      images: [picture('overview/config-module.png', 'KonsoleConfigurator · Module und Seiten auf Konsolen verteilen.'), picture('overview/config-ressourcen.png', 'Ressourcen und Zugriffsprofile übersichtlich zuordnen.')] },
+      images: [picture('overview/config-module.png', 'ConsoleConfigurator · Module und Seiten auf Konsolen verteilen.'), picture('overview/config-ressourcen.png', 'Ressourcen und Zugriffsprofile übersichtlich zuordnen.')] },
     { id: 'access', title: 'Zugriffsprofile', tag: 'Zugriff nachvollziehbar machen', number: '05',
       heading: 'Sichtbar, lesbar, bedienbar',
       text: 'Benannte Profile legen fest, wer Inhalte sehen und bedienen darf. Die Zuordnung lässt sich an der Seite oder am einzelnen Element nachvollziehen.',
       route: 'access-1500', link: 'Zugriffsprofile verstehen',
-      images: [picture('overview/access-profile.png', 'Zugriffsprofile im KonsoleConfigurator · getrennte Kurskopie.'), picture('overview/config-ressourcen.png', 'Profile werden den betreffenden Ressourcen ausdrücklich zugeordnet.')] },
+      images: [picture('overview/access-profile.png', 'Zugriffsprofile im ConsoleConfigurator · getrennte Kurskopie.'), picture('overview/config-ressourcen.png', 'Profile werden den betreffenden Ressourcen ausdrücklich zugeordnet.')] },
     { id: 'types', title: 'Grundtypen Editor', tag: 'Bausteine beschreiben', number: '06',
       heading: 'Ein Gerät einmal verständlich beschreiben',
       text: 'Signalrollen, Werte und Aktionen zu einem wiederverwendbaren Grundtyp zusammenfassen. Ein Zylinder ist ein anschauliches erstes Beispiel.',
@@ -62,8 +62,8 @@ window.createWorkshopOverview = function ({ main, escape }) {
   let stopConsole = () => {};
 
   main.innerHTML = `
-    <section class="workshop-overview" aria-label="Konsole Lite und ihre Werkzeuge">
-      <header class="overview-heading"><div><span class="overview-kicker">KONSOLE LITE · LERNWERKSTATT</span><h1>Eine Idee. Viele Möglichkeiten.</h1></div><a href="#/basic" class="overview-course-link">Zur Schulung <span aria-hidden="true">↗</span></a></header>
+    <section class="workshop-overview" aria-label="ConsoleLite und ihre Werkzeuge">
+      <header class="overview-heading"><div><span class="overview-kicker">CONSOLELITE · LERNWERKSTATT</span><h1>Eine Idee. Viele Möglichkeiten.</h1></div><a href="#/basic" class="overview-course-link">Zur Schulung <span aria-hidden="true">↗</span></a></header>
       <div class="overview-layout">
         <section class="overview-presentation" aria-label="Ausgewähltes Werkzeug"><div id="overview-stage" class="overview-stage"></div><div id="overview-caption" class="overview-caption"></div></section>
         <nav class="overview-editors" aria-label="Konsole und Editoren"><div class="overview-list-heading">ENTDECKEN & GESTALTEN <span>11 Einblicke</span></div>${editors.map(editor => `<button type="button" data-editor="${editor.id}" aria-pressed="${editor.id === selected}"><img class="overview-editor-icon" src="assets/editor-icons/${editor.id}.svg" alt="" aria-hidden="true"><span><strong>${escape(editor.title)}</strong><small>${escape(editor.tag)}</small></span><span class="overview-editor-arrow" aria-hidden="true">↗</span></button>`).join('')}<a class="overview-all-lessons" href="#/overview">Alle Unterlagen & Vorbereitung →</a></nav>

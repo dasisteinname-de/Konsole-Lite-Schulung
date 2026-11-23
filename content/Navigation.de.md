@@ -1,4 +1,4 @@
-# Konsole Lite kennenlernen und bedienen
+# ConsoleLite kennenlernen und bedienen
 
 Bevor du eine Seite gestaltest, lerne die Konsole aus Sicht des Bedieners kennen.
 Du findest den Weg von MAIN zu einem Modul und einer Seite, vergrößerst eine

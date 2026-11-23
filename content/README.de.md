@@ -1,6 +1,6 @@
 # Schulungsunterlagen für Servicetechniker
 
-Mit KonsoleLite eine verständliche Bedienmaske gestalten, Geräte als Units
+Mit ConsoleLite eine verständliche Bedienmaske gestalten, Geräte als Units
 zuordnen und Schrittketten lokal prüfen. Der Kurs beginnt ohne vorausgesetzte
 QML-, Python- oder JSON-Programmierkenntnisse. Maschinenkenntnisse der Teilnehmer
 sind ausdrücklich erwünscht: Sie bestimmen, welche Rückmeldung ein Ziel

@@ -35,7 +35,7 @@ keine aktiven PLC-Rückmeldungen. Auch die Live-Bilder verwenden nur lokale Kurs
 
 | Arbeitsunterlage | Was du damit baust |
 | --- | --- |
-| [Konsole Lite kennenlernen](#/orientation) | Bedienleiste, MAIN, Module, Seiten, Meldungen, INFO und Zoom verstehen |
+| [ConsoleLite kennenlernen](#/orientation) | Bedienleiste, MAIN, Module, Seiten, Meldungen, INFO und Zoom verstehen |
 | [Navigation ausprobieren](#/navigation-lab) | Menüs und Fenster im Browser selbst öffnen und schließen |
 | [Module Seiten und F1–F8](#/project) | Eigene Kursseite vorbereiten und Benennung von Funktionszuordnung unterscheiden |
 | [BMK LED Schritt für Schritt](#/bmk) | Vollständige Bildfolge von Einfügen bis Speichern und Wiederöffnen |
