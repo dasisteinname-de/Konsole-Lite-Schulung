@@ -8,6 +8,44 @@ window.createConsoleNavigationLab = function ({ main, escape, compact = false, o
     { id: 11, name: 'Rezepturen', pages: ['Rezepturwerte'] },
     { id: 12, name: 'Vakuum Clamp', pages: ['Vakuum Spannstelle'] }
   ];
+  // Nur die belegte Seitenfläche zeigen. Die Originalaufnahmen bleiben für
+  // die Kurskapitel erhalten; der Browserrahmen liefert Navigation und F1–F8.
+  // Ausschnitt: x, y, Breite, Höhe in Pixeln der jeweiligen Originalaufnahme.
+  const hgmCrops = [
+    [6, 23, 1145, 588],  // Übersicht einschließlich Offline-Hinweis
+    [6, 6, 1145, 614],   // Elektrische Bewegungen
+    [6, 6, 1170, 638],   // Pneumatische Bewegungen
+    [6, 6, 1145, 614],   // Positionen & Teach
+    [4, 5, 1490, 590],   // Achspositionen: vollständige Tabelle
+    [6, 6, 1488, 648],   // Safety Monitor: vollständige Tabelle
+    [6, 6, 1145, 614],   // Parameter & Datensicherung
+    [6, 6, 1145, 553],   // Ablaufmonitor
+    [6, 6, 1145, 614],   // Meldungen & Antriebe
+    [0, 0, 1500, 660]    // Reserve bleibt eine bewusst freie Seite
+  ];
+
+  function referencePage(module, page) {
+    const label = `${module.name} · ${module.pages[page]} · Offline-Kursansicht`;
+    if (module.id === 12) {
+      // Die bereits passende Vakuumansicht unverändert einbetten.
+      return `<img class="console-reference-image" src="assets/images/trend-vakuum-anwender-1500.png" alt="${escape(label)}">`;
+    }
+    let source;
+    if (module.id === 1) {
+      source = { file: `overview/hgm-${page + 1}.png`, width: 1500, height: 660, crop: hgmCrops[page] };
+    } else if (module.id === 3) {
+      source = { file: 'overview/balancing.png', width: 1500, height: 660, crop: [6, 23, 1145, 597] };
+    } else {
+      source = { file: 'live-element-recipe.png', width: 1510, height: 840, crop: [68, 112, 1124, 644] };
+    }
+    const [x, y, width, height] = source.crop;
+    // viewBox vergrößert proportional. Der Clip hält auch bei breiteren
+    // Bildschirmen den alten Rezepturkopf und die zweite F-Leiste außerhalb.
+    return `<svg class="console-reference-frame" viewBox="${x} ${y} ${width} ${height}" role="img" aria-label="${escape(label)}" preserveAspectRatio="xMidYMid meet">
+      <defs><clipPath id="console-reference-clip"><rect x="${x}" y="${y}" width="${width}" height="${height}"></rect></clipPath></defs>
+      <image href="assets/images/${source.file}" width="${source.width}" height="${source.height}" clip-path="url(#console-reference-clip)"></image>
+    </svg>`;
+  }
   const tasks = ['MAIN öffnen', 'Modulliste öffnen', 'Seitenliste öffnen', '150 % wählen', '200 % wählen', '100 % wiederherstellen', 'Meldungen öffnen und schließen', 'INFO besuchen', 'F-Taste untersuchen'];
   const completed = new Set();
   const remembered = new Map();
@@ -131,13 +169,7 @@ window.createConsoleNavigationLab = function ({ main, escape, compact = false, o
     const sheet = q('console-sheet');
     if (isMain) sheet.innerHTML = `<h2>ConsoleLite</h2><p>Bereich auswählen · fünf Beispielmodule</p><div class="console-module-tiles">${modules.map((m, i) => `<button data-module="${i}"><span>${String(m.id).padStart(2, '0')}</span><strong>${escape(m.name)}</strong></button>`).join('')}</div>`;
     else if (module.id === 9) sheet.innerHTML = `<h2>INFO · ${escape(module.pages[pageIndex])}</h2><p>Vereinfachte Informationsansicht im Lernmodell.</p><div class="console-document"><h3>Hinweise zur Kurskopie</h3><p>Die Kursunterlagen erklären Bedienung und Projektierung. Originalseiten bleiben erhalten. Eine Information zu öffnen startet keine Maschinenaktion.</p><p>In der echten Konsole können hier bereitgestellte Dokumente, Protokolle oder Tabellen erscheinen. Dieses Modell liest keine Dateien von deinem PC.</p></div>`;
-    else {
-      const file = module.id === 1 ? `overview/hgm-${pageIndex + 1}.png`
-        : module.id === 3 ? 'overview/balancing.png'
-        : module.id === 11 ? 'live-element-recipe.png'
-        : 'trend-vakuum-anwender-1500.png';
-      sheet.innerHTML = `<img class="console-reference-image" src="assets/images/${file}" alt="${escape(module.name)} · ${escape(module.pages[pageIndex])} · Offline-Kursansicht">`;
-    }
+    else sheet.innerHTML = referencePage(module, pageIndex);
     q('console-location').textContent = isMain ? 'MAIN · gemeinsame Übersicht' : `${module.name} → ${module.pages[pageIndex]} · F1–F8 gehören zu dieser Seite`;
     drawMenu(); drawTasks(); requestAnimationFrame(drawScale);
     onModuleChange(module, isMain);

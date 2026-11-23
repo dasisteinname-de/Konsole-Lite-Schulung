@@ -1,8 +1,8 @@
 /* Die Übersicht bleibt bei Full HD auf einer Fläche. Kurskapitel behalten
    ihren lesbaren Seitenfluss; das Kursmenü ist hier bewusst aufklappbar. */
 .topbar-home { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #2e4435; flex: none; }
-.topbar-home-mark { display: block; background: #29372e; color: #eef4dc; border-radius: 5px; font-size: 26px; line-height: 1; font-weight: 650; padding: 6px 7px; }
-.topbar-home-mark > span { color: #d6e799; }
+.topbar-home-mark { display: block; width: 40px; height: 40px; flex: none; }
+.brand .brand-mark { display: block; width: 45px; height: 45px; flex: none; border: 0; border-radius: 0; }
 .topbar-home > span:last-child { font-size: 12px; font-weight: 650; line-height: 1.2; }
 .topbar-home small { display: block; font-size: 7px; letter-spacing: 1.3px; font-weight: 400; margin-top: 4px; }
 @media (max-width: 900px) { .topbar .breadcrumb { display: none; } }
@@ -27,9 +27,10 @@ body[data-page="start"] #main { max-width: none; padding: 23px 36px 28px; height
 .compact-console-lab .console-training-label { flex: none; padding: 12px; }
 .compact-console-lab .console-toolbar { flex: none; }
 .compact-console-lab .console-working-area { flex: 1; min-height: 0; }
-.compact-console-lab .console-viewport { height: 100%; }
+.compact-console-lab .console-viewport { height: 100%; min-height: 0; }
 .compact-console-lab .console-sheet { padding: 9px; display: flex; align-items: center; justify-content: center; }
 .compact-console-lab .console-sheet .console-reference-image { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.compact-console-lab .console-reference-frame { width: 100%; height: 100%; }
 .compact-console-lab .console-sheet:has(.console-document), .compact-console-lab .console-sheet:has(.console-module-tiles) { display: block; overflow: auto; }
 .compact-console-lab .console-sheet > p { margin: 0 0 12px; }
 .compact-console-lab .console-sheet h2 { font-size: 21px; }

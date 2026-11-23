@@ -3,7 +3,7 @@
 Die Startseite zeigt links die vorhandene interaktive Konsolenbedienung und
 rechts die Konsole mit zehn Werkzeugen. Sie passt bei 1920 × 1080 und
 1920 × 980 ohne Seitenscroll auf den Bildschirm. Das Kursmenü bleibt erreichbar.
-Das C-Emblem in der oberen Leiste führt aus jedem Kapitel zurück zur Übersicht.
+Das CL7-Emblem in der oberen Leiste führt aus jedem Kapitel zurück zur Übersicht.
 Die elf Werkzeug-Icons sind derselbe SVG-Bestand wie in den PC-Editoren.
 
 ## Kurzer Weg durch das erste Video
@@ -39,6 +39,11 @@ Vakuumkurve ist eine Aufnahme, kein live mit einer PLC verbundener Browsertrend.
   dort genannter Softwarestand bleibt maßgeblich.
 - Übersicht und eigenständige Bedienprobe verwenden dieselbe Funktion in
   `console-lab.js`. Es gibt keinen zweiten Navigationsmotor.
+- Die dort hinterlegten Bildausschnitte zeigen nur die belegte Seitenfläche.
+  Hintergrundmagazin und Balancing werden dadurch größer dargestellt, ohne
+  Texte oder Bedienelemente zu verzerren. Bei Rezepturen bleiben der alte
+  Navigationskopf und die alte F-Tastenleiste außerhalb des Ausschnitts.
+  Die Originalbilder in den Kurskapiteln und die Vakuumansicht bleiben erhalten.
 - Die Galerie zeigt je Werkzeug zwei bis drei Bilder und einen kurzen Zweck.
   Die zugehörigen Kapitel bleiben über den Link unter dem Bild erreichbar.
 
@@ -48,6 +53,10 @@ zuerst; zusätzliche Parameter bei Bedarf aufklappen. Diese Veröffentlichung
 
 ## Produktname
 
-Der aktuelle Markenname lautet ConsoleLite. Emblem, Seitentitel und neue
-Editoraufnahmen zeigen C. Historische Aufnahmen sowie technische Pfade und
+Der aktuelle Markenname lautet ConsoleLite. Das gemeinsame Website-Emblem lautet CL7: gerade,
+eng gesetzte helle Buchstaben und eine grüne 7 in RGB 181 / 189 / 0
+(#b5bd00). Obere Leiste, Kursmenü und Browser-Icon nutzen dieselbe SVG-Datei.
+Die Buchstaben stammen aus dem bereits abgestimmten Arial-Bold-Entwurf;
+das Originalhersteller-Schriftbild wird damit nicht als exakt identifiziert behauptet.
+Historische Aufnahmen sowie technische Pfade und
 bereits verteilte Schulungs- und Repository-Links bleiben gültig.
