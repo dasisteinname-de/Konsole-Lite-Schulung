@@ -256,7 +256,7 @@ JSON-Programmierung von Hand nachgebaut.
 2. Spalten **Sensor** und **Zustand** sowie zwei vorbereitete lokale Beispielzeilen
    wählen. Sichtbare Überschriften von technischen Datenpfaden unterscheiden.
 3. Breiten, Zeilenhöhe, Kopfzeile und Scrollverhalten einstellen.
-4. Layout speichern und die Zeilen in der lokalen Vorschau prüfen.
+4. Speichern und die Zeilen in der lokalen Vorschau prüfen.
 
 **Kontrolle:** In der Live-Ansicht stehen drei lokale Beispielzeilen unter
 **Sensor** und **Zustand**. Bei dateibasierten Tabellen die Datei nicht durch ein leeres

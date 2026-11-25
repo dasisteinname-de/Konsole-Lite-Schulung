@@ -119,7 +119,7 @@ In der OFFLINE-Vorschau beweist ein farbiger Bearbeitungskreis keine aktive PLC.
 
 ![Nach Speichern und erneutem Öffnen bleiben Beschriftung und Variablenzuordnung erhalten](images/09-bmk-gespeichert.png)
 
-**Layout speichern**, Seite wechseln und wieder öffnen. Kontrollieren:
+**Speichern**, Seite wechseln und wieder öffnen. Kontrollieren:
 
 - Karte und Zielkreis befinden sich weiterhin an den gewählten Stellen.
 - BMK und Beschreibung stimmen.
