@@ -13,6 +13,13 @@ Maschinensteuerungsquellen.
 | Aktuelle Bedienwege | [Zugriff](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/access-1500), [Transfer](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/transfer-1500), [CFG](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/cfg-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500) |
 | Nachschlagen | [Grundelemente](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/elements), [Trend / XY](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/trend-1500), [Begriffe](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/reference) |
 
+## Teststand 1.52.1
+
+Im Testzweig `codex/stabilization-1520` erklären die Kapitel Grundelemente und
+Projektaufbau den Strukturbaum, Page9 und die korrigierte Lehrseitennavigation.
+Die öffentliche Website erhält diese Änderungen erst durch eine eigene
+Übernahme nach main.
+
 ## Aktueller Stand in main
 
 Die gepflegte Schulung liegt in **main**. Neue Softwarestände werden hier

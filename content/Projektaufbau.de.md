@@ -186,3 +186,17 @@ PC-Ansicht einer Datei und sind keine Maschinen-Breakpoints.
 nicht behoben. Erst den Python-Zugriff korrigieren, PC Live testen und nach
 Übernahme der Python-Datei Restart Apps ausführen. Ein gesetzter LOCAL-Merker
 ist eine Anforderung; die tatsächliche Reaktion bestätigt der zuständige Owner.
+
+
+## Lehrseiten und CFG-Test in 1.52.1
+
+Im Modul 05 stehen die drei bisherigen Seiten sowie Page4 Buttons,
+Page5 RadioButton, Page6 Checkbox, Page7 Slider, Page8 ProgressBar und
+Page9 Strukturbaum zur Verfügung. Der Navigationskatalog der Console berücksichtigt
+nun auch die neuen nummerierten Seiten; der selbst vergebene Modulname bleibt.
+
+Im gelieferten **br_sh-Testprofil** sind ausschließlich CFG-Sichtbarkeit und
+CFG-Lesen auf Stufe 0 gesetzt. So kann der angeforderte Test ohne Serviceanmeldung
+stattfinden. Listenbearbeitung, Dateiwurzeln und sonstige Schreibrechte behalten
+ihre Einstellungen. Nach Aktualisierung beider Repositories in
+`codex/stabilization-1520` Restart Apps ausführen und auf MAIN **1.52.1** prüfen.

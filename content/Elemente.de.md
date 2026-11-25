@@ -262,24 +262,37 @@ JSON-Programmierung von Hand nachgebaut.
 **Sensor** und **Zustand**. Bei dateibasierten Tabellen die Datei nicht durch ein leeres
 lokales Modell ersetzen; Änderungen an PLC-Daten sind hier nicht vorgesehen.
 
-## Struktur
+## Struktur als Baum (1.52.1)
 
-### Live Ansicht
+![Lehrseite Strukturbaum mit Hauptknoten, Ebenen und Listen](images/structure-tree-1521.png)
 
-![Struktur in der echten lokalen Live-Ansicht mit Konsolennavigation und F1 bis F8](images/live-element-structure.png)
+**Struktur** zeigt ein vollständiges Objekt mit Eltern und Kindern,
+Verbindungslinien und Einzügen. Listen erhalten Indexknoten, rechts steht der
+Wert oder der Containertyp mit Eintragszahl. Zweige lassen sich durch Klick
+auf die Zeile oder **+ / −** öffnen und schließen. Tiefe Bäume können auch
+horizontal verschoben werden. Die Ansicht liest; sie schreibt nichts zurück.
 
-### Entwurfsansicht
+1. **Struktur** einfügen und ausreichend Platz vorsehen.
+2. Eine der drei Quellen festlegen: **Statische Daten → JSON bearbeiten …**,
+   **Datenmodell → …** für ein vorhandenes Objekt/eine Liste oder
+   **Tabellendatei → …** für eine vorhandene JSON- bzw. Tabellendatei.
+3. Für ein Datenmodell beispielsweise `controller.parameterTree` auf der
+   Lehrseite Page9 verwenden. Die Auswahl zeigt tatsächliche Containerdeklarationen;
+   einzelne BOOL-/Integer-Signale passen hier nicht. Der Pfad erzeugt keine Daten.
+4. Einrückung, anfangs geöffnete Ebenen und Verbindungslinien einstellen,
+   speichern und in der Vorschau die Eltern-/Kindzuordnung prüfen.
 
-![Struktur Element mit Platz für eine gegliederte Anzeige](images/design-element-structure.png)
+Eine Datei hat Vorrang, danach gilt das gebundene Modell, zuletzt der statische
+JSON-Inhalt. Nicht mehr gewünschte Quellen beim Wechsel leeren. Dateien im
+Projekt werden relativ referenziert; ein absoluter Pfad muss auch am Ziel
+vorhanden und lesbar sein. **Neu lesen** liest eine Datei erneut ein.
+JSON muss ein Objekt oder eine Liste sein; ungültige Eingaben bleiben im
+Dialog zur Korrektur offen. Es werden keine Daten durch Programmcode ausgeführt.
 
-1. **Struktur** einfügen und ausreichend Platz für benannte Werte lassen.
-2. Das vom Dozenten vorbereitete Strukturmodell auswählen beziehungsweise die
-   vorhandene `modelBinding`-Zuordnung lesen.
-3. Schrift, Zeilen und Bildlauf anpassen und die Namen/Werte in der Vorschau prüfen.
-
-**Kontrolle:** Die vorhandene Strukturansicht zeigt benannte Werte als Tabelle;
-sie ist kein hier angenommener aufklappbarer Baum. Ein angezeigter Eintrag ist
-weder ein zusätzlicher Unit-Aufruf noch eine Maschinenaktion.
+**Kontrolle:** **05 Schulungszentrum → Page9 Struktur: Baumansicht** zeigt
+verschachtelte Spracheinstellungen und Achsenlisten. Aufklappen verändert nur
+die Darstellung. Ganze Zweige bleiben als zusammengehörige Struktur erkennbar.
+Eine begrenzte Tiefe oder Zeilenzahl wird ausdrücklich gemeldet.
 
 ## ImageList
 
@@ -394,6 +407,10 @@ Aktionswert und endet beim Loslassen.
 Unter **05 Schulungszentrum** bleiben die drei bisherigen Sandkastenseiten
 erhalten. **Page4 Buttons**, **Page5 RadioButton**, **Page6 Checkbox**,
 **Page7 Slider** und **Page8 ProgressBar** ergänzen bedienbare LOCAL-Beispiele.
+**Page9 Struktur: Baumansicht** ergänzt ein verschachteltes LOCAL-Objekt.
+Ab 1.52.1 verwendet auch die echte Console-Navigation diesen vollständigen
+Lehrkatalog. Die eigene Modulbezeichnung und Start-/Manual-/Run-Einstellungen
+bleiben erhalten; erneutes Aktivieren bereits aktiver Seiten ist nicht nötig.
 Neben jedem Element steht die erwartete Reaktion. Im QML Editor zeigt derselbe
 Baustein seine Eigenschaften; die QML-Quelle enthält unmittelbar am Element
 die Erklärung des Ziels, des Werts und des Tastenverhaltens.
@@ -406,10 +423,12 @@ auch die Markierung gesetzt. Links steht der gelesene Zahlenwert, rechts
 die eigene Beschriftung. Externe Änderungen aktualisieren die Anzeige.
 Auch zwei konfigurierte Werte aktivieren keinen dauernden Force.
 
-Die Lehrwerte liegen im zusätzlichen Interface **Schulungszentrum /
+Die Lehrwerte von Page4–Page8 liegen im zusätzlichen Interface **Schulungszentrum /
 bedienbeispiele** als LOCAL-Werte im RAM. Keine PLC-Adresse und keine
 automatische Schreibaktion beim Öffnen. Seiten, Interfacequelle und
 Startregister gehören gemeinsam zur Lieferung; nach Installation Restart Apps.
+Page9 definiert sein reines LOCAL-Beispiel direkt als `controller.parameterTree`
+in der QML-Quelle; auch dort wird keine PLC-Adresse beschrieben.
 
 
 ![RadioButton-Lehrseite mit drei Auswahlwerten und zweitem LOCAL-Schreiber](images/lehrseite-radio-1520.png)
