@@ -264,11 +264,10 @@ lokales Modell ersetzen; Änderungen an PLC-Daten sind hier nicht vorgesehen.
 
 ## Struktur als Baum (1.52.1)
 
-![Lehrseite Strukturbaum mit Hauptknoten, Ebenen und Listen](images/structure-tree-1521.png)
+![Lehrseite Strukturbaum mit Hauptknoten, Ebenen und Listen](images/structure-tree-1523.png)
 
 **Struktur** zeigt ein vollständiges Objekt mit Eltern und Kindern,
-Verbindungslinien und Einzügen. Listen erhalten Indexknoten, rechts steht der
-Wert oder der Containertyp mit Eintragszahl. Zweige lassen sich durch Klick
+Verbindungslinien und Einzügen. Listen erhalten Indexknoten, rechts steht der Wert. Containerzähler sind entfallen. **Name: Wert** schaltet zwischen kompakter Schlüssel/Wert-Schreibweise und Spalten um. Zweige lassen sich durch Klick
 auf die Zeile oder **+ / −** öffnen und schließen. Tiefe Bäume können auch
 horizontal verschoben werden. Die Ansicht liest; sie schreibt nichts zurück.
 
@@ -441,3 +440,24 @@ in der QML-Quelle; auch dort wird keine PLC-Adresse beschrieben.
 Für alle Elemente und F1–F8 gelten nur **Sichtbar ab** (Element und Wert sehen)
 und **Bedienbar ab** (bedienen, schreiben, ausführen). Es gibt keine eigenen
 zusätzlichen Lesbar-/Schreibbar-Felder. Die Modul-/Seitenrechte gelten zusätzlich.
+
+
+## Anzeigeverbesserungen in 1.52.3
+
+**ProgressBar:** Die konfigurierte Elementhöhe ist auf PC und Maschine dieselbe
+Balkenhöhe. Unter **Balken und Hintergrund** lassen sich Balkenfarbe, Hintergrund,
+Rahmen und Rundung wählen. Beispiele: HDH_GREEN, white oder #285ac4.
+
+![ProgressBar als voller Balken mit unabhängigem LOCAL-Geber](images/progress-1523.png)
+
+**Textwerte:** Anzeige-Nachkommastellen auf 2, 4 oder 5 setzen. Optional Nullen
+auffüllen und Komma/Punkt wählen. Binäre Rechenreste wie 0.9400000000000001
+werden nur für die Anzeige formatiert; die Variable wird nicht zurückgeschrieben.
+
+![Slider mit kurzer REAL-Anzeige und unabhängigem Integer-Wert](images/slider-1523.png)
+
+**Page9 / CFG:** CFG-Zweig lesen für `\CFG\CfgDisplayLanguage`; Einzelwert lesen
+für `\CFG\CfgDisplayLanguage\plcErrorLanguage`. Ein tieferer vorhandener Pfad
+kann eingegeben werden. Der bestehende ParameterBrowser prüft die Leserechte.
+Öffnen, Aufklappen und Umschalten führen keinen Get aus. Offline meldet die
+Ansicht fehlende native CFG-Livewerte. **LOCAL-Beispiel** führt zum RAM-Objekt zurück.

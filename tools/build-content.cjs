@@ -54,7 +54,7 @@ async function build() {
       if (level === '2') headings.push({ text: plain, anchor });
       return `<h${level} id="${anchor}">${text}</h${level}>`;
     }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) => {
-      const version = name === 'structure-tree-1521.png' ? '1.52.1' : suppliedEditorImages.has(name) ? '1.51.0' : imageVersion;
+      const version = ['structure-tree-1523.png','progress-1523.png','slider-1523.png'].includes(name) ? '1.52.3' : name === 'structure-tree-1521.png' ? '1.52.1' : suppliedEditorImages.has(name) ? '1.51.0' : imageVersion;
       if (!version) throw new Error(`Bildstand für ${file} fehlt`);
       const digest=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/images',name))).digest('hex').slice(0,12);
       const origin = suppliedEditorImages.has(name) ? 'Anwenderaufnahme' : localEditorImages.has(name) ? 'LOCAL-Editoraufnahme' : imageOrigin;
