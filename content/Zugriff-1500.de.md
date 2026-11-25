@@ -29,6 +29,15 @@ schaltet keine PLC-Betriebsart und erteilt keine Maschinenfreigabe.
 5. PC Live testen; nach Übernahme geänderter Startkonfiguration Restart Apps
    an der Station ausführen.
 
+## Hidden und Enabled je Modul oder Seite
+
+Die ausgewählte Zeile besitzt **BOOL Hidden** in Spalte **6** und
+**BOOL Enabled** in Spalte **9**, jeweils mit **…** zur Auswahl eines vorhandenen
+BOOL-Eingangs. Leere Bindungen schränken nicht ein. Hidden=true verbirgt den
+Bereich; Enabled=false zeigt ihn gesperrt. Unbekannte gebundene Eingänge
+verbergen beziehungsweise sperren. Modul, Seite und Zugriffsrechte gelten
+zusammen. Alte positive Sichtbarkeitsbindungen werden unverändert übernommen.
+
 ## Benannte Stufen von 0 bis 5
 
 **0 / leer = ohne zusätzliche Einschränkung.** Neue Elemente sind zunächst

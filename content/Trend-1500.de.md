@@ -211,3 +211,11 @@ Erklärt er, warum eine rote Zone keine Maschinenfreigabe und kein Stoppsignal i
 
 Für die Übernahme gespeicherter Seiten gilt das vorhandene Kapitel
 [Vom Editor auf die TNC](#/transfer-1500).
+
+
+## Lesbare QML-Konfiguration (1.52.0)
+
+Die literale `trendConfig` wird beim Speichern als eingerücktes JSON-Objekt
+ausgegeben: eine Schlüssel-Wert-Zuordnung pro Zeile, verschachtelte Objekte
+und Arrays mit eigenen Zeilen und passenden Klammern. Erneutes Speichern
+ändert die Werte nicht. Berechnete QML-Ausdrücke werden nicht umgedeutet.

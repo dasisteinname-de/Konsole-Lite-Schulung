@@ -5,7 +5,7 @@ Seite im QML Editor vor: Modulbereich wählen, Seite anlegen, Namen vergeben und
 die festen Funktionstasten erkennen. Arbeite ausschließlich in der Kurskopie.
 Vorhandene Originalseiten bleiben erhalten.
 
-Für Start / Manual / Run, Zugriffsrechte und Austausch siehe außerdem die Kapitel 1.50.0 im Kursmenü. Die folgenden Aufnahmen zeigen die ursprüngliche Kurskopie.
+Für Start / Manual / Run, Zugriffsrechte und Austausch siehe außerdem die Kapitel 1.50.0 im Kursmenü. Die allgemeinen Navigationsaufnahmen stammen aus der Kurskopie; die Konfigurationsaufnahmen zeigen den gemeinsamen Dialog von 1.52.0.
 
 ## Modul und Seite unterscheiden
 
@@ -17,20 +17,23 @@ nicht automatisch Dateien, Signalpfade oder Schnittstellen um.
 Die Konsole besitzt feste Basismodule und ausdrücklich registrierte zusätzliche Module mit eigener stabiler Identität. Für die Kursübung wird ein Reserveplatz
 wie Bereich 06 eingerichtet; Modulnummer und Verzeichnis bleiben stabil.
 
-## Einen Modulplatz einrichten
+## Module und Seiten zentral konfigurieren
 
-![Module und Seiten im echten Verwaltungsdialog mit stabilen technischen Kennungen](images/navigation-09-module-verwalten.png)
+![Module und Seiten im gemeinsamen KonsoleConfigurator mit Start, Manual und Run](images/navigation-09-konfigurator.png)
 
-1. **Menü → Projekt → Module und Seiten verwalten …** öffnen.
-2. **Freien Modulplatz benennen …** wählen und einen bereitgestellten Reserveplatz
-   06, 07 oder 08 auswählen. Einen belegten Bereich nicht unbeabsichtigt umwidmen.
-3. Als Anzeigenamen beispielsweise **Serviceanzeigen** eintragen.
-4. Die zugehörigen Seiten und ihre technischen Kennungen in der Tabelle prüfen.
-5. **Navigation speichern · kein Start** wählen. Die Live-Offline-Vorschau neu
-   öffnen und den neuen Modulnamen kontrollieren.
+1. **Menü → Projekt → KonsoleConfigurator · Module / Seiten …** öffnen.
+2. Im Reiter **Module / Seiten · Start / Manual / Run** den vorhandenen
+   Modulbereich oder seine Seite markieren.
+3. Die Zelle **Anzeigename** doppelt anklicken und beispielsweise **Serviceanzeigen** eintragen.
+   Das ändert den lesbaren Navigationstext, keine Verzeichnisse oder Signalpfade.
+4. Die Seite mit den Checkboxen **Start, Manual, Run** auf die Konsolen verteilen.
+   **Beim Start laden** wählt den Seitencontroller für den nächsten Modellstart.
+5. **Konfiguration speichern · neu laden** wählen und den Namen im PC Live prüfen.
 
-Ein Anzeigename schafft keinen zusätzlichen elften Modulplatz und verändert
-keinen Gerätepfad. Bestehende Bereiche werden im gleichen Dialog bearbeitet.
+Der frühere separate Verwaltungsdialog entfällt. Namen, Verteilung, Rechte
+und dynamische Bedingungen liegen jetzt im selben Konfigurator. Ein zusätzliches
+Projektmodul wird im **Interface Editor → + Modul anlegen …** angelegt.
+Das Benennen eines Reservebereichs erzeugt kein weiteres Modul.
 
 ## Eine neue Kursseite anlegen
 
@@ -42,7 +45,7 @@ keinen Gerätepfad. Bestehende Bereiche werden im gleichen Dialog bearbeitet.
    verwenden. Keine Leerzeichen oder Umlaute in diesem technischen Beispielnamen.
 4. Als Anzeigenamen **Kurs · Navigation** eintragen.
 5. Die neu angelegte Seite im Projekt-/Seitenbereich auswählen und öffnen.
-6. Nach einer ersten kleinen Änderung **Layout speichern**, die Seite wechseln
+6. Nach einer ersten kleinen Änderung **Speichern**, die Seite wechseln
    und wieder öffnen. Den gewählten Namen kontrollieren.
 
 **Ergebnis:** Eine eigene gespeicherte Kursseite ist vorhanden. Sie ersetzt
@@ -54,13 +57,12 @@ Projektkonfiguration zusammen.
 
 ## Anzeigenamen bearbeiten
 
-1. Die eigene editierbare Seite öffnen.
-2. **Menü → Projekt → Konsolentexte …** wählen.
-3. Den lesbaren **Modulnamen** und **Seitennamen** eintragen. Die angebotenen
-   TextDB-IDs sind für Übersetzungen vorgesehen; technische Identitäten nicht
-   durch einen beliebigen Anzeigenamen ersetzen.
-4. Den Dialog bestätigen und **Layout speichern**.
-5. Die Seite wieder öffnen und Modul-/Seitentext in der Vorschau prüfen.
+1. Den **KonsoleConfigurator · Module / Seiten** öffnen.
+2. Die Zelle **Anzeigename** der Modulzeile oder Seite doppelt anklicken und den Namen ändern.
+3. Speichern und den Text in der Vorschau prüfen. Technische Kennungen bleiben stabil.
+
+**Konsolentexte …** bietet ergänzend die TextDB-IDs für mehrsprachige Namen.
+Eine explizite Namensvorgabe im Konfigurator ist der angezeigte Navigationstext.
 
 **Partnerkontrolle:** Zeige auf Modulname, Seitenname und technische Seitenkennung.
 Erkläre, welcher Text den Menschen hilft und welche Kennung eine Verknüpfung trägt.
@@ -84,40 +86,63 @@ eindeutig zu öffnen und eine Änderung wiederzufinden.
 2. Die gewünschte Taste doppelklicken.
 3. Rechts die tatsächlich angebotenen Eigenschaften ansehen.
 4. Für die Übung den sichtbaren **text** auf **Übungsinformation** ändern.
-5. **Layout speichern** und die Beschriftung nach dem Wiederöffnen kontrollieren.
+5. **Speichern** und die Beschriftung nach dem Wiederöffnen kontrollieren.
 
 ![Geänderte F1-Beschriftung als Übungsinformation in der echten Eigenschaftentabelle](images/navigation-08-fkey-text.png)
 
-**Text und Funktion sind verschieden:** Bei den neuen Lite-Seiten bietet die
-aktuelle Eigenschaftentabelle der festen Taste nur das Textfeld an. Ein neuer
-Text erzeugt dort keine neue Funktion und keine Navigation. Die vollständige
-visuelle Aktionsparametrierung ist für diese Seiten noch nicht verfügbar.
-Eine Kursübung darf deshalb keine neue Tastenaktion versprechen, die nur durch
-zusätzlichen Quellcode zustande käme.
+**Text und Funktion sind verschieden:** F1–F8 verwenden dieselben
+Aktions- und Bindungseigenschaften wie normale Buttons. Für eine Funktion
+**Aktionsart = python** und den Methodennamen ohne Klammern wählen;
+für einen Seitenwechsel **navigate** mit Zielmodul und Zielseite verwenden.
+Eine reine Beschriftung erzeugt keine Aktion. Vorhandene vom System belegte
+Tasten und ihre Hinweise beachten.
 
 F1 bis F8 bleiben feste Host-Tasten. Sie werden nicht wie ein zusätzliches
 Button-Element auf die Seite gezogen oder gelöscht. Bestehende Funktionen im
 Kurs nur nach Anweisung des Dozenten verwenden, keine Maschinenaktion testen.
 
-## Module und Seiten bedingt anzeigen
+## Module und Seiten ausblenden oder sperren
 
-![Sichtbarkeit eines Moduls mit ausdrücklich ausgewähltem globalen BOOL-Pfad](images/navigation-10-sichtbarkeit.png)
+![Getrennte Hidden- und Enabled-Variablen im gemeinsamen KonsoleConfigurator](images/navigation-10-bindings.png)
 
-1. **Module und Seiten verwalten …** öffnen und die Modulzeile markieren.
-2. Das Häkchen **Sichtbar** zunächst aus- und wieder einschalten. Für eine einzelne
-   Seite deren Zeile verwenden; nicht versehentlich die Modulzeile ändern.
-3. Für eine Abhängigkeit **Variable für gewählte Zeile auswählen …** öffnen und
-   den vom Dozenten vorbereiteten globalen BOOL-Pfad auswählen. Der vollständige
-   Pfad steht danach in der letzten Spalte. Das Beispielbild zeigt eine
-   Service-Anzeige, keine zusätzliche Maschinenfreigabe.
-4. Speichern und die Navigation in der Kurskopie prüfen. Ohne Variablenpfad
-   gilt allein das Häkchen. Mit Pfad müssen Häkchen und gelesener Wert TRUE sein.
-5. Einen unbekannten oder nicht verfügbaren Pfad prüfen: Der Bereich bleibt
-   ausgeblendet. Fällt die Bedingung der geöffneten Seite weg, erscheint MAIN.
-   Die Seite ist weiterhin gespeichert und im Editor bearbeitbar.
+1. Im **KonsoleConfigurator → Module / Seiten** die Modulzeile oder einzelne Seite markieren.
+2. In der **6. Spalte BOOL Hidden** über **…** einen globalen BOOL-Pfad
+   aus dem Interface wählen. `true` versteckt den Eintrag, `false` zeigt ihn.
+3. In der **9. Spalte BOOL Enabled** über **…** einen BOOL-Pfad wählen.
+   `true` erlaubt Bedienung, `false` lässt den Bereich sichtbar und gesperrt.
+4. Leere Bindungen bedeuten sichtbar und bedienbar. Unbekannte gebundene
+   Hidden-Werte verbergen, unbekannte Enabled-Werte sperren.
+5. Speichern und mit den vorbereiteten LOCAL-Werten in PC Live testen.
+   Modulbedingungen gelten zusätzlich zu Seitenbedingungen und Zugriffsprofilen.
+6. Wird die aktuelle Seite verborgen, erscheint MAIN. Wird sie nur gesperrt,
+   bleibt ihre Anzeige geladen; neue Eingaben und F-Tastenaktionen sind gesperrt.
 
-Ausblenden ersetzt weder Zugriffsschutz noch Maschinenfreigabe. Für Basic keine
-reale PLC-Variable umschalten; der Dozent stellt die lokalen Beispielwerte bereit.
+Frühere positive Sichtbarkeitsbindungen behalten ihre Bedeutung. Bei vorhandenem
+Altbestand zeigt der Dialog zusätzlich **Bestand: BOOL sichtbar** an.
+Eine frühere feste Ausblendung kann im selben Dialog aufgehoben werden.
+Ausblenden und HMI-Sperren ersetzen keine Maschinenfreigabe.
+
+## Mehrere Elemente entfernen
+
+Mit Strg-Klick mehrere Elemente auf der Layoutfläche markieren und **Löschen**
+wählen. Eine Bestätigung nennt die gesamte Auswahl. Abbrechen erhält alle
+Elemente; nach Bestätigung bleiben nicht gewählte Elemente erhalten.
+Einmal **Rückgängig / Strg+Z** stellt die gesamte gelöschte Auswahl wieder her.
+Dateien ändern sich erst beim Speichern.
+
+## Interface oder Projektmodul entfernen
+
+Im **Interface Editor** das zusätzliche Interface oder die Modulzeile im
+physischen Baum auswählen. Für Module stehen **Modul archivieren …** mit
+Wiederherstellung und **Modul endgültig löschen …** getrennt zur Verfügung.
+Auch ein eigenes Modul ohne Interface kann archiviert oder gelöscht werden.
+**Interface löschen …** entfernt eine zusätzliche Gruppe und ihren Startverweis.
+
+Der Bestätigungsdialog nennt Projekt, Namen und Dateiumfang; Standard ist
+Abbrechen. Verwendete Verweise zuerst auflösen, offene Entwürfe speichern oder
+bewusst verwerfen. Feste Basismodule und primäre Modellquellen sind geschützt.
+Endgültiges Löschen erstellt kein neues wiederherstellbares Modularchiv.
+Die Änderung am PC beendet kein bereits laufendes Maschinenmodell.
 
 ## Von der Projektstruktur zur Seitengestaltung
 

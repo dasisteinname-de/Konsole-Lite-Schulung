@@ -256,7 +256,7 @@ JSON-Programmierung von Hand nachgebaut.
 2. Spalten **Sensor** und **Zustand** sowie zwei vorbereitete lokale Beispielzeilen
    wählen. Sichtbare Überschriften von technischen Datenpfaden unterscheiden.
 3. Breiten, Zeilenhöhe, Kopfzeile und Scrollverhalten einstellen.
-4. Layout speichern und die Zeilen in der lokalen Vorschau prüfen.
+4. Speichern und die Zeilen in der lokalen Vorschau prüfen.
 
 **Kontrolle:** In der Live-Ansicht stehen drei lokale Beispielzeilen unter
 **Sensor** und **Zustand**. Bei dateibasierten Tabellen die Datei nicht durch ein leeres
@@ -350,3 +350,75 @@ müssen Layout und Zuordnungen erhalten bleiben. Nicht angebundene Anzeigen
 bleiben ausdrücklich nicht angebunden; kein PLC-Test wird vorgetäuscht.
 
 Zurück zur [Basic-Unterlage](#/basic).
+
+
+## Elemente bequem platzieren und gemeinsam gestalten (1.52.0)
+
+Ein Element aus der Bibliothek auf die Layoutfläche ziehen. Unter der Maus
+erscheint seine Vorschau; die linke obere Ecke folgt dem Zeiger. Loslassen
+platziert es am Raster. Abbrechen oder außerhalb loslassen fügt nichts ein.
+Doppelklick bleibt möglich. Größe anschließend an den Griffen ändern.
+
+Markierte Elemente mit den **Pfeiltasten** zur nächsten Rasterlinie in der
+gewählten Richtung bewegen, danach in Rastersprüngen (normal 10 Pixel).
+**Alt + Pfeil** bewegt um einen Pixel ohne Einrasten. Ist beispielsweise x=23,
+führt Rechts zu 30, Links zu 20. Eine Gruppe behält ihre relativen Abstände.
+Ohne Auswahl scrollen die Pfeile weiterhin die Seite; im Textfeld bewegen sie
+den Textcursor.
+
+Mehrere gleiche Elementtypen mit Strg-Klick markieren. Gemeinsame
+Ausrichtung, Schrift und Farben unter **Eigenschaften** wirken auf alle. Die
+Auswahl bleibt bestehen; ein **Rückgängig** nimmt die Gruppenänderung zurück.
+Kopien behalten eine eigene technische Identität und bleiben nach Speichern
+und erneutem Öffnen neben ihrem Original erhalten.
+
+## RadioButton: einen festen Wert einmal schreiben
+
+Drei RadioButton-Elemente an dieselbe Integer-Variable binden und denselben
+**Gruppennamen** vergeben. Unter **Auswahlwert (einmaliges Set)** nacheinander
+100, 200 und 300 eintragen und **Rückschreiben** aktivieren. Jeder Klick schreibt
+genau einmal. Loslassen, spätere PLC-Änderungen und die Markierung selbst
+schreiben nichts. Die Markierung folgt dem gelesenen Wert; ist er z. B. 73,
+ist keiner dieser drei Einträge ausgewählt. Dies ist keine PLC-Quittierung.
+
+Normale Buttons können unter **Tastenverhalten = radio** denselben Gruppennamen
+erhalten. Jeder behält seine Aktion, etwa **variable / set / 100**. Ein
+angenommener Klick markiert ihn und hebt die Markierung der anderen auf; diese
+bleiben anklickbar. Andere Gruppen sind unabhängig. Für Plus/Minus stattdessen
+**add/subtract** und einen Zahlenwert verwenden; **repeat** wiederholt diesen
+Aktionswert und endet beim Loslassen.
+
+
+## Neue Lehrseiten direkt in der Console
+
+Unter **05 Schulungszentrum** bleiben die drei bisherigen Sandkastenseiten
+erhalten. **Page4 Buttons**, **Page5 RadioButton**, **Page6 Checkbox**,
+**Page7 Slider** und **Page8 ProgressBar** ergänzen bedienbare LOCAL-Beispiele.
+Neben jedem Element steht die erwartete Reaktion. Im QML Editor zeigt derselbe
+Baustein seine Eigenschaften; die QML-Quelle enthält unmittelbar am Element
+die Erklärung des Ziels, des Werts und des Tastenverhaltens.
+
+Bei Checkbox können **Wert bei true**, **Wert bei false** und **Wert bei false
+schreiben** konfiguriert werden. Beispielsweise 100/200 mit aktiviertem
+Abwahlschreiben oder nur 500 mit deaktivierter Abwahl. Ohne Abwahlschreiben
+bleibt der aktuelle Wert erhalten. Passt er weiterhin zum true-Wert, bleibt
+auch die Markierung gesetzt. Links steht der gelesene Zahlenwert, rechts
+die eigene Beschriftung. Externe Änderungen aktualisieren die Anzeige.
+Auch zwei konfigurierte Werte aktivieren keinen dauernden Force.
+
+Die Lehrwerte liegen im zusätzlichen Interface **Schulungszentrum /
+bedienbeispiele** als LOCAL-Werte im RAM. Keine PLC-Adresse und keine
+automatische Schreibaktion beim Öffnen. Seiten, Interfacequelle und
+Startregister gehören gemeinsam zur Lieferung; nach Installation Restart Apps.
+
+
+![RadioButton-Lehrseite mit drei Auswahlwerten und zweitem LOCAL-Schreiber](images/lehrseite-radio-1520.png)
+
+![Checkbox-Lehrseite mit gelesenen Zahlen und optionalem Abwahlschreiben](images/lehrseite-checkbox-1520.png)
+
+
+## Zwei gemeinsame Zugriffsbedingungen
+
+Für alle Elemente und F1–F8 gelten nur **Sichtbar ab** (Element und Wert sehen)
+und **Bedienbar ab** (bedienen, schreiben, ausführen). Es gibt keine eigenen
+zusätzlichen Lesbar-/Schreibbar-Felder. Die Modul-/Seitenrechte gelten zusätzlich.
