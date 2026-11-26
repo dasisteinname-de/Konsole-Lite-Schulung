@@ -6,6 +6,8 @@ Lernziel: Symbolquelle, lokales Signal, DNC-Verbindung, Laufzeit und physischen
 Ausgang auseinanderhalten. Zunächst nur lesen und in der Kurskopie arbeiten.
 Der Browser dieser Schulung verbindet sich nie mit einer Steuerung.
 
+**Neu zur gemeinsamen Planung:** [PLC–Python-Schnittstelle](#/plc-interface) erklärt den Interface Editor und zeigt das geplante INPUT-/OUTPUT-Mapping, die Moduldateien und den AppPool. Der PLC-Teil ist dort ausdrücklich als Diskussionsentwurf gekennzeichnet.
+
 ## Herkunft und Typ vor dem Import prüfen
 
 Der Interface Editor zeigt die gespeicherten Deklarationen. Bei Python-Quellen

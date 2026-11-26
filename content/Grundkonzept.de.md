@@ -38,3 +38,5 @@ Die schematische Darstellung zeigt den Aufbau, keine echte Steuerungsverbindung.
 [Navigation selbst ausprobieren →](#/navigation-lab)
 
 [Module, Seiten und F1–F8 selbst projektieren →](#/project)
+
+[PLC–Python-Schnittstelle: Datenwege, Interface Editor und Dateien →](#/plc-interface)

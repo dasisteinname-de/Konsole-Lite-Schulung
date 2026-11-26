@@ -9,7 +9,7 @@ window.createWorkshopOverview = function ({ main, escape }) {
     { id: 'interface', title: 'Interface Editor', tag: 'Variablen verbinden', number: '02',
       heading: 'Die Verbindung zur Maschine',
       text: 'PLC-Symbole auswählen, Datentypen prüfen und als Interface bereitstellen. Dieselbe Variable lässt sich anschließend mit Anzeigen, Eingabefeldern und Slidern verbinden.',
-      route: 'advanced-station', link: 'Interface und Stationsweg kennenlernen',
+      route: 'plc-interface', link: 'PLC–Python-Schnittstelle verstehen',
       images: [picture('overview/interface-signale.png', 'Interface Editor · typisierte Signale in der getrennten Kurskopie'), picture('overview/interface-quelle.png', 'Die zugehörige Python-Quelle bleibt im Editor sichtbar.')] },
     { id: 'qml', title: 'QML Editor', tag: 'Masken gestalten', number: '03',
       heading: 'Aus Elementen wird eine Bedienseite',

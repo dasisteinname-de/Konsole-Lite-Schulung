@@ -11,6 +11,7 @@ Maschinensteuerungsquellen.
 | --- | --- |
 | Lernen und ausprobieren | [Lernwerkstatt](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/) |
 | Aktuelle Bedienwege | [Zugriff](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/access-1500), [Transfer](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/transfer-1500), [CFG](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/cfg-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500) |
+| PLC–Python-Konzept | [Interface Editor, Datenwege und PLC_PY_COM · Diskussionsentwurf](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/plc-interface) |
 | Nachschlagen | [Grundelemente](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/elements), [Trend / XY](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/trend-1500), [Begriffe](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/reference) |
 
 ## Teststand 1.52.4
@@ -121,3 +122,12 @@ Anschlussprofil. Für reale Anlagen sind deren Vorgaben und Freigaben maßgeblic
 Radio-LED-Bereiche, projektierte Glättung und vereinfachte Profilauswahl: neue Abschnitte in Elemente, Trend und Projektaufbau.
 
 Eigene Vertiefungen: Button, RadioButton und Rezepturen; Trend ergänzt die praktische Glättungsprüfung.
+
+## PLC–Python-Schnittstelle · gemeinsamer Konzeptstand
+
+`content/PLC-Python-Schnittstelle.de.md` erklärt den bestehenden Importweg und
+das am 26.11.2026 besprochene Zielbild mit PY-Symbolen, INPUT-/OUTPUT-MOD,
+zentralen Einstiegen und AppPool. Zwei SVG-Infografiken und ein zweiseitiges
+A3-PDF gehören dazu. Die neue PLC-Generierung, Übergabesynchronisierung und
+Regel der Ausgangsübertragung sind ausdrücklich noch nicht implementiert.
+Änderungen am Konzept werden in diesem Kapitel und seinen Grafiken gepflegt.

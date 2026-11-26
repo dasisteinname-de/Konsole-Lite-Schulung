@@ -20,6 +20,7 @@ const chapters = [
   ['advanced-chain', 'Eine Schrittkette aufbauen', 'Fortgeschrittene-Kette.de.md', '1.44'],
   ['advanced-call', 'CALL SK · AUTO & HAND', 'Fortgeschrittene-CALL.de.md', '1.44'],
   ['advanced-diagnostics', 'Diagnose & Wiederanlauf', 'Fortgeschrittene-Diagnose.de.md', '1.44'],
+  ['plc-interface', 'PLC–Python-Schnittstelle', 'PLC-Python-Schnittstelle.de.md', '26.11.2026', 'Konzeptgrafik · Entwurf'],
   ['advanced-station', 'Interface & Stationsweg', 'Fortgeschrittene-Station.de.md', '1.44'],
   ['advanced-visualizers', 'Unit-Taste & Ablaufanzeigen', 'Fortgeschrittene-Anzeigen.de.md', '1.44'],
   ['access-1500', '1.50.0 · Konsolen & Zugriffsrechte', 'Zugriff-1500.de.md'],
