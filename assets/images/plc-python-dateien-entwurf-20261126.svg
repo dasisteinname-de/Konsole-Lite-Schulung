@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1188" viewBox="0 0 1680 1188" role="img" aria-labelledby="title-2 desc-2">
 <title id="title-2">PLC_PY_COM: Dateien, AppPool und Aufräumen</title><desc id="desc-2">Diskussionsentwurf zur achten KonsoleLite-Projektmappe PLC_PY_COM. Zwei zentrale PLC-Einstiegsdateien werden einmal eingebunden und registrieren die modulspezifische DEF-Datei und beide IN-/OUT-MOD-Dateien. AppPool liefert die zugehörigen Dateien mit. Entfernt werden nur nicht mehr verwendete eigene Schnittstellenbindungen, niemals die ursprünglichen PLC-Deklarationen.</desc>
-<defs><style>text{font-family:"DejaVu Sans",Arial,sans-serif;fill:#203b43}.muted{fill:#526c71}.mono{font-family:"DejaVu Sans Mono",Consolas,monospace}.heading{font-weight:700}</style>
+<defs><style>text{font-family:"DejaVu Sans",Arial,sans-serif;fill:#203b43}.muted{fill:#526c71}.mono{font-family:"DejaVu Sans Mono",Consolas,monospace;white-space:pre}.heading{font-weight:700}</style>
 <marker id="gray-2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#819b9b"/></marker>
 <marker id="blue-2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#287e9b"/></marker>
 <marker id="brown-2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#a5663c"/></marker>
@@ -14,31 +14,32 @@
 <rect x="56" y="182" width="1568" height="61" rx="10" fill="#e9efed" stroke="#c3d0ca" stroke-width="1.5"/>
 <text x="78" y="220" font-size="21" class="">PLC_PY_COM ergänzt die sieben bestehenden KonsoleLite-Ordner. Python-Interfaces bleiben an ihrem bisherigen Ort.</text>
 <rect x="56" y="270" width="690" height="687" rx="14" fill="#ffffff" stroke="#becdca" stroke-width="1.5"/>
-<text x="80" y="311" font-size="19" class="heading muted">VORGESCHLAGENE PROJEKTSTRUKTUR</text>
+<text x="80" y="311" font-size="19" class="heading muted">PROJEKTSTRUKTUR · HGM ALS BEISPIEL</text>
 <text x="85" y="353" font-size="23" class="mono heading" style="fill:#203b43">KonsoleLite/</text>
-<text x="85" y="381" font-size="23" class="mono" style="fill:#526c71">├─ CONFIG/</text>
-<text x="85" y="409" font-size="23" class="mono" style="fill:#526c71">├─ CTRL/</text>
-<text x="85" y="437" font-size="23" class="mono" style="fill:#526c71">├─ DATA/</text>
-<text x="85" y="465" font-size="23" class="mono" style="fill:#526c71">├─ DOCS/</text>
-<text x="85" y="493" font-size="23" class="mono" style="fill:#203b43">├─ MODULES/</text>
-<text x="85" y="521" font-size="23" class="mono" style="fill:#203b43">│  └─ &lt;Modul&gt;/interfaces/</text>
-<rect x="75" y="525" width="647" height="30" rx="4" fill="#e5eddf" stroke="none" stroke-width="1.5"/>
-<text x="85" y="549" font-size="23" class="mono heading" style="fill:#557553">│     └─ &lt;Gruppe&gt;.py</text>
-<text x="85" y="577" font-size="23" class="mono heading" style="fill:#a5663c">├─ PLC_PY_COM/</text>
-<rect x="75" y="581" width="647" height="30" rx="4" fill="#e6f0f3" stroke="none" stroke-width="1.5"/>
-<text x="85" y="605" font-size="23" class="mono heading" style="fill:#287e9b">│  ├─ PLC_PY_COM.DEF</text>
-<rect x="75" y="609" width="647" height="30" rx="4" fill="#e6f0f3" stroke="none" stroke-width="1.5"/>
-<text x="85" y="633" font-size="23" class="mono heading" style="fill:#287e9b">│  ├─ PLC_PY_COM.MOD</text>
-<text x="85" y="661" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_HGM.DEF</text>
-<text x="85" y="689" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_HGM_IN.MOD</text>
-<text x="85" y="717" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_HGM_OUT.MOD</text>
-<text x="85" y="745" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_CLAMPING.DEF</text>
-<text x="85" y="773" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_CLAMPING_IN.MOD</text>
-<text x="85" y="801" font-size="23" class="mono" style="fill:#a5663c">│  └─ PY_CLAMPING_OUT.MOD</text>
-<text x="85" y="829" font-size="23" class="mono" style="fill:#526c71">├─ SEQUENCE/</text>
-<text x="85" y="857" font-size="23" class="mono" style="fill:#526c71">└─ UNITS/</text>
-<text x="82" y="911" font-size="18" class="muted">Grün: bleibt am Ort · Blau: zentrale Einstiege</text>
-<text x="82" y="939" font-size="18" class="muted">Braun: neue PLC-Dateien · Namen beispielhaft</text>
+<text x="85" y="380" font-size="23" class="mono" style="fill:#526c71">├─ CONFIG/</text>
+<text x="85" y="407" font-size="23" class="mono" style="fill:#526c71">├─ CTRL/</text>
+<text x="85" y="434" font-size="23" class="mono" style="fill:#526c71">├─ DATA/</text>
+<text x="85" y="461" font-size="23" class="mono" style="fill:#526c71">├─ DOCS/</text>
+<text x="85" y="488" font-size="23" class="mono" style="fill:#203b43">├─ MODULES/</text>
+<text x="85" y="515" font-size="23" class="mono" style="fill:#203b43">│  └─ Hintergrundmagazin/</text>
+<text x="85" y="542" font-size="23" class="mono" style="fill:#203b43">│     └─ interfaces/</text>
+<rect x="75" y="545" width="647" height="30" rx="4" fill="#e5eddf" stroke="none" stroke-width="1.5"/>
+<text x="85" y="569" font-size="23" class="mono heading" style="fill:#557553">│        └─ interface.py</text>
+<text x="85" y="596" font-size="23" class="mono heading" style="fill:#a5663c">├─ PLC_PY_COM/</text>
+<rect x="75" y="599" width="647" height="30" rx="4" fill="#e6f0f3" stroke="none" stroke-width="1.5"/>
+<text x="85" y="623" font-size="23" class="mono heading" style="fill:#287e9b">│  ├─ PLC_PY_COM.DEF</text>
+<rect x="75" y="626" width="647" height="30" rx="4" fill="#e6f0f3" stroke="none" stroke-width="1.5"/>
+<text x="85" y="650" font-size="23" class="mono heading" style="fill:#287e9b">│  ├─ PLC_PY_COM.MOD</text>
+<text x="85" y="677" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_HGM.DEF</text>
+<text x="85" y="704" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_HGM_IN.MOD</text>
+<text x="85" y="731" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_HGM_OUT.MOD</text>
+<text x="85" y="758" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_CLAMPING.DEF</text>
+<text x="85" y="785" font-size="23" class="mono" style="fill:#a5663c">│  ├─ PY_CLAMPING_IN.MOD</text>
+<text x="85" y="812" font-size="23" class="mono" style="fill:#a5663c">│  └─ PY_CLAMPING_OUT.MOD</text>
+<text x="85" y="839" font-size="23" class="mono" style="fill:#526c71">├─ SEQUENCE/</text>
+<text x="85" y="866" font-size="23" class="mono" style="fill:#526c71">└─ UNITS/</text>
+<text x="82" y="911" font-size="18" class="muted">Grün: Python bleibt · HGM = Hintergrundmagazin</text>
+<text x="82" y="939" font-size="17" class="muted">Blau: zentrale Einstiege · Braun: neue PLC-Beispieldateien</text>
 <rect x="786" y="270" width="838" height="183" rx="14" fill="#e6f0f3" stroke="#a4c3cc" stroke-width="1.5"/>
 <text x="810" y="307" font-size="25" class="heading">01   PLC-Projekt einmal anbinden</text>
 <text x="810" y="346" font-size="22" class="mono">DEV_DATA     →  PLC_PY_COM.DEF</text>

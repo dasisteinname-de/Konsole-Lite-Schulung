@@ -7,7 +7,7 @@ anschließend dieselbe projektierte Verbindung.
 
 <div class="notice blue"><strong>Diskussionsentwurf · 26.11.2026.</strong> Der bestehende Interface Editor erzeugt Python-Bindings. Die hier beschriebene zusätzliche PLC-Dateierzeugung und der neue Datenaustausch sind ein Konzept. Alle gebundenen PLC-Variablen werden gelesen und zurückgeschrieben. Die technische Synchronisierung, Zyklusanbindung und Schreibzuständigkeit werden gemeinsam festgelegt.</div>
 
-[Beide Infografiken als PDF · zwei Blätter A3 quer](assets/documents/PLC_PY_COM-Konzept-20261126.pdf?v=plc-cross-reference)
+[Beide Infografiken als PDF · zwei Blätter A3 quer](assets/documents/PLC_PY_COM-Konzept-20261126.pdf?v=physical-tree)
 
 Den vollständigen Bedienweg mit aktuellen Aufnahmen findest du unter
 [Interface Editor · Schritt für Schritt](#/interface-editor). Beide Kapitel gehören zu Basic.
@@ -42,6 +42,8 @@ PY-Schnittstellenvariable **`WG_PY_Speed`**. Damit ist erkennbar, dass dieser
 Wert in Python verarbeitet und dort möglicherweise verändert wird. Ob eine
 Änderung tatsächlich erfolgt, ergibt sich aus der konkreten Python-Logik
 und Bedienung.
+Die gefundene PY-Verknüpfung ist in der Grafik gelb hervorgehoben;
+darunter sind beide zugehörigen MOD-Dateien vollständig benannt.
 
 **Einheitlicher Umgang mit jeder gebundenen PLC-Variable:** Jede Variable
 wird zu Beginn aus der PLC aktualisiert und am Ende an ihr Original
@@ -111,8 +113,13 @@ aus der Zeichnung allein folgt keine belastbare Zykluszeit.
 
 ![Projektstruktur im Diskussionsentwurf: PLC_PY_COM, zentrale Dateien, AppPool und Entfernen ungenutzter Verbindungen](images/plc-python-dateien-entwurf-20261126.svg)
 
-Das Python-Interface bleibt im bestehenden Modulpfad, beispielsweise
-`KonsoleLite/MODULES/<Modul>/interfaces/<Gruppe>.py`.
+Das Python-Interface bleibt an seinem tatsächlichen Ort im br_sh-Projekt:
+`KonsoleLite/MODULES/Hintergrundmagazin/interfaces/interface.py`.
+**MODULES**, **Hintergrundmagazin** und **interfaces** sind drei getrennte
+Ordnerebenen; **interface.py** ist die Datei innerhalb von **interfaces**.
+Die Grafik zeigt jede Ebene einzeln. HGM ist die Abkürzung für Hintergrundmagazin.
+Weitere Interface-Gruppen können als eigene Python-Dateien im selben
+`interfaces`-Ordner liegen.
 Der zusätzliche achte Projektordner heißt **`KonsoleLite/PLC_PY_COM/`**.
 
 Je Modul gehören künftig zum Python-Interface drei PLC-Dateien:
