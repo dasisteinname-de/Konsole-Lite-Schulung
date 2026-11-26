@@ -200,3 +200,13 @@ CFG-Lesen auf Stufe 0 gesetzt. So kann der angeforderte Test ohne Serviceanmeldu
 stattfinden. Listenbearbeitung, Dateiwurzeln und sonstige Schreibrechte behalten
 ihre Einstellungen. Nach Aktualisierung beider Repositories in
 `codex/stabilization-1520` Restart Apps ausführen und auf MAIN **1.52.1** prüfen.
+
+## DNC-Profil als einziger Verbindungsname · 1.52.4
+
+In **Projekt / Maschine** die ComboBox **DNC-Profil** öffnen.
+Die lokale Profilliste wird dabei aktualisiert. Profil wählen und speichern: Die
+Auswahl bleibt im Projekt auch nach Neustart erhalten. Das zusätzliche Feld
+Maschinen-ID und die separate Taste zum Lesen der Liste entfallen. Verbinden
+ist weiterhin eine eigene bewusste Aktion.
+
+Im QML-Editor liegt die Dokumentation unter **Menü → Hilfe**: lokales PDF-Handbuch und **DNC / RPC erklärt …**. RPC = Remote Procedure Call.

@@ -13,7 +13,7 @@ Maschinensteuerungsquellen.
 | Aktuelle Bedienwege | [Zugriff](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/access-1500), [Transfer](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/transfer-1500), [CFG](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/cfg-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500) |
 | Nachschlagen | [Grundelemente](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/elements), [Trend / XY](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/trend-1500), [Begriffe](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/reference) |
 
-## Teststand 1.52.3
+## Teststand 1.52.4
 
 Im Testzweig `codex/stabilization-1520` erklären die Kapitel Grundelemente und
 Projektaufbau den Strukturbaum, Page9 und die korrigierte Lehrseitennavigation.
@@ -117,3 +117,5 @@ Die Screenshots zeigen sowohl Layout-/Bearbeitungszustände als auch die echte
 Live-Offline-Ansicht mit lokalen Kurswerten. Sie stammen aus einer isolierten
 Übungskopie, nicht von einer verbundenen Maschine. Beispielvariablen erklären die Zuordnung und sind kein
 Anschlussprofil. Für reale Anlagen sind deren Vorgaben und Freigaben maßgeblich.
+
+Radio-LED-Bereiche, projektierte Glättung und vereinfachte Profilauswahl: neue Abschnitte in Elemente, Trend und Projektaufbau.

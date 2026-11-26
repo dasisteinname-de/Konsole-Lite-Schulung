@@ -17,6 +17,8 @@ unverändert. Vorbereitung: [Kursübersicht](#/overview).
 
 ![QML Editor mit Elementbibliothek links, Hintergrundmagazin im Layout und Eigenschaften rechts](images/overview/qml-layout-anwender-1510.png)
 
+[Das Grundkonzept als große Infografik ansehen →](#/concept)
+
 ## So arbeitest du mit den Bildkapiteln
 
 Die Elementkapitel folgen derselben Reihenfolge:

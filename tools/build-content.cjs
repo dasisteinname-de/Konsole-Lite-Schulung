@@ -6,6 +6,7 @@ const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const chapters = [
   ['overview', 'Kurs & Vorbereitung', 'README.de.md'],
+  ['concept', 'Das Grundkonzept · Workspace bis Element', 'Grundkonzept.de.md', '1.52.4', 'Infografik'],
   ['basic', 'Einstieg & Tagesplan', 'Basic.de.md', '1.44'],
   ['orientation', 'ConsoleLite kennenlernen', 'Navigation.de.md', '1.44'],
   ['project', 'Module Seiten und F1–F8', 'Projektaufbau.de.md', '1.44'],
@@ -54,7 +55,7 @@ async function build() {
       if (level === '2') headings.push({ text: plain, anchor });
       return `<h${level} id="${anchor}">${text}</h${level}>`;
     }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) => {
-      const version = ['structure-tree-1523.png','progress-1523.png','slider-1523.png'].includes(name) ? '1.52.3' : name === 'structure-tree-1521.png' ? '1.52.1' : suppliedEditorImages.has(name) ? '1.51.0' : imageVersion;
+      const version = name === 'radio-range-1524.png' ? '1.52.4' : ['structure-tree-1523.png','progress-1523.png','slider-1523.png'].includes(name) ? '1.52.3' : name === 'structure-tree-1521.png' ? '1.52.1' : suppliedEditorImages.has(name) ? '1.51.0' : imageVersion;
       if (!version) throw new Error(`Bildstand für ${file} fehlt`);
       const digest=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/images',name))).digest('hex').slice(0,12);
       const origin = suppliedEditorImages.has(name) ? 'Anwenderaufnahme' : localEditorImages.has(name) ? 'LOCAL-Editoraufnahme' : imageOrigin;
@@ -67,7 +68,7 @@ async function build() {
   // the old router while displaying a new navigation menu after deployment.
   const indexPath = path.join(root, 'index.html');
   let index = fs.readFileSync(indexPath, 'utf8');
-  for (const name of ['styles.css', 'console-lab.css', 'overview.css', 'overview.js', 'content.js', 'console-lab.js', 'app.js']) {
+  for (const name of ['styles.css', 'console-lab.css', 'overview.css', 'overview.js', 'content.js', 'console-lab.js', 'concept-lab.js', 'app.js']) {
     const digest = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, name))).digest('hex').slice(0, 12);
     const pattern = new RegExp(`((?:src|href)=")${name.replace(/\./g, '\\.')}\\??[^"\\s]*(")`, 'g');
     index = index.replace(pattern, `$1${name}?v=${digest}$2`);

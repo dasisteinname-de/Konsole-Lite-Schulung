@@ -461,3 +461,24 @@ für `\CFG\CfgDisplayLanguage\plcErrorLanguage`. Ein tieferer vorhandener Pfad
 kann eingegeben werden. Der bestehende ParameterBrowser prüft die Leserechte.
 Öffnen, Aufklappen und Umschalten führen keinen Get aus. Offline meldet die
 Ansicht fehlende native CFG-Livewerte. **LOCAL-Beispiel** führt zum RAM-Objekt zurück.
+
+## Radio-LED und Bereiche · 1.52.4
+
+Auf **Schulungszentrum / Page5** bleiben 100, 200 und 300 als einmalige Set-Werte
+erhalten. **Bereiche aktivieren** schaltet von exaktem Vergleich auf die drei
+benachbarten Bereiche. Die beiden Eingabefelder ändern LOCAL-Integer-Grenzen.
+Bereich links, LED in der Mitte, Bedeutung rechts; die Bereichsbeschriftung kann
+bei der Projektierung ausgeblendet werden. LED-Farbe, Deckkraft und Blinken
+werden unabhängig vom Text und vom Klickwert eingestellt.
+
+![LOCAL-Übung: Bereiche aus Variablen und drei verschiedenfarbige Radio-LED](images/radio-range-1524.png)
+
+Die optionale BOOL-Freigabe bedeutet **true = Bereich**, **false = exakter Wert**.
+Ohne Signal reicht die Hauptoption. Bei fehlenden gebundenen Daten wird keine
+Aktivität bestätigt. Ein Klick schreibt einmal; der PLC bzw. ein Slider darf
+danach jederzeit ändern. Ein Bereich je RadioButton genügt; Nachbarbereiche
+ohne Überlappung projektieren, oben normalerweise exklusiv.
+
+**Glättung aktivieren** ist standardmäßig aus. **Glättungszeit [ms]**, z. B.
+500 oder 1200, verzögert beim LED das Ausschalten. Aktivierung bleibt sofort.
+Die Anzeige erzwingt keinen Wert und schreibt nicht per Timer in die Variable.

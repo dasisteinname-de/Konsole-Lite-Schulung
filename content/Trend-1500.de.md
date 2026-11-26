@@ -219,3 +219,17 @@ Die literale `trendConfig` wird beim Speichern als eingerücktes JSON-Objekt
 ausgegeben: eine Schlüssel-Wert-Zuordnung pro Zeile, verschachtelte Objekte
 und Arrays mit eigenen Zeilen und passenden Klammern. Erneutes Speichern
 ändert die Werte nicht. Berechnete QML-Ausdrücke werden nicht umgedeutet.
+
+## Kurze Sensoraussetzer bewusst überbrücken · 1.52.4
+
+**Glättung aktivieren** ist eine zusätzliche Projektierungsoption, Standard aus.
+**Glättungszeit [ms]** ist von 100 bis 5000 ms einstellbar, Standard 500 ms.
+Bei aktivierter Option wird der letzte echte Wert bei fehlendem Eingang noch
+für diese Zeit aufgenommen. Linie, Cursor und CSV bleiben dabei durchgehend;
+Qualitätscode **3** und „Glättung“ kennzeichnen gehaltene Werte. Neue echte Werte
+werden sofort übernommen. Nach Ablauf gilt „keine Daten“, niemals ein erfundener
+Nullwert. Ohne vorangegangene Probe und nach Pause wird nichts gehalten.
+
+Der Servicetechniker entscheidet bei der Maskenerstellung: langsamer Sensor mit
+kurzen Aussetzern, z. B. 1200 ms; zeitkritischer Istwert ohne zusätzliches Halten,
+Häkchen aus. Dies ist eine Ausfallverzögerung, kein Mittelwert und kein Force.
