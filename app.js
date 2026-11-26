@@ -6,7 +6,7 @@
   const dialog = document.querySelector('#image-dialog');
   const chapters = window.COURSE || {};
   const titles = { start: 'Übersicht', 'navigation-lab': 'Konsolenbedienung ausprobieren', 'bmk-lab': 'BMK selbst ausprobieren', 'sequence-lab': 'Eine Schrittkette verstehen', reference: 'Begriffe & Grenzen' };
-  const ordered = ['concept', 'basic', 'orientation', 'project', 'bmk', 'elements', 'button', 'radio-button', 'recipes', 'advanced', 'advanced-units', 'advanced-chain', 'advanced-call', 'advanced-diagnostics', 'plc-interface', 'advanced-station', 'advanced-visualizers', 'access-1500', 'transfer-1500', 'pool-1500', 'cfg-1500', 'trend-1500', 'quickguide'];
+  const ordered = ['concept', 'basic', 'orientation', 'project', 'interface-editor', 'plc-interface', 'bmk', 'elements', 'button', 'radio-button', 'recipes', 'advanced', 'advanced-units', 'advanced-chain', 'advanced-call', 'advanced-diagnostics', 'advanced-station', 'advanced-visualizers', 'access-1500', 'transfer-1500', 'pool-1500', 'cfg-1500', 'trend-1500', 'quickguide'];
   let cleanup = () => {};
   const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const readProgress = () => { try { return JSON.parse(localStorage.getItem('konsole-training-read') || '{}'); } catch { return {}; } };
@@ -15,7 +15,7 @@
     const item = chapters[id];
     const read = !!readProgress()[id];
     const next = ordered[ordered.indexOf(id) + 1];
-    const group = id.endsWith('-1500') ? '1.50.0' : id.startsWith('advanced') || id === 'quickguide' || id === 'plc-interface' ? 'Fortgeschrittene' : id === 'overview' ? 'Nachschlagen' : 'Basic';
+    const group = id.endsWith('-1500') ? '1.50.0' : id.startsWith('advanced') || id === 'quickguide' ? 'Fortgeschrittene' : id === 'overview' ? 'Nachschlagen' : 'Basic';
     main.innerHTML = `<div class="chapter-toolbar"><span>${group} / ${escape(item.title)}</span><button class="complete-button" aria-pressed="${read}" id="mark-read">${read ? '✓ Als gelesen markiert' : 'Kapitel als gelesen markieren'}</button></div><article class="prose">${item.html}</article><div class="chapter-next"><a href="#/start">← Zum Lernweg</a>${next ? `<a class="button" href="#/${next}">Weiter: ${escape(chapters[next].title)} →</a>` : '<a href="#/sequence-lab">Zum Ablauf-Lernmodell →</a>'}</div>`;
     installAccessTraining();
     const h1 = main.querySelector('h1');

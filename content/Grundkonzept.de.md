@@ -39,4 +39,6 @@ Die schematische Darstellung zeigt den Aufbau, keine echte Steuerungsverbindung.
 
 [Module, Seiten und F1–F8 selbst projektieren →](#/project)
 
+[Interface Editor Schritt für Schritt →](#/interface-editor)
+
 [PLC–Python-Schnittstelle: Datenwege, Interface Editor und Dateien →](#/plc-interface)

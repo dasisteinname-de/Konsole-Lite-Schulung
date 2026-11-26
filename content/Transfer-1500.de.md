@@ -10,7 +10,7 @@ Teststand für 1.49.10 bestätigt; neue 1.50.0-Rechte getrennt prüfen.
 1. Den richtigen **Projektordner**, DNC-Profil und Maschinenpfad wählen.
    Ein Klick auf die DNC-Auswahl liest die Profilliste neu. Währenddessen zeigen
    Meldung und Fortschrittsbalken die laufende Abfrage; anschließend öffnet sich
-   die Liste. Die separate Lesetaste bleibt verfügbar.
+   die Liste. Seit 1.52.4 entfällt die separate Lesetaste.
 2. Änderungen in den geöffneten Seiten vorbereiten. **Speichern / Strg+S**
    speichert weiterhin nur die aktive Seite; **Speichern + Transfer** prüft und
    speichert alle geänderten offenen Seiten vor der Übertragung.

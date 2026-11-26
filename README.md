@@ -11,6 +11,7 @@ Maschinensteuerungsquellen.
 | --- | --- |
 | Lernen und ausprobieren | [Lernwerkstatt](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/) |
 | Aktuelle Bedienwege | [Zugriff](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/access-1500), [Transfer](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/transfer-1500), [CFG](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/cfg-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500) |
+| Interface Editor | [Basic · Schritt für Schritt mit aktuellen Editoraufnahmen](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/interface-editor) |
 | PLC–Python-Konzept | [Interface Editor, Datenwege und PLC_PY_COM · Diskussionsentwurf](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/plc-interface) |
 | Nachschlagen | [Grundelemente](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/elements), [Trend / XY](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/trend-1500), [Begriffe](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/reference) |
 
@@ -131,3 +132,8 @@ zentralen Einstiegen und AppPool. Zwei SVG-Infografiken und ein zweiseitiges
 A3-PDF gehören dazu. Die neue PLC-Generierung, Übergabesynchronisierung und
 Regel der Ausgangsübertragung sind ausdrücklich noch nicht implementiert.
 Änderungen am Konzept werden in diesem Kapitel und seinen Grafiken gepflegt.
+
+Interface Editor und PLC–Python-Schnittstelle stehen als benachbarte Basic-Kapitel
+im Kursmenü. Die Interface-Galerie führt direkt zur Editoranleitung. Vier neue
+Qt-Aufnahmen aus einem erfundenen LOCAL-Kursprojekt zeigen 1.52.4; der ältere
+Stationsabschnitt wurde zur aktuellen Verbindung-/Transferlektion überarbeitet.

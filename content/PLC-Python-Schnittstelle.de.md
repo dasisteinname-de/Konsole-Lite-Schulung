@@ -9,17 +9,23 @@ anschließend dieselbe projektierte Verbindung.
 
 [Beide Infografiken als PDF · zwei Blätter A3 quer](assets/documents/PLC_PY_COM-Konzept-20261126.pdf)
 
+Den vollständigen Bedienweg mit aktuellen Aufnahmen findest du unter
+[Interface Editor · Schritt für Schritt](#/interface-editor). Beide Kapitel gehören zu Basic.
+
 ## Was der Interface Editor heute macht
 
 1. Im **Interface Editor** das betreffende Modul und die Interface-Gruppe wählen.
 2. **PLC-Projekt / DEF importieren …** öffnen. Python-Ziel, DEF-Dateien und
    konkrete Signale auswählen. Im PLC-Projekt bzw. in DEV_DATA nach den
    benötigten Originalvariablen suchen; die Quellen werden dabei gelesen.
-3. Herkunft, tatsächlichen Datentyp und Richtung prüfen. Ein Namenspräfix oder
+3. Herkunft, tatsächlichen Datentyp und Anbindung prüfen. Ein Namenspräfix oder
    ein angezeigter Wert allein beweist keinen Datentyp.
 4. Das Python-Interface speichern. Seine Variablen lassen sich danach im
    QML Editor mit Anzeige, Slider oder anderen Elementen verbinden.
    Speichern und Aktivierung im laufenden Modell sind getrennte Schritte.
+
+Die folgende Tabelle erklärt die fachlichen Richtungen. Die Python-Ansicht
+des Editors zeigt bei **Anbindung** LOCAL oder PLC; das ist keine IN-/OUT-Freigabe.
 
 | Richtung aus Python-Sicht | Bedeutung |
 | --- | --- |
