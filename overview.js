@@ -67,7 +67,7 @@ window.createWorkshopOverview = function ({ main, escape }) {
 
   main.innerHTML = `
     <section class="workshop-overview" aria-label="ConsoleLite und ihre Werkzeuge">
-      <header class="overview-heading"><div><span class="overview-kicker">CONSOLELITE · LERNWERKSTATT</span><h1>Eine Idee. Viele Möglichkeiten.</h1></div><a href="#/basic" class="overview-course-link">Zur Schulung <span aria-hidden="true">↗</span></a></header>
+      <header class="overview-heading"><div><span class="overview-kicker">CONSOLELITE · LERNWERKSTATT</span><h1>Eine Idee. Viele Möglichkeiten.</h1></div><a href="#/concept" class="overview-course-link">Zur Schulung <span aria-hidden="true">↗</span></a></header>
       <div class="overview-layout">
         <section class="overview-presentation" aria-label="Ausgewähltes Werkzeug"><div id="overview-stage" class="overview-stage"></div><div id="overview-caption" class="overview-caption"></div></section>
         <nav class="overview-editors" aria-label="Konsole und Editoren"><div class="overview-list-heading">ENTDECKEN & GESTALTEN <span>11 Einblicke</span></div>${editors.map(editor => `<button type="button" data-editor="${editor.id}" aria-pressed="${editor.id === selected}"><img class="overview-editor-icon" src="assets/editor-icons/${editor.id}.svg" alt="" aria-hidden="true"><span><strong>${escape(editor.title)}</strong><small>${escape(editor.tag)}</small></span><span class="overview-editor-arrow" aria-hidden="true">↗</span></button>`).join('')}<a class="overview-all-lessons" href="#/concept">Grundkonzept: Workspace → Modul → Seite → Element</a><a class="overview-all-lessons" href="#/overview">Alle Unterlagen & Vorbereitung →</a></nav>
