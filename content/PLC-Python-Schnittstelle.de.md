@@ -7,7 +7,7 @@ anschließend dieselbe projektierte Verbindung.
 
 <div class="notice blue"><strong>Diskussionsentwurf · 26.11.2026.</strong> Der bestehende Interface Editor erzeugt Python-Bindings. Die hier beschriebene zusätzliche PLC-Dateierzeugung und der neue Datenaustausch sind ein Konzept. Alle gebundenen PLC-Variablen werden gelesen und zurückgeschrieben. Die technische Synchronisierung, Zyklusanbindung und Schreibzuständigkeit werden gemeinsam festgelegt.</div>
 
-[Beide Infografiken als PDF · zwei Blätter A3 quer](assets/documents/PLC_PY_COM-Konzept-20261126.pdf?v=three-level-flow)
+[Beide Infografiken als PDF · zwei Blätter A3 quer](assets/documents/PLC_PY_COM-Konzept-20261126.pdf?v=plc-cross-reference)
 
 Den vollständigen Bedienweg mit aktuellen Aufnahmen findest du unter
 [Interface Editor · Schritt für Schritt](#/interface-editor). Beide Kapitel gehören zu Basic.
@@ -35,6 +35,13 @@ Die Auswahl im Interface Editor bleibt vertraut. Zusätzlich entstehen eigene
 PY-Symbole. Die Verbindung zum Original steht ausdrücklich im PLC-Projekt.
 Ein PLC-Integrator findet dadurch beim Querverweis der Originalvariablen auch
 die zugehörige Python-Schnittstelle.
+
+**Beispiel PLC-Querverweis:** Der PLC-Entwickler sucht `WG_Speed`. Im Mapping
+von `PY_HGM_IN.MOD` bzw. `PY_HGM_OUT.MOD` findet er die zugehörige
+PY-Schnittstellenvariable **`WG_PY_Speed`**. Damit ist erkennbar, dass dieser
+Wert in Python verarbeitet und dort möglicherweise verändert wird. Ob eine
+Änderung tatsächlich erfolgt, ergibt sich aus der konkreten Python-Logik
+und Bedienung.
 
 **Einheitlicher Umgang mit jeder gebundenen PLC-Variable:** Jede Variable
 wird zu Beginn aus der PLC aktualisiert und am Ende an ihr Original

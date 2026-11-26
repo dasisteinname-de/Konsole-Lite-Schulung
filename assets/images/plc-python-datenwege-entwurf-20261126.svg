@@ -24,9 +24,10 @@
 <text x="532" y="338" font-size="23" class="heading">Interface Editor · Modul auswählen</text>
 <text x="532" y="373" font-size="27" class="mono heading">WG_Speed  →  WG_PY_Speed …</text>
 <text x="532" y="402" font-size="18" class="muted">Datentyp aus DEF übernehmen · keine Richtungswahl</text>
-<text x="1266" y="338" font-size="22" class="heading">PLC-Querverweis</text>
-<text x="1266" y="373" font-size="21" class="mono">WG_Speed suchen</text>
-<text x="1266" y="402" font-size="20" class="mono">→ PY_HGM_IN / OUT finden</text>
+<text x="1266" y="332" font-size="22" class="heading">PLC-Querverweis</text>
+<text x="1266" y="357" font-size="19" class="mono">WG_Speed suchen</text>
+<text x="1266" y="384" font-size="22" class="mono heading">→ WG_PY_Speed finden</text>
+<text x="1266" y="408" font-size="16" class="mono">Mapping in PY_HGM_IN / OUT.MOD</text>
 <text x="56" y="466" font-size="25" class="heading">02   Pro Modul: Python + DEF + zwei MOD-Dateien</text>
 <rect x="56" y="489" width="484" height="153" rx="14" fill="#edf0eb" stroke="#a9b9a5" stroke-width="1.5"/>
 <rect x="598" y="489" width="484" height="153" rx="14" fill="#e4f0f3" stroke="#a4c3cc" stroke-width="1.5"/>
