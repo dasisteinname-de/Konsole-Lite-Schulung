@@ -233,3 +233,20 @@ Nullwert. Ohne vorangegangene Probe und nach Pause wird nichts gehalten.
 Der Servicetechniker entscheidet bei der Maskenerstellung: langsamer Sensor mit
 kurzen Aussetzern, z. B. 1200 ms; zeitkritischer Istwert ohne zusätzliches Halten,
 Häkchen aus. Dies ist eine Ausfallverzögerung, kein Mittelwert und kein Force.
+
+## Glättung bewusst prüfen
+
+1. Im Trend **Anzeige, Puffer und Protokoll** öffnen.
+2. **Glättung aktivieren** zunächst aus lassen: Ein nicht lesbarer Eingang bzw.
+   ein false-Qualitätssignal erzeugt eine echte Datenlücke.
+3. Option einschalten und **Glättungszeit [ms] = 1200** setzen.
+4. Mit der vorbereiteten LOCAL-Qualitätsquelle einen kurzen Ausfall simulieren.
+   Das letzte echte Messergebnis wird innerhalb der Frist weiter aufgenommen.
+5. Mit dem Cursor über diese Proben fahren: Wert vorhanden, Kennzeichnung **Glättung**.
+6. Den Ausfall länger als die Frist bestehen lassen: Danach **keine Daten**, kein
+   Nullwert. Nach Wiederkehr gilt der echte neue Eingang sofort.
+7. Falls Dateiprotokoll aktiv ist: Gehaltene Zeilen tragen Qualität **3**, ungültige **0**.
+
+Eine Pause ist kein Sensoraussetzer. Sie stoppt die Aufnahme und verwirft den
+Nachlauf. Die Option ersetzt auch keine erkannte Quellqualität: Der Leser oder
+die Gültigkeitsbindung muss die fehlenden/ungültigen Daten tatsächlich melden.

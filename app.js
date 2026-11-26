@@ -6,7 +6,7 @@
   const dialog = document.querySelector('#image-dialog');
   const chapters = window.COURSE || {};
   const titles = { start: 'Übersicht', 'navigation-lab': 'Konsolenbedienung ausprobieren', 'bmk-lab': 'BMK selbst ausprobieren', 'sequence-lab': 'Eine Schrittkette verstehen', reference: 'Begriffe & Grenzen' };
-  const ordered = ['concept', 'basic', 'orientation', 'project', 'bmk', 'elements', 'advanced', 'advanced-units', 'advanced-chain', 'advanced-call', 'advanced-diagnostics', 'advanced-station', 'advanced-visualizers', 'access-1500', 'transfer-1500', 'pool-1500', 'cfg-1500', 'trend-1500', 'quickguide'];
+  const ordered = ['concept', 'basic', 'orientation', 'project', 'bmk', 'elements', 'button', 'radio-button', 'recipes', 'advanced', 'advanced-units', 'advanced-chain', 'advanced-call', 'advanced-diagnostics', 'advanced-station', 'advanced-visualizers', 'access-1500', 'transfer-1500', 'pool-1500', 'cfg-1500', 'trend-1500', 'quickguide'];
   let cleanup = () => {};
   const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const readProgress = () => { try { return JSON.parse(localStorage.getItem('konsole-training-read') || '{}'); } catch { return {}; } };

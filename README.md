@@ -119,3 +119,5 @@ Live-Offline-Ansicht mit lokalen Kurswerten. Sie stammen aus einer isolierten
 Anschlussprofil. Für reale Anlagen sind deren Vorgaben und Freigaben maßgeblich.
 
 Radio-LED-Bereiche, projektierte Glättung und vereinfachte Profilauswahl: neue Abschnitte in Elemente, Trend und Projektaufbau.
+
+Eigene Vertiefungen: Button, RadioButton und Rezepturen; Trend ergänzt die praktische Glättungsprüfung.
