@@ -62,8 +62,8 @@
 <rect x="56" y="986" width="1568" height="143" rx="14" fill="#ffffff" stroke="#b6c9c0" stroke-width="1.5"/>
 <text x="80" y="1022" font-size="21" class="heading">GEMEINSAM FESTLEGEN · bevor der Generator umgesetzt wird</text>
 <text x="80" y="1055" font-size="20" class="">Eindeutige Namen und Typen · PLC-Aufrufreihenfolge · einmalige Umstellung vorhandener Python-Bindings</text>
-<text x="80" y="1087" font-size="20" class="">Schreibfreigabe: offene Bedienseite / Hintergrunddienst · zyklischer Sollwertbetrieb oder einzelne Schreibaufträge</text>
-<text x="80" y="1115" font-size="19" class="muted">Übergabeprotokoll · Timeout / Wiederverbindung · konsistente Werte · Konfliktprüfung und Aktivierung beim Import</text>
+<text x="80" y="1087" font-size="20" class="">Schreibzuständigkeit: PLC-Logik, Bedienung und Hintergrunddienste abstimmen · keine Signal-Richtungswahl</text>
+<text x="80" y="1115" font-size="19" class="muted">Vollständige Datenabbilder und Taktung · Wiederverbindung · schreibbare PLC-Ziele · Konfliktprüfung beim Import</text>
 <text x="56" y="1163" font-size="18" class="heading muted">KONZEPT ZUR BESPRECHUNG · kein PLC-Programm wurde geändert, übersetzt oder auf eine Maschine übertragen.</text>
 <text x="56" y="1180" font-size="16" class="muted">Ziel: PLC-Integrator und Python-Entwickler können dieselbe Verbindung vom Originalsymbol bis zur Bedienung verfolgen.</text>
 </svg>

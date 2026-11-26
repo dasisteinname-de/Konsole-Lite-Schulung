@@ -7,11 +7,11 @@ const root = path.resolve(__dirname, '..');
 const chapters = [
   ['overview', 'Kurs & Vorbereitung', 'README.de.md'],
   ['concept', 'Das Grundkonzept · Workspace bis Element', 'Grundkonzept.de.md', '1.52.4', 'Infografik'],
+  ['interface-editor', 'Interface Editor Schritt für Schritt', 'Interface-Editor.de.md', '1.52.4', 'LOCAL-Kurskopie'],
+  ['plc-interface', 'PLC–Python-Schnittstelle', 'PLC-Python-Schnittstelle.de.md', '26.11.2026', 'Konzeptgrafik · Entwurf'],
   ['basic', 'Einstieg & Tagesplan', 'Basic.de.md', '1.44'],
   ['orientation', 'ConsoleLite kennenlernen', 'Navigation.de.md', '1.44'],
   ['project', 'Module Seiten und F1–F8', 'Projektaufbau.de.md', '1.44'],
-  ['interface-editor', 'Interface Editor Schritt für Schritt', 'Interface-Editor.de.md', '1.52.4', 'LOCAL-Kurskopie'],
-  ['plc-interface', 'PLC–Python-Schnittstelle', 'PLC-Python-Schnittstelle.de.md', '26.11.2026', 'Konzeptgrafik · Entwurf'],
   ['bmk', 'BMK LED Schritt für Schritt', 'BMK-LED.de.md', '1.44'],
   ['elements', 'Die Grundelemente', 'Elemente.de.md', '1.44'],
   ['button', 'Button Schritt für Schritt', 'Button.de.md', '1.52.4'],

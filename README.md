@@ -137,3 +137,8 @@ Interface Editor und PLC–Python-Schnittstelle stehen als benachbarte Basic-Kap
 im Kursmenü. Die Interface-Galerie führt direkt zur Editoranleitung. Vier neue
 Qt-Aufnahmen aus einem erfundenen LOCAL-Kursprojekt zeigen 1.52.4; der ältere
 Stationsabschnitt wurde zur aktuellen Verbindung-/Transferlektion überarbeitet.
+
+Im PLC–Python-Zielkonzept entfällt die Signal-Richtungswahl: Jede gebundene
+PLC-Variable besitzt ein vollständiges Lese- und Rückschreibmapping, auch bei
+unverändertem Wert. Die ersten drei Basic-Punkte sind Grundkonzept, Interface
+Editor und PLC–Python-Schnittstelle. Die technische Synchronisierung bleibt offen.

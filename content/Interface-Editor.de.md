@@ -141,6 +141,11 @@ Richtungen IN, OUT und INOUT auftreten. Sie werden aus Python-Sicht gelesen:
 IN liest aus der PLC, OUT schreibt zur PLC, INOUT benötigt beide Wege.
 Diese fachliche Richtung nicht mit der Anbindungsart LOCAL/PLC verwechseln.
 
+Das [neue PLC–Python-Konzept](#/plc-interface) sieht diese Richtungswahl
+nicht mehr vor: Jede dort gebundene PLC-Variable wird gelesen, verarbeitet und
+zurückgeschrieben. Die Beschreibung der aktuellen Editoransicht bleibt davon
+unterschieden; die neue PLC-Dateierzeugung ist noch nicht implementiert.
+
 ## Bestehende Variablen bearbeiten und speichern
 
 1. Eine Zeile wählen und den richtigen Namen sowie Identifier prüfen.
