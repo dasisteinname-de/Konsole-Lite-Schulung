@@ -7,7 +7,7 @@ anschließend dieselbe projektierte Verbindung.
 
 <div class="notice blue"><strong>Diskussionsentwurf · 26.11.2026.</strong> Der bestehende Interface Editor erzeugt Python-Bindings. Die hier beschriebene zusätzliche PLC-Dateierzeugung und der neue Datenaustausch sind ein Konzept. Alle gebundenen PLC-Variablen werden gelesen und zurückgeschrieben. Die technische Synchronisierung, Zyklusanbindung und Schreibzuständigkeit werden gemeinsam festgelegt.</div>
 
-[Beide Infografiken als PDF · zwei Blätter A3 quer](assets/documents/PLC_PY_COM-Konzept-20261126.pdf?v=read-write-all)
+[Beide Infografiken als PDF · zwei Blätter A3 quer](assets/documents/PLC_PY_COM-Konzept-20261126.pdf?v=three-level-flow)
 
 Den vollständigen Bedienweg mit aktuellen Aufnahmen findest du unter
 [Interface Editor · Schritt für Schritt](#/interface-editor). Beide Kapitel gehören zu Basic.
@@ -45,6 +45,10 @@ Verarbeitungsphasen derselben Verbindung. LOCAL-Werte und Konstanten sind
 weiterhin keine PLC-Verbindungen.
 
 ![Datenwege im Diskussionsentwurf: Originalvariable, PY-Interface, INPUT-Verarbeitung und OUTPUT](images/plc-python-datenwege-entwurf-20261126.svg)
+
+Die Grafik wird **von oben nach unten** gelesen. Beide Pfeilreihen laufen
+**von links nach rechts**. Dazwischen zeigt der breite Python-Block die
+Verarbeitung am Beispiel **60 ⇒ 80**.
 
 Der gewünschte fachliche Durchlauf entspricht einem Eingangs- und Ausgangsabbild:
 

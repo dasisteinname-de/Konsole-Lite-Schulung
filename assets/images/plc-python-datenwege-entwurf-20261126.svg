@@ -34,7 +34,7 @@
 <text x="78" y="521" font-size="16" class="heading muted">PYTHON · BESTEHENDER ABLAGEORT</text>
 <text x="78" y="561" font-size="29" class="mono heading">&lt;Gruppe&gt;.py</text>
 <text x="78" y="597" font-size="20" class="">Eine Bindung für Anzeige und Bedienung.</text>
-<text x="78" y="624" font-size="17" class="muted">Liest Eingangswerte, verarbeitet und liefert Ausgangswerte.</text>
+<text x="78" y="624" font-size="17" class="muted">Lesen → Verarbeiten → Zurückschreiben.</text>
 <text x="620" y="521" font-size="16" class="heading muted">NEU · PLC-DEFINITIONEN</text>
 <text x="620" y="561" font-size="29" class="mono heading">PY_HGM.DEF</text>
 <text x="620" y="597" font-size="19" class="">Typisierte PY-Variablen für beide Mappingwege</text>
@@ -43,42 +43,47 @@
 <text x="1162" y="558" font-size="25" class="mono heading">PY_HGM_IN.MOD</text>
 <text x="1162" y="588" font-size="25" class="mono heading">PY_HGM_OUT.MOD</text>
 <text x="1162" y="617" font-size="17" class="">Lesen und Schreiben getrennt nachvollziehen.</text>
-<text x="56" y="688" font-size="25" class="heading">03   INPUT → Python-Verarbeitung → OUTPUT</text>
-<text x="56" y="731" font-size="20" class="heading" style="fill:#287e9b">LESEN · alle gebundenen PLC-Variablen in das Eingangsabbild</text>
-<rect x="56" y="749" width="356" height="91" rx="10" fill="#e8f1f3" stroke="#b0c6cc" stroke-width="1.5"/>
-<text x="75" y="783" font-size="21" class="heading">PLC-Originalwert</text>
-<text x="75" y="818" font-size="18" class="muted">WG_Speed = 60</text>
-<rect x="460" y="749" width="356" height="91" rx="10" fill="#e8f1f3" stroke="#b0c6cc" stroke-width="1.5"/>
-<text x="479" y="783" font-size="21" class="heading">INPUT.MOD liest</text>
-<text x="479" y="818" font-size="18" class="muted">Original → PY-Variable</text>
-<rect x="864" y="749" width="356" height="91" rx="10" fill="#e8f1f3" stroke="#b0c6cc" stroke-width="1.5"/>
-<text x="883" y="783" font-size="21" class="heading">PY-Wert im Modell</text>
-<text x="883" y="818" font-size="18" class="muted">WG_PY_Speed = 60</text>
-<rect x="1268" y="749" width="356" height="91" rx="10" fill="#e8f1f3" stroke="#b0c6cc" stroke-width="1.5"/>
-<text x="1287" y="783" font-size="21" class="heading">Python / QML</text>
-<text x="1287" y="818" font-size="18" class="muted">Slider zeigt 60</text>
-<path d="M418 793H449" fill="none" stroke="#287e9b" stroke-width="3" marker-end="url(#blue-1)"/>
-<path d="M822 793H853" fill="none" stroke="#287e9b" stroke-width="3" marker-end="url(#blue-1)"/>
-<path d="M1226 793H1257" fill="none" stroke="#287e9b" stroke-width="3" marker-end="url(#blue-1)"/>
-<text x="56" y="883" font-size="20" class="heading" style="fill:#a5663c">ZURÜCKSCHREIBEN · alle gebundenen PLC-Variablen · auch unveränderte Werte</text>
-<rect x="56" y="901" width="356" height="91" rx="10" fill="#f5ecdf" stroke="#cebba1" stroke-width="1.5"/>
-<text x="75" y="935" font-size="21" class="heading">PLC-Originalwert</text>
-<text x="75" y="970" font-size="17" class="muted">aktuellen PY-Wert übernehmen</text>
-<rect x="460" y="901" width="356" height="91" rx="10" fill="#f5ecdf" stroke="#cebba1" stroke-width="1.5"/>
-<text x="479" y="935" font-size="21" class="heading">OUTPUT.MOD schreibt</text>
-<text x="479" y="970" font-size="17" class="muted">PY-Variable → Original</text>
-<rect x="864" y="901" width="356" height="91" rx="10" fill="#f5ecdf" stroke="#cebba1" stroke-width="1.5"/>
-<text x="883" y="935" font-size="21" class="heading">PY-Wert nach Verarbeitung</text>
-<text x="883" y="970" font-size="17" class="muted">WG_PY_Speed = 80</text>
-<rect x="1268" y="901" width="356" height="91" rx="10" fill="#f5ecdf" stroke="#cebba1" stroke-width="1.5"/>
-<text x="1287" y="935" font-size="21" class="heading">Python-Logik / QML</text>
-<text x="1287" y="970" font-size="17" class="muted">verarbeitet / Slider setzt 80</text>
-<path d="M449 945H418" fill="none" stroke="#a5663c" stroke-width="3" marker-end="url(#brown-1)"/>
-<path d="M853 945H822" fill="none" stroke="#a5663c" stroke-width="3" marker-end="url(#brown-1)"/>
-<path d="M1257 945H1226" fill="none" stroke="#a5663c" stroke-width="3" marker-end="url(#brown-1)"/>
-<rect x="56" y="1041" width="1568" height="78" rx="10" fill="#e5eddf" stroke="#b4c5a1" stroke-width="1.5"/>
-<text x="78" y="1073" font-size="21" class="heading">Jede gebundene PLC-Variable: lesen → Python-Logik → zurückschreiben. Keine IN-/OUT-Auswahl.</text>
-<text x="78" y="1102" font-size="19" class="">Vollständiges Mapping in beide Richtungen, auch bei unverändertem Wert. Die technische Übergabe bleibt abzustimmen.</text>
-<text x="56" y="1157" font-size="17" class="muted">PLC und Python besitzen bisher keinen gemeinsamen Takt. Konsistente Ein-/Ausgangsabbilder und Übergabe müssen abgestimmt werden.</text>
+<text x="56" y="688" font-size="25" class="heading">03   Ein Durchlauf · von oben nach unten</text>
+<text x="56" y="731" font-size="20" class="heading" style="fill:#287e9b">LESEN · alle gebundenen PLC-Variablen</text>
+<rect x="56" y="749" width="356" height="80" rx="10" fill="#e8f1f3" stroke="#b0c6cc" stroke-width="1.5"/>
+<text x="75" y="780" font-size="21" class="heading">PLC-Originalwert</text>
+<text x="75" y="811" font-size="18" class="muted">WG_Speed = 60</text>
+<rect x="460" y="749" width="356" height="80" rx="10" fill="#e8f1f3" stroke="#b0c6cc" stroke-width="1.5"/>
+<text x="479" y="780" font-size="21" class="heading">INPUT.MOD liest</text>
+<text x="479" y="811" font-size="18" class="muted">Original → PY-Variable</text>
+<rect x="864" y="749" width="356" height="80" rx="10" fill="#e8f1f3" stroke="#b0c6cc" stroke-width="1.5"/>
+<text x="883" y="780" font-size="21" class="heading">PY-Variable</text>
+<text x="883" y="811" font-size="18" class="muted">WG_PY_Speed = 60</text>
+<rect x="1268" y="749" width="356" height="80" rx="10" fill="#e8f1f3" stroke="#b0c6cc" stroke-width="1.5"/>
+<text x="1287" y="780" font-size="21" class="heading">QML zeigt den Wert</text>
+<text x="1287" y="811" font-size="18" class="muted">Anzeige / Slider: 60</text>
+<path d="M418 788H449" fill="none" stroke="#287e9b" stroke-width="3" marker-end="url(#blue-1)"/>
+<path d="M822 788H853" fill="none" stroke="#287e9b" stroke-width="3" marker-end="url(#blue-1)"/>
+<path d="M1226 788H1257" fill="none" stroke="#287e9b" stroke-width="3" marker-end="url(#blue-1)"/>
+<path d="M1446 834V853" fill="none" stroke="#287e9b" stroke-width="2.5" marker-end="url(#blue-1)"/>
+<rect x="56" y="859" width="1568" height="93" rx="12" fill="#e5eddf" stroke="#b4c5a1" stroke-width="1.5"/>
+<text x="80" y="890" font-size="23" class="heading">PYTHON-VERARBEITUNG · Logik der Module / Bedienung</text>
+<text x="80" y="923" font-size="20" class="">Beispiel: Python berechnet einen neuen Wert oder der Slider wird bewegt.</text>
+<text x="1262" y="924" font-size="40" class="heading" style="fill:#557553">60 ⇒ 80</text>
+<path d="M234 958V994" fill="none" stroke="#557553" stroke-width="2.5" marker-end="url(#green-1)"/>
+<text x="460" y="986" font-size="20" class="heading" style="fill:#a5663c">ZURÜCKSCHREIBEN · vollständig, auch unveränderte Werte</text>
+<rect x="56" y="1001" width="356" height="80" rx="10" fill="#f5ecdf" stroke="#cebba1" stroke-width="1.5"/>
+<text x="75" y="1032" font-size="21" class="heading">Python / QML nach Logik</text>
+<text x="75" y="1063" font-size="18" class="muted">Ergebnis der Verarbeitung: 80</text>
+<rect x="460" y="1001" width="356" height="80" rx="10" fill="#f5ecdf" stroke="#cebba1" stroke-width="1.5"/>
+<text x="479" y="1032" font-size="21" class="heading">PY-Variable</text>
+<text x="479" y="1063" font-size="18" class="muted">WG_PY_Speed = 80</text>
+<rect x="864" y="1001" width="356" height="80" rx="10" fill="#f5ecdf" stroke="#cebba1" stroke-width="1.5"/>
+<text x="883" y="1032" font-size="21" class="heading">OUTPUT.MOD schreibt</text>
+<text x="883" y="1063" font-size="18" class="muted">PY-Variable → Original</text>
+<rect x="1268" y="1001" width="356" height="80" rx="10" fill="#f5ecdf" stroke="#cebba1" stroke-width="1.5"/>
+<text x="1287" y="1032" font-size="21" class="heading">PLC-Originalwert</text>
+<text x="1287" y="1063" font-size="18" class="muted">WG_Speed = 80</text>
+<path d="M418 1040H449" fill="none" stroke="#a5663c" stroke-width="3" marker-end="url(#brown-1)"/>
+<path d="M822 1040H853" fill="none" stroke="#a5663c" stroke-width="3" marker-end="url(#brown-1)"/>
+<path d="M1226 1040H1257" fill="none" stroke="#a5663c" stroke-width="3" marker-end="url(#brown-1)"/>
+<rect x="56" y="1104" width="1568" height="39" rx="8" fill="#e9efed" stroke="#c3d0ca" stroke-width="1.5"/>
+<text x="78" y="1130" font-size="20" class="heading">Jede gebundene PLC-Variable durchläuft Lesen → Verarbeitung → Rückschreiben. Der Datentyp bleibt erhalten.</text>
+<text x="56" y="1161" font-size="17" class="muted">Fachlicher Ablauf: PLC und Python besitzen bisher keinen gemeinsamen Takt. Konsistente Abbilder und Übergabe sind noch abzustimmen.</text>
 <text x="56" y="1180" font-size="16" class="muted">Symbolnamen sind Beispiele, keine ausführbare PLC-Syntax. Neue DEF-/MOD-Erzeugung und der dargestellte Datenaustausch sind noch nicht implementiert.</text>
 </svg>
