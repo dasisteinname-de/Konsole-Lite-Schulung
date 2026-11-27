@@ -30,7 +30,7 @@ const chapters = [
   ['cfg-1500', 'CFG · Vollkatalog & Rezepturvorlagen', 'CFG-1500.de.md'],
   ['trend-1500', 'Trend-/XY-Diagramm · Aufnahme & Ansicht', 'Trend-1500.de.md', '1.50.0', 'Anwenderaufnahme'],
   ['quickguide', 'CALL SK Kurzbedienung', 'KURZANLEITUNG.de.md'],
-  ['manager-installation', 'Anhang A · Manager installieren und starten', 'Manager-Installation.de.md', '1.52.6', 'LOCAL-Dokumentationsaufnahme'],
+  ['manager-installation', 'Anhang A · Manager installieren und starten', 'Manager-Installation.de.md', '1.52.8', 'LOCAL-Dokumentation · Managerbilder 1.52.6'],
   ['manager-activation', 'Anhang B · Arbeitsplatz aktivieren', 'Manager-Aktivierung.de.md', '1.52.6', 'LOCAL-Dokumentationsaufnahme'],
   ['manager-project', 'Anhang C · Projekt wählen und beginnen', 'Manager-Projekt.de.md', '1.52.6', 'LOCAL-Dokumentationsaufnahme']
 ];

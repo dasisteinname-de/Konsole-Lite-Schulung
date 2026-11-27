@@ -22,7 +22,7 @@ erforderlich. Dieser Bedienweg gilt für Windows 10/11 x64.
 Eigene Programme/
 └─ ConsoleLiteEditors/
    ├─ CL7Manager.exe       ← hier starten
-   ├─ CL7Updater.exe
+   ├─ Updater/             ← vollständiger Updatehelfer ab 1.52.8
    ├─ System/
    ├─ Tools/
    └─ weitere Bibliotheken und Programmdateien
@@ -79,11 +79,62 @@ Managers beendet diese Fenster nicht.
 3. Im Manager **Programm → Signiertes Update installieren …** öffnen und den
    Update-ZIP wählen. Dieses Update wird nicht vorher wie ein normales
    Installationspaket entpackt.
-4. Der Manager schließt sich. Der eigene Updatehelfer prüft die passende
-   Ausgangsversion, die Signatur und die Programmdateien und zeigt die geplante
-   Änderung. Erst nach Bestätigung wird sie übernommen.
-5. Danach den Manager aus seinem bisherigen Programmordner erneut starten und
-   Version, Aktivierungsstatus und gewählten Projektpfad kontrollieren.
+4. Ab **1.52.8** erscheint sofort eine Vorbereitungsanzeige. Der Manager bleibt
+   sichtbar, bis das eigenständige Updatefenster seine Bereitschaft bestätigt.
+   Dieses Fenster bleibt während des gesamten weiteren Ablaufs geöffnet.
+5. Das Fenster zeigt die aktuelle Phase und die wirklich bearbeitete Dateizahl:
+   vorhandenen Stand prüfen, Signatur prüfen, neue Installation vorbereiten,
+   neue Dateien prüfen und schließlich die Programmordner wechseln. Bei Phasen
+   ohne bekannte Gesamtzahl läuft eine Aktivitätsanzeige.
+6. Nach der ersten Prüfung Zielordner, Versionswechsel und entfallende Dateien
+   kontrollieren. Erst **Update installieren** bestätigt den Wechsel. Bis dahin
+   kann die Prüfung abgebrochen werden. Während des bestätigten Dateiwechsels
+   bleibt das Fenster geöffnet; es lässt sich nicht versehentlich schließen.
+7. Am Ende erscheint **Update vollständig übernommen** im selben Fenster.
+   Gewünschte Optionen markieren und **Fertig** wählen:
+
+| Option | Wirkung beim Abschluss |
+| --- | --- |
+| Manager nach dem Schließen starten | Startet den aktualisierten Manager aus genau diesem Programmordner. |
+| Manager-Verknüpfung auf dem Desktop erstellen | Legt einen Link **ConsoleLite Manager** für den aktuellen Benutzer an. |
+| Manager im Startmenü unter ConsoleLite eintragen | Legt **ConsoleLite → ConsoleLite Manager** im persönlichen Startmenü an. |
+
+Ohne Auswahl schließt nur das Updatefenster. Die Editoren bleiben über den
+Manager erreichbar; sie bekommen keine zusätzlichen eigenen Verknüpfungen.
+Ein vorhandener gleichnamiger Link zu einer anderen Installation wird nicht
+still umgestellt. Eine fehlgeschlagene Abschlussaktion wird im Fenster gezeigt;
+sie macht ein bereits übernommenes Update nicht rückgängig. Danach Version,
+Aktivierungsstatus und Projektpfad im Manager kontrollieren.
+
+### Erster Wechsel von einem älteren Piloten
+
+Ältere Versionen zeigen noch einzelne Meldungsfenster und starten den Manager
+nicht automatisch neu. Für den Wechsel kann der Herausgeber das separate Paket
+**ConsoleLiteUpdater** bereitstellen. Dieses vollständig **außerhalb** des
+Programmordners entpacken, `CL7Updater.exe` öffnen und das signierte Update-ZIP
+sowie den zu aktualisierenden `CL7Manager.exe` wählen. Nach dem Speichern eigener
+Entwürfe den alten Manager und alle Editoren schließen; Vorschau und Bestätigung
+erfolgen im neuen Updatefenster. Der Start allein installiert noch nichts.
+
+Mehrere entpackte Programmstände sind unabhängige Installationen. Das
+Projektfeld einer alten Kopie zeigt daher nicht zwingend denselben Pfad wie das
+der aktuellen Installation. Im Updatefenster den **Programmordner** prüfen und
+den späteren Desktop-/Startmenü-Link auf diese eine gewählte Installation richten.
+
+### Wenn Windows den Updatehelfer blockiert
+
+Die **CL7-Produktsignatur im ZIP** und eine **Windows-Code-Signing-Signatur der
+EXE** sind verschiedene Prüfungen. Der private Lizenzschlüssel ersetzt kein
+Windows-Zertifikat. Die aktuelle Pilotlieferung hat noch keine Authenticode-
+Signatur; eine erfolgreiche Paketprüfung garantiert deshalb nicht, dass die
+lokale Windows-Richtlinie den Programmstart erlaubt.
+
+Bei einer Blockade bleibt der Manager ab 1.52.8 geöffnet und zeigt den Startfehler.
+Die Meldung aus Windows-Sicherheit bzw. dem CodeIntegrity-Protokoll an den
+Herausgeber geben. Benötigt wird eine zur Windows-Richtlinie passende vertrauens-
+würdige Programmsignatur oder Freigabe. Das Update schaltet keine Schutzfunktion
+aus. Das neue Paket gilt erst nach erfolgreichem Starttest auf dem Ziel-PC als
+dort geprüft.
 
 Die Lizenz bleibt auf **demselben Computer und im selben Windows-Benutzerprofil**
 erhalten. Sie liegt außerhalb des Programmordners. Projektordner und eigene
