@@ -166,6 +166,12 @@ vorhandenes Modul wird als Konflikt gemeldet und bleibt erhalten. Aktive
 Arbeitsdaten und Maschinenbindungen reisen nicht als App mit; benötigte
 Anschlüsse sind im Zielprojekt einzurichten.
 
+Die zusätzliche Erzeugung von `PLC_PY_COM` mit PY-DEF und IN-/OUT-MOD-Dateien
+gehört zum [Diskussionsentwurf der PLC–Python-Schnittstelle](#/plc-interface).
+Der ZIP-Austausch dieses Programmstands überträgt bestehende Moduldateien;
+eine automatische Prüfung aller benötigten Symbole im Ziel-PLC-Projekt ist
+noch nicht enthalten.
+
 Ein fehlendes Standardmodul wie Hintergrundmagazin behält beim Import seinen
 festen Navigationsplatz. Eigene zusätzliche Module erhalten einen freien Platz
 nach den Standardmodulen. Bereits vorhandene Module bleiben geschützt.
