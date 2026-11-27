@@ -132,6 +132,47 @@ außerhalb des Austauschs. Rezepturvorgaben werden als **MOCK** ohne aktive
 Schreibfreigabe exportiert. Gleiche App-ID oder gleicher Modulordner wird als
 Konflikt gemeldet; vorhandene Versionen werden nicht still ersetzt.
 
+## Ohne GitHub: ZIP per E-Mail oder USB austauschen
+
+Der Austausch zwischen zwei Arbeitsplätzen braucht keine GitHub-Anmeldung
+und keine Internetverbindung. Der Autor gibt eine App als Datei weiter; der
+Empfänger prüft sie und übernimmt sie bewusst in sein Zielprojekt.
+
+**Beim Autor:**
+
+1. Alle gewünschten Moduländerungen speichern.
+2. Im Interface Editor **AppPool öffnen …** und einen eigenen lokalen Pool öffnen
+   oder anlegen. **App aus Projekt veröffentlichen …** übernimmt das gewählte
+   Modul, seine Controller, Bilder und Dokumentation in diesen lokalen Pool.
+3. Die App links wählen und **Gewählte App als ZIP …** speichern.
+4. Diese ZIP-Datei per E-Mail, USB-Stick oder Dateisystem weitergeben.
+
+**Beim Empfänger ab Manager-Paket 1.52.6:**
+
+1. Das gewünschte Zielprojekt öffnen und im Interface Editor **AppPool öffnen …**.
+2. **App aus ZIP öffnen …** anklicken und die erhaltene ZIP-Datei wählen.
+   Ein vorheriges Entpacken ist nicht erforderlich.
+3. Übersicht, Version, Anforderungen und **Importprüfung · Dateien** prüfen.
+   Bis hierhin bleiben die Projektdateien unverändert.
+4. **Installieren** übernimmt die geprüften Modul- und Controllerdateien in
+   die zugehörigen Projektordner. Anschließend im KonsoleConfigurator Modul,
+   Seiten, Arbeitsbereiche und Rechte bewusst einstellen.
+
+![Offline empfangene App im AppPool mit ZIP-Dateiauswahl und geprüfter Importvorschau · LOCAL-Dokumentationsaufnahme 1.52.6](images/manager/app-pool-offline-1526.png)
+
+Die ZIP-Datei enthält den Katalog und die dazugehörigen App-Dateien mit
+Prüfsummen. Das Öffnen und Importieren startet keinen Paketcode. Ein bereits
+vorhandenes Modul wird als Konflikt gemeldet und bleibt erhalten. Aktive
+Arbeitsdaten und Maschinenbindungen reisen nicht als App mit; benötigte
+Anschlüsse sind im Zielprojekt einzurichten.
+
+Ein geöffnetes ZIP ist eine schreibgeschützte Paketquelle. Es wird weder
+verändert noch als dauerhafter AppPool gespeichert. Die bisherige lokale
+Poolauswahl bleibt erhalten. **AppPool öffnen …** öffnet weiterhin einen
+normalen Katalogordner auf dem PC, USB-Laufwerk oder einem erreichbaren
+Dateisystem. Für ältere Pakete lässt sich ein offizieller App-Export vollständig
+entpacken und dessen Ordner mit `catalog.json` auf diesem Weg öffnen.
+
 ## Aus dem Pool ins eigene Projekt
 
 1. Das gewünschte **Zielprojekt** öffnen und im AppPool die App auswählen.
