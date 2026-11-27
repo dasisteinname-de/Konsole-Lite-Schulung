@@ -6,6 +6,8 @@ als eigene Fenster. Die benötigten Python-/Qt-Bibliotheken gehören zum fertige
 Windows-Paket. Auf dem Arbeitsplatz ist dafür keine Python- oder VS-Code-Installation
 erforderlich. Dieser Bedienweg gilt für Windows 10/11 x64.
 
+Der Updateablauf ist für **1.52.8** beschrieben; die Managerbilder zeigen 1.52.6.
+
 [Arbeitsplatz aktivieren](#/manager-activation) ·
 [Projekt wählen und beginnen](#/manager-project)
 
@@ -125,14 +127,14 @@ den späteren Desktop-/Startmenü-Link auf diese eine gewählte Installation ric
 
 Die **CL7-Produktsignatur im ZIP** und eine **Windows-Code-Signing-Signatur der
 EXE** sind verschiedene Prüfungen. Der private Lizenzschlüssel ersetzt kein
-Windows-Zertifikat. Die aktuelle Pilotlieferung hat noch keine Authenticode-
-Signatur; eine erfolgreiche Paketprüfung garantiert deshalb nicht, dass die
+Windows-Zertifikat. Die aktuelle Pilotlieferung hat noch keine Authenticode-Signatur;
+eine erfolgreiche Paketprüfung garantiert deshalb nicht, dass die
 lokale Windows-Richtlinie den Programmstart erlaubt.
 
 Bei einer Blockade bleibt der Manager ab 1.52.8 geöffnet und zeigt den Startfehler.
 Die Meldung aus Windows-Sicherheit bzw. dem CodeIntegrity-Protokoll an den
-Herausgeber geben. Benötigt wird eine zur Windows-Richtlinie passende vertrauens-
-würdige Programmsignatur oder Freigabe. Das Update schaltet keine Schutzfunktion
+Herausgeber geben. Benötigt wird eine zur Windows-Richtlinie passende
+vertrauenswürdige Programmsignatur oder Freigabe. Das Update schaltet keine Schutzfunktion
 aus. Das neue Paket gilt erst nach erfolgreichem Starttest auf dem Ziel-PC als
 dort geprüft.
 
