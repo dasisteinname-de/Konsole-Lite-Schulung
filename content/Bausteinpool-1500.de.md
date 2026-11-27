@@ -126,6 +126,17 @@ Tarif steht Branchschutz nicht zur Verfügung.
    veröffentlichten Paket enthalten sein. Die ursprünglichen Moduldateien bleiben unverändert.
 6. Veröffentlichung prüfen, danach den neuen Eintrag ansehen; bei Bedarf **Gewählte App als ZIP …** exportieren.
 
+Nach der Modulauswahl öffnet sich **App veröffentlichen · Angaben für den
+AppPool**. Mindestens **Kurzbeschreibung \*** ausfüllen und anschließend
+**App veröffentlichen** wählen. **Abbrechen** übernimmt keine Veröffentlichung.
+
+![Autorenformular nach der Modulauswahl mit ausgefüllter Kurzbeschreibung als Beispiel](images/app-pool-publish-form-local-1527.png)
+
+**Hinweis zu 1.52.6:** Wenn nach der Modulauswahl und **OK** kein Autorenformular
+erscheint, den korrigierten Programmstand **1.52.7** verwenden. Dieser Stand
+behebt den internen Abbruch vor dem Formular; Projektquellen und vorhandene
+AppPool-Einträge bleiben erhalten.
+
 Veröffentlicht werden Modulquellen, Controller und vorbereitete Vorgaben.
 Aktive Kundendatenbanken, Logs, Arbeitswerte und Maschinenbindings bleiben
 außerhalb des Austauschs. Rezepturvorgaben werden als **MOCK** ohne aktive

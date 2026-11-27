@@ -67,10 +67,11 @@ async function build() {
       if (level === '2') headings.push({ text: plain, anchor });
       return `<h${level} id="${anchor}">${text}</h${level}>`;
     }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) => {
-      const version = suppliedManagerImages.has(name) ? '1.52.5' : name === 'radio-range-1524.png' ? '1.52.4' : ['structure-tree-1523.png','progress-1523.png','slider-1523.png'].includes(name) ? '1.52.3' : name === 'structure-tree-1521.png' ? '1.52.1' : suppliedEditorImages.has(name) ? '1.51.0' : imageVersion;
+      let version = suppliedManagerImages.has(name) ? '1.52.5' : name === 'radio-range-1524.png' ? '1.52.4' : ['structure-tree-1523.png','progress-1523.png','slider-1523.png'].includes(name) ? '1.52.3' : name === 'structure-tree-1521.png' ? '1.52.1' : suppliedEditorImages.has(name) ? '1.51.0' : imageVersion;
+      if (name === 'app-pool-publish-form-local-1527.png') version = '1.52.7';
       if (!version) throw new Error(`Bildstand für ${file} fehlt`);
       const digest=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/images',name))).digest('hex').slice(0,12);
-      const origin = suppliedManagerImages.has(name) || suppliedEditorImages.has(name) ? 'Anwenderaufnahme' : localEditorImages.has(name) ? 'LOCAL-Editoraufnahme' : imageOrigin;
+      const origin = suppliedManagerImages.has(name) || suppliedEditorImages.has(name) ? 'Anwenderaufnahme' : name === 'app-pool-publish-form-local-1527.png' || localEditorImages.has(name) ? 'LOCAL-Editoraufnahme' : imageOrigin;
       return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt} · ${origin} ${version}" loading="lazy" tabindex="0"><figcaption>${alt} · ${origin} ${version} · Anklicken zum Vergrößern</figcaption></figure>`;
     });
     data[id] = { title, html, headings, search: md.replace(/!\[[^\]]*\]\([^)]*\)/g, '') };
