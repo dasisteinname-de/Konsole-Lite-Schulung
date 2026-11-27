@@ -166,6 +166,10 @@ vorhandenes Modul wird als Konflikt gemeldet und bleibt erhalten. Aktive
 Arbeitsdaten und Maschinenbindungen reisen nicht als App mit; benötigte
 Anschlüsse sind im Zielprojekt einzurichten.
 
+Ein fehlendes Standardmodul wie Hintergrundmagazin behält beim Import seinen
+festen Navigationsplatz. Eigene zusätzliche Module erhalten einen freien Platz
+nach den Standardmodulen. Bereits vorhandene Module bleiben geschützt.
+
 Ein geöffnetes ZIP ist eine schreibgeschützte Paketquelle. Es wird weder
 verändert noch als dauerhafter AppPool gespeichert. Die bisherige lokale
 Poolauswahl bleibt erhalten. **AppPool öffnen …** öffnet weiterhin einen
