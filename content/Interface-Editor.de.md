@@ -1,5 +1,10 @@
 # Interface Editor · Schritt für Schritt
 
+**Erster Start:** Im ConsoleLite Manager den Projektordner wählen oder beim
+ersten Werkzeugstart zuordnen. Ein bereits eingetragener gültiger Projektpfad
+wird übernommen. Die Anleitung für vorhandene und neue Projekte steht in
+[Anhang C · Projekt wählen und beginnen](#/manager-project).
+
 **Variablen vorbereiten, ihre Herkunft verstehen und mit der Maske verbinden.**
 Der Interface Editor ist der Ort für die Daten einer Bedienseite. Er ordnet
 Variablen einem Modul und einer Interface-Gruppe zu. Im QML Editor verwendest

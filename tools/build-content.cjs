@@ -29,7 +29,10 @@ const chapters = [
   ['pool-1500', 'AppPool · veröffentlichen & importieren', 'Bausteinpool-1500.de.md', '1.50.0', 'LOCAL-Editoraufnahme'],
   ['cfg-1500', 'CFG · Vollkatalog & Rezepturvorlagen', 'CFG-1500.de.md'],
   ['trend-1500', 'Trend-/XY-Diagramm · Aufnahme & Ansicht', 'Trend-1500.de.md', '1.50.0', 'Anwenderaufnahme'],
-  ['quickguide', 'CALL SK Kurzbedienung', 'KURZANLEITUNG.de.md']
+  ['quickguide', 'CALL SK Kurzbedienung', 'KURZANLEITUNG.de.md'],
+  ['manager-installation', 'Anhang A · Manager installieren und starten', 'Manager-Installation.de.md', '1.52.6', 'LOCAL-Dokumentationsaufnahme'],
+  ['manager-activation', 'Anhang B · Arbeitsplatz aktivieren', 'Manager-Aktivierung.de.md', '1.52.6', 'LOCAL-Dokumentationsaufnahme'],
+  ['manager-project', 'Anhang C · Projekt wählen und beginnen', 'Manager-Projekt.de.md', '1.52.6', 'LOCAL-Dokumentationsaufnahme']
 ];
 const slug = s => s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 // Diese Bilder stammen aus einer isolierten Qt-LOCAL-Kopie des aktuellen
@@ -42,6 +45,10 @@ const suppliedEditorImages = new Set([
   'overview/qml-layout-anwender-1510.png',
   'overview/config-anwender-1510.png',
   'overview/app-pool-anwender-1510.png'
+]);
+const suppliedManagerImages = new Set([
+  'manager/project-folder-choice-1525.png',
+  'manager/interface-project-loaded-1525.png'
 ]);
 async function build() {
   const { marked } = await import('marked');
@@ -60,10 +67,10 @@ async function build() {
       if (level === '2') headings.push({ text: plain, anchor });
       return `<h${level} id="${anchor}">${text}</h${level}>`;
     }).replace(/<img src="images\/([^"]+)" alt="([^"]*)">/g, (_, name, alt) => {
-      const version = name === 'radio-range-1524.png' ? '1.52.4' : ['structure-tree-1523.png','progress-1523.png','slider-1523.png'].includes(name) ? '1.52.3' : name === 'structure-tree-1521.png' ? '1.52.1' : suppliedEditorImages.has(name) ? '1.51.0' : imageVersion;
+      const version = suppliedManagerImages.has(name) ? '1.52.5' : name === 'radio-range-1524.png' ? '1.52.4' : ['structure-tree-1523.png','progress-1523.png','slider-1523.png'].includes(name) ? '1.52.3' : name === 'structure-tree-1521.png' ? '1.52.1' : suppliedEditorImages.has(name) ? '1.51.0' : imageVersion;
       if (!version) throw new Error(`Bildstand für ${file} fehlt`);
       const digest=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'assets/images',name))).digest('hex').slice(0,12);
-      const origin = suppliedEditorImages.has(name) ? 'Anwenderaufnahme' : localEditorImages.has(name) ? 'LOCAL-Editoraufnahme' : imageOrigin;
+      const origin = suppliedManagerImages.has(name) || suppliedEditorImages.has(name) ? 'Anwenderaufnahme' : localEditorImages.has(name) ? 'LOCAL-Editoraufnahme' : imageOrigin;
       return `<figure><img src="assets/images/${name}?v=${digest}" alt="${alt} · ${origin} ${version}" loading="lazy" tabindex="0"><figcaption>${alt} · ${origin} ${version} · Anklicken zum Vergrößern</figcaption></figure>`;
     });
     data[id] = { title, html, headings, search: md.replace(/!\[[^\]]*\]\([^)]*\)/g, '') };

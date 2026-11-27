@@ -12,6 +12,7 @@ Maschinensteuerungsquellen.
 | Lernen und ausprobieren | [Lernwerkstatt](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/) |
 | Aktuelle Bedienwege | [Zugriff](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/access-1500), [Transfer](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/transfer-1500), [CFG](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/cfg-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500), [AppPool](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/pool-1500) |
 | Interface Editor | [Basic · Schritt für Schritt mit aktuellen Editoraufnahmen](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/interface-editor) |
+| Manager und Arbeitsplatz | [Installation & Update](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/manager-installation), [Aktivierung](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/manager-activation), [Projekt wählen](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/manager-project) |
 | PLC–Python-Konzept | [Interface Editor, Datenwege und PLC_PY_COM · Diskussionsentwurf](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/plc-interface) |
 | Nachschlagen | [Grundelemente](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/elements), [Trend / XY](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/trend-1500), [Begriffe](https://dasisteinname-de.github.io/Konsole-Lite-Schulung/#/reference) |
 

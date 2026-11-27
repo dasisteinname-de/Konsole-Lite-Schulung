@@ -1,0 +1,3 @@
+# PDF-Dateien unverändert als Binärdateien ausliefern.
+*.pdf binary
+*.png binary

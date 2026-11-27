@@ -1,5 +1,11 @@
 # Schulungsunterlagen für Servicetechniker
 
+**Start über den ConsoleLite Manager:** Das fertige Windows-Paket enthält die
+Editoren und ihre Laufzeitbibliotheken. Die bebilderten Anhänge erklären
+[Installation und Programmupdate](#/manager-installation),
+[Aktivierung des Arbeitsplatzes](#/manager-activation) und
+[Auswahl oder Anlage eines Projekts](#/manager-project).
+
 Mit ConsoleLite eine verständliche Bedienmaske gestalten, Geräte als Units
 zuordnen und Schrittketten lokal prüfen. Der Kurs beginnt ohne vorausgesetzte
 QML-, Python- oder JSON-Programmierkenntnisse. Maschinenkenntnisse der Teilnehmer
